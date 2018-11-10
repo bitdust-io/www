@@ -50,6 +50,196 @@
 
 <h1 id="bitdust-change-log">BitDust Change Log</h1>
 
+<p>2018-11-10 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>ported to Python3.6 finally (Python2.7 also supported) !!!</li>
+<li>speed up raid workers (Stanislav Evseev)</li>
+<li>switched from parallelp to the built-in multiprocessing (Stanislav Evseev)</li>
+<li>turn on proxy server by default for all nodes, updated seed nodes</li>
+<li>built more unit tests</li>
+<li>"make test" command will also execute "python bitdust.py install" first</li>
+<li>use global python to run unit tests</li>
+<li>run unit tests on travis</li>
+<li>transition from pickle to json</li>
+<li>new regression tests based on docker containers (Stanislav Evseev)</li>
+<li>CI/CD integration with travis</li>
+<li>detect current python version in deploy script and use it</li>
+<li>added system.deploy module to isolate everythng related to "python bitdust.py install" command</li>
+<li>Add chat-history endpoint (Anton Grishun)</li>
+<li>slow down DHT traffic</li>
+<li>added space<em>donated(), space</em>consumed() and space_local() methods to REST HTTP API</li>
+<li>added api method identity_backup(), tested recover identity</li>
+<li>bug fix : correctly load/save list of my suppliers</li>
+<li>randomize tcp, udp, http, dht and blockchain port numbers during startup</li>
+<li>Added environment variable to access to internal api interface</li>
+<li>added bitrex.ai to dht seed nodes (by Renato Cardoso)</li>
+<li>added CodernityDB3 fork to code base</li>
+</ul>
+
+<p>2018-07-28 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>added more known id servers</li>
+<li>added smoketestdht in Makefile</li>
+<li>added event "shared-list-files-received"</li>
+<li>added events "share-connected", "share-disconnected"</li>
+<li>added events "private-key-shared" and "private-key-share-failed"</li>
+<li>add simple health-check method</li>
+<li>isolated SSL dependecies in old/unused methods in lib.net_misc</li>
+<li>make possible to register new identity on local ID server</li>
+<li>store public keys in OpenSSH format and private keys in PEM</li>
+<li>use pickle instead of base64 to serialize encrypted data</li>
+<li>backward incompatible !!!!!!!!!!!!!!!! : reimplement encryption, use pycryptodomex instead of pycrypto, bump twisted version in requirements</li>
+<li>clean up, removed old "UI experiments" based on Django framework</li>
+<li>installing virtualenv isolated</li>
+<li>updated blockchain/trinity/deploy_linux.sh</li>
+<li>pyethapp is dead, testing trinity which is python3.6</li>
+<li>experiments with pyethapp blockchain tool</li>
+<li>added file/download/v1 api method</li>
+<li>encoding fix: always set UTF8 as default locale</li>
+<li>executable file name fix in few places to make windows electron platform working</li>
+<li>added api.shell() method to be able to debug in real time</li>
+<li>added task for tracking network statuses and reconnect network service</li>
+<li>updated list of seed nodes</li>
+<li>wraping stored data with extra layer when supplier returning back saved files in order to route it correctly</li>
+<li>sending pub keys to suppliers when required</li>
+<li>loading suppliers of other known customers at start up</li>
+<li>added callback_id in the automat class</li>
+<li>temporary disabled "CRITICALLY_OFFLINE" supplier dismiss fearure</li>
+<li>added <code>all_customers</code> parameter to api.file_list() API</li>
+<li>limit twisted&lt;18 in requirements.txt</li>
+<li>added timer fallback in network_connector()</li>
+<li>added method API method network/details</li>
+<li>added api method user<em>status</em>check()</li>
+<li>added api.identity_list() method</li>
+<li>rebuilt dht service and added key-value expiration flow</li>
+<li>added cancel() method to service<em>supplier</em>relations() to be able to clean up junk dht records</li>
+<li>updated file<em>upload/file</em>download API methods so they will be able to open share before start</li>
+<li>improving files synchronization logic</li>
+<li>disabled services/udp-transport by default, services/proxy-transport should be used now by default</li>
+<li>stop publishing "supplier-file-modified" event, more smart fire_hire()</li>
+<li>added share<em>list() and share</em>create() api mothods, adjusted key_id format validation</li>
+<li>added id server bitrex.ai:8084</li>
+<li>shared file download is working !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</li>
+<li>fixed api.message<em>send(), packet</em>in.process() to be able to cache input packet creator identity</li>
+<li>in service_supplier() external customer must be able to request Data()</li>
+<li>service_supplier() able to send shared data to external customer</li>
+<li>bump dht protocol version to 5</li>
+<li>publishing my active eccmap in dht relations</li>
+<li>added DetectSupplierPosition() to be able to connect to external suppliers</li>
+<li>bump dht protocol version to 4</li>
+<li>modified stun client code to use randomized udp and dht port numbers</li>
+<li>added lg.args() method, testing DHT methods</li>
+<li>added DHT methods to work with validated json data</li>
+<li>added clean up in dht_relations()</li>
+<li>refactored Files() command - must be encrypted now</li>
+<li>must be able to request 0 bytes from supplier</li>
+<li>working with file sharing</li>
+</ul>
+
+<p>2018-04-16 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>refactoring/improvements/new api methods, building file share methods, supporting new UI based on electron framework</li>
+<li>switched from restore() to restore_worker()</li>
+<li>added data_receiver() machine</li>
+<li>updated packet_out() : use cached copy of the remote identity only if it is fresh - if older than 60 sec then cache again</li>
+<li>randomized backups fs id</li>
+<li>added api methods to exchange json messages</li>
+<li>added api methods to get/set my nickname</li>
+<li>improved performance of api.user_search()</li>
+<li>added rest method for adding/removing users from list of contacts</li>
+<li>save backup index in service_customer()</li>
+<li>also storing locally a list files from other customers</li>
+<li>processing ListFiles() command also in service_customer()</li>
+<li>added service<em>shared</em>data(), testing shared<em>access</em>donor() machine</li>
+<li>added api.share<em>open() and api.share</em>history() interfaces</li>
+<li>added Packets field to signed.Packet to store outgoing transfers</li>
+<li>building shared<em>access</em>coordinator()</li>
+<li>added response timeout callback methods to packet<em>out and catching that in key</em>audit() now</li>
+<li>able to audit master key as well</li>
+<li>added api.transfers_list() to be able to test/debug file uploads/downloads process</li>
+<li>destination<em>folder is not a mandatory in api.file</em>download_start()</li>
+<li>added api.key_audit() method</li>
+<li>added AuditKey() command, working with key_ring, added method to test validate keys on remote machines</li>
+<li>added access/shared<em>access</em>coordinator.py</li>
+<li>rework event id format in the p2p queue, publish events from the blockchain</li>
+<li>working with blockchain, registering own identity in the blockchain if possible (mine a block if not enough coins)</li>
+<li>miners should only generate blocks if some transactions are pending</li>
+<li>Added service_blockchain() based on PyBC open source project - basic implementation of blockchain technology</li>
+<li>added file<em>download</em>start() and file<em>download</em>stop()  to REST HTTP API</li>
+<li>set normalize<em>key</em>alias=True everywhere : force to send key_alias in packetID</li>
+<li>updated ListFiles()/Files() commands so that they also processing key_alias parameter</li>
+<li>change storage location for customer's file : also depend on key_alias</li>
+<li>handling of Event() packets in service<em>p2p</em>notifications() only</li>
+<li>add logging in automat.startTimers()</li>
+<li>Big change! refactor p2p services requests : use generic json structures instead of plain strings</li>
+<li>added methods to connect producer with given queue</li>
+<li>added api.queue_list()</li>
+<li>added global<em>id.ParseGlobalQueueID(queue</em>id) method, fix in my_keys</li>
+<li>make api.network<em>connected() workin properly and return valid status based on p2p</em>connector().state</li>
+<li>improved api.service<em>restart() method, added wait</em>timeout parameter with default value 10 seconds</li>
+<li>generate events when your contacts got changed</li>
+<li>added flexibility to crypt.signed.Packet : you can use specific key to sign your data now, not only your master key</li>
+<li>finilized design of the queue<em>id: {queue</em>alias}&amp;{owner<em>id}&amp;{supplier</em>id}</li>
+<li>set service<em>p2p</em>notifications enabled by default</li>
+<li>change dependecy for service<em>supplier - it must depend on service</em>p2p_notifications also</li>
+<li>add CORS to REST HTTP API, work with p2p_queue, fixes</li>
+<li>added /event/send/<event_id>/v1 API HTTP method</li>
+<li>added response<em>timeout argument to packet</em>out()</li>
+<li>added Event() to p2p.commands</li>
+<li>skip command handling in p2p_service, logic distributed to the services</li>
+<li>added p2p_queue.py, refactoring</li>
+<li>publish events from id<em>restorer() and id</em>registrator()</li>
+<li>added api.event<em>listen(), possible to publish event when state machine change state, work on api.service</em>restart()</li>
+<li>modified initializer() machine logic: start bitdust process even if local identity is not exist, added API methods to create/recover identity</li>
+<li>disabled Django WEB UI interface, we are building new UI based on Electron</li>
+<li>added service<em>p2p</em>notifications()</li>
+</ul>
+
+<p>2018-01-14 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>added id server blog.bitdust.io, removed id server whmcs.whois.ai</li>
+<li>fixed DHT init/connect scripts, </li>
+<li>limit twisted and django versions in requirements, set --index-url=https://pypi.python.org/simple/ in deployment script</li>
+<li>proper handling customer location of ".bitdust" folder</li>
+</ul>
+
+<p>2017-11-27 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>added few options in services/identity-propagate/ branch</li>
+<li>updated id_registrator() to be able to contol your identity sources via settings</li>
+<li>now identitycache will erase all local files on startup</li>
+<li>added "identity server" in command line interface to run id server locally</li>
+<li>added "identity backup" in command line interface</li>
+<li>added setup.py</li>
+<li>added git mirror on: dev.bitdust.io/code/devel (dev)</li>
+<li>added git mirror on: bitbucket.org/bitdust_io/devel (bitbucket)</li>
+<li>added git mirror on: gitlab.com/bitdust/devel (gitlab)</li>
+<li>added api /key/*/v1 REST methods, tested again key_ring sharing</li>
+<li>added api /config/*/v1 REST methods</li>
+<li>added txrestapi, added REST HTTP server for serving api.* methods in interface/rest<em>http</em>server.py, updated settings</li>
+<li>get rid of stun<em>client</em>RFC3489 dependency! only STUN from BitDust nodes now</li>
+<li>removed shtoom and stun<em>rfc</em>3489 files from repo</li>
+<li>added list of known id servers in idserver WEB front-end</li>
+<li>added api.network_stun() method to detect and report your current external IP</li>
+<li>added new api.message_*() methods for further development of the GUI</li>
+<li>added chat/message_keeper.py to store message history</li>
+<li>fixes in service<em>identity</em>server()</li>
+<li>fixes/imporvements in identitycache.py</li>
+<li>fixes/improvements related to global id</li>
+<li>fixes in lookup.py</li>
+<li>fixes in api.file_create()</li>
+<li>fixes in cmd_deploy()</li>
+<li>fixes in backup_fs.py</li>
+<li>fixes in transport/proxy/</li>
+<li>fixes in transport/tcp/</li>
+<li>updated help.py</li>
+</ul>
+
 <p>2017-10-31 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
 
 <ul>
@@ -280,7 +470,7 @@
 
 <div id="bottom_area">
 <div id=copyright class="pull-right">
-© BitDust, 2016&nbsp;&nbsp;&nbsp;
+© BitDust, 2019&nbsp;&nbsp;&nbsp;
 </div>
 </div>
 
@@ -357,9 +547,12 @@
                             <li><a href="identities.html">User Identification</a></li>
                             <li><a href="storage.html">Distributed Storage</a></li>
                             <li><a href="security.html">Data Security</a></li>
-                            <li><a href="rebuilding.html">Automatic Rebuilding</a></li>
                             <li><a href="sharing.html">File Sharing</a></li>
+                            <li><a href="rebuilding.html">Automatic Rebuilding</a></li>
                             <li><a href="dht.html">Distributed Hash-Table</a></li>
+                            <li><a href="services.html">Network services</a></li>
+                            <li><a href="transports.html">Transport protocols</a></li>
+                            <li><a href="crypto_contracts.html">Crypto-contracts</a></li>
                         </ul>
                     </li>
 
@@ -372,7 +565,10 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="roadmap.html">Roadmap</a></li>
                             <li><a href="automats.html">Finite State Machines</a></li>
+                            <li><a href="technologies.html">Technologies</a></li>
                             <li><a href="api.html">API Interface</a></li>
+                            <li><a href="software_releases.html">Software releases</a></li>
+                            <li><a href="respect.html">Contributors and Supporters</a></li>
                         </ul>
                     </li>
                     
@@ -385,6 +581,14 @@
                             <li>
                                 <a href="https://github.com/bitdust-io" 
                                     target="blank">GitHub/bitdust-io</a>
+                            </li>
+                            <li>
+                                <a href="https://bitbucket.org/bitdust_io" 
+                                    target="blank">BitBucket/bitdust_io</a>
+                            </li>
+                            <li>
+                                <a href="https://gitlab.com/bitdust.io" 
+                                    target="blank">GitLab/bitdust.io</a>
                             </li>
                             <li>
                                 <a href="https://dev.bitdust.io/explore/projects" 
