@@ -1,7 +1,6 @@
 #!/bin/bash
 
 git pull upstream master
-git pull github master
 git pull fork master
 
 git status
