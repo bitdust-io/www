@@ -50,14 +50,14 @@
 
 <h1 id="bitdust-api">BitDust API</h1>
 
-<h2 id="stop()">stop()</h2>
+<h2 id="process_stop()">process_stop()</h2>
 
 <p>Stop the main process immediately.</p>
 
 <pre><code>{'status': 'OK', 'result': 'stopped'}
 </code></pre>
 
-<h2 id="restart(showgui=false)">restart(showgui=False)</h2>
+<h2 id="process_restart(showgui=false)">process_restart(showgui=False)</h2>
 
 <p>Restart the main process, if flag show=True the GUI will be opened after
 restart.</p>
@@ -65,12 +65,24 @@ restart.</p>
 <pre><code>{'status': 'OK', 'result': 'restarted'}
 </code></pre>
 
-<h2 id="show()">show()</h2>
+<h2 id="process_show()">process_show()</h2>
 
-<p>Opens a default web browser to show the BitDust GUI.</p>
+<p>Deprecated.
+Opens a default web browser to show the BitDust GUI.</p>
 
 <pre><code>{'status': 'OK',   'result': '"show" event has been sent to the main process'}
 </code></pre>
+
+<h2 id="process_health()">process_health()</h2>
+
+<p>Returns true if system is running </p>
+
+<pre><code>{'status': 'OK' }
+</code></pre>
+
+<h2 id="process_debug()">process_debug()</h2>
+
+<p>Execute a breakpoint inside main thread and start Python shell using standard <code>pdb.set_trace()</code> debugger.</p>
 
 <h2 id="config_get(key)">config_get(key)</h2>
 
@@ -109,6 +121,8 @@ restart.</p>
 <h2 id="identity_get(include_xml_source=false)">identity_get(include_xml_source=False)</h2>
 
 <h2 id="identity_create(username)">identity_create(username)</h2>
+
+<h2 id="identity_backup(destination_filepath)">identity_backup(destination_filepath)</h2>
 
 <h2 id="identity_recover(private_key_source,-known_idurl=none)">identity_recover(private_key_source, known_idurl=None)</h2>
 
@@ -250,7 +264,7 @@ but just in case.</p>
 <pre><code>{'status': 'OK', 'result': 'the main files sync loop has been restarted'}
 </code></pre>
 
-<h2 id="files_list(remote_path=none,-key_id=none,-recursive=true)">files_list(remote_path=None, key_id=None, recursive=True)</h2>
+<h2 id="files_list(remote_path=none,-key_id=none,-recursive=true,-all_customers=false)">files_list(remote_path=None, key_id=None, recursive=True, all_customers=False)</h2>
 
 <p>Returns list of known files registered in the catalog under given <code>remote_path</code> folder.
 By default returns items from root of the catalog.
@@ -329,7 +343,7 @@ list of pending items to be uploaded.</p>
 }
 </code></pre>
 
-<h2 id="file_upload_start(local_path,-remote_path,-wait_result=false,-open_share=true)">file_upload_start(local_path, remote_path, wait_result=False, open_share=True)</h2>
+<h2 id="file_upload_start(local_path,-remote_path,-wait_result=false,-open_share=false)">file_upload_start(local_path, remote_path, wait_result=False, open_share=False)</h2>
 
 <h2 id="file_upload_stop(remote_path)">file_upload_stop(remote_path)</h2>
 
@@ -723,6 +737,8 @@ in DHT network.</p>
 <p>Starts nickname_holder() machine to register and keep your nickname in DHT
 network.</p>
 
+<h2 id="message_history(user)">message_history(user)</h2>
+
 <h2 id="message_send(recipient,-json_data,-timeout=5)">message_send(recipient, json_data, timeout=5)</h2>
 
 <p>Sends a text message to remote peer, <code>recipient</code> is a string with nickname or global_id.</p>
@@ -744,10 +760,12 @@ Both, incoming and outgoing, messages will be populated here.</p>
  'result': [{
     'type': 'private_message',
     'dir': 'incoming',
-    'id': '123456788',
-    'sender': 'abc$alice@first-host.com',
-    'recipient': 'abc$bob@second-host.net',
-    'message': 'Hello World!',
+    'message_id': '123456788',
+    'sender': 'messages$alice@first-host.com',
+    'recipient': 'messages$bob@second-host.net',
+    'data': {
+        'message': 'Hello BitDust!'
+    },
     'time': 123456789
 }]}
 </code></pre>
