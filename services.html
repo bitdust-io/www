@@ -9,7 +9,7 @@
 
     <link rel="canonical" href="https://bitdust.io">
     
-    <title>BitDust : Network services</title>
+    <title>BitDust : Network Services</title>
 
     <!-- <meta property="fb:admins" content="1097958228"/> -->
     <!-- <meta property="fb:app_id" content="543329652498581"/> -->
@@ -48,7 +48,79 @@
 <div class="Center-Block">
 <div id=page_content>
 
-<h1 id="network-services">Network services</h1>
+<h1 id="network-services">Network Services</h1>
+
+<h2 id="microservices-tree">Microservices Tree</h2>
+
+<p>BitDust software is developing based on <a href="https://en.wikipedia.org/wiki/Microservices">service-oriented architecture</a> and bellow you can see a dependencies tree of all network services currently exist in the software.</p>
+
+<p>Most network services were implemented using <a href="automats.html">finite state machines</a>, on the picture you can see corresponding automatas as a blue labels. </p>
+
+<div class=automatpng>
+
+<p><a href="services/bitdust_services_tree.pdf"><img src="services/bitdust_services_tree.png" alt="BitDust Microservices Tree" /></a></p>
+
+</div>
+
+<h2 id="list-of-network-services">List of network services</h2>
+
+<ul>
+<li><a href="service_backup_db.html">service_backup_db()</a></li>
+<li><a href="service_backups.html">service_backups()</a></li>
+<li><a href="service_broadcasting.html">service_broadcasting()</a></li>
+<li><a href="service_contract_chain.html">service_contract_chain()</a></li>
+<li><a href="service_customer.html">service_customer()</a></li>
+<li><a href="service_customer_contracts.html">service_customer_contracts()</a></li>
+<li><a href="service_customer_patrol.html">service_customer_patrol()</a></li>
+<li><a href="service_customer_support.html">service_customer_support()</a></li>
+<li><a href="service_data_motion.html">service_data_motion()</a></li>
+<li><a href="service_employer.html">service_employer()</a></li>
+<li><a href="service_entangled_dht.html">service_entangled_dht()</a></li>
+<li><a href="service_gateway.html">service_gateway()</a></li>
+<li><a href="service_identity_propagate.html">service_identity_propagate()</a></li>
+<li><a href="service_identity_server.html">service_identity_server()</a></li>
+<li><a href="service_ip_port_responder.html">service_ip_port_responder()</a></li>
+<li><a href="service_keys_registry.html">service_keys_registry()</a></li>
+<li><a href="service_list_files.html">service_list_files()</a></li>
+<li><a href="service_miner.html">service_miner()</a></li>
+<li><a href="service_my_ip_port.html">service_my_ip_port()</a></li>
+<li><a href="service_network.html">service_network()</a></li>
+<li><a href="service_nodes_lookup.html">service_nodes_lookup()</a></li>
+<li><a href="service_p2p_hookups.html">service_p2p_hookups()</a></li>
+<li><a href="service_p2p_notifications.html">service_p2p_notifications()</a></li>
+<li><a href="service_private_messages.html">service_private_messages()</a></li>
+<li><a href="service_proxy_server.html">service_proxy_server()</a></li>
+<li><a href="service_proxy_transport.html">service_proxy_transport()</a></li>
+<li><a href="service_rebuilding.html">service_rebuilding()</a></li>
+<li><a href="service_restores.html">service_restores()</a></li>
+<li><a href="service_shared_data.html">service_shared_data()</a></li>
+<li><a href="service_supplier.html">service_supplier()</a></li>
+<li><a href="service_supplier_contracts.html">service_supplier_contracts()</a></li>
+<li><a href="service_supplier_relations.html">service_supplier_relations()</a></li>
+<li><a href="service_tcp_connections.html">service_tcp_connections()</a></li>
+<li><a href="service_tcp_transport.html">service_tcp_transport()</a></li>
+<li><a href="service_udp_datagrams.html">service_udp_datagrams()</a></li>
+<li><a href="service_udp_transport.html">service_udp_transport()</a></li>
+</ul>
+
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = "http://bitdust.io/services.html";   
+        this.page.identifier = "./services"
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = '//bitdust.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+</div>
 
 
 </div>
@@ -58,7 +130,7 @@
 
 <div id="bottom_area">
 <div id=copyright class="pull-right">
-© BitDust, 2016&nbsp;&nbsp;&nbsp;
+© BitDust, 2019&nbsp;&nbsp;&nbsp;
 </div>
 </div>
 
@@ -135,6 +207,7 @@
                             <li><a href="identities.html">User Identification</a></li>
                             <li><a href="storage.html">Distributed Storage</a></li>
                             <li><a href="security.html">Data Security</a></li>
+                            <li><a href="sharing.html">File Sharing</a></li>
                             <li><a href="rebuilding.html">Automatic Rebuilding</a></li>
                             <li><a href="dht.html">Distributed Hash-Table</a></li>
                             <li><a href="services.html">Network services</a></li>
@@ -154,8 +227,8 @@
                             <li><a href="automats.html">Finite State Machines</a></li>
                             <li><a href="technologies.html">Technologies</a></li>
                             <li><a href="api.html">API Interface</a></li>
-                            <li><a href="bugs.html">Known bugs</a></li>
-                            <li><a href="changelog.html">Change log</a></li>
+                            <li><a href="software_releases.html">Software releases</a></li>
+                            <li><a href="respect.html">Contributors and Supporters</a></li>
                         </ul>
                     </li>
                     
@@ -166,12 +239,20 @@
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="https://github.com/vesellov" 
-                                    target="blank">GitHub/vesellov</a>
+                                <a href="https://github.com/bitdust-io" 
+                                    target="blank">GitHub/bitdust-io</a>
                             </li>
                             <li>
-                                <a href="https://gitlab.bitdust.io/explore/projects" 
-                                    target="blank">gitlab.bitdust.io</a>
+                                <a href="https://bitbucket.org/bitdust_io" 
+                                    target="blank">BitBucket/bitdust_io</a>
+                            </li>
+                            <li>
+                                <a href="https://gitlab.com/bitdust.io" 
+                                    target="blank">GitLab/bitdust.io</a>
+                            </li>
+                            <li>
+                                <a href="https://dev.bitdust.io/explore/projects" 
+                                    target="blank">dev.bitdust.io</a>
                             </li>
                         </ul>
                     </li>
