@@ -88,6 +88,11 @@ Now import fresh code from "devel" repo on top of existing files:</p>
 <pre><code>./import ../bitdust.devel/
 </code></pre>
 
+<p>Turn OFF DEBUG mode in all Python files:</p>
+
+<pre><code>find . -type f -name "*.py" -exec sed -i 's/_Debug = True/_Debug = False/g' {} +
+</code></pre>
+
 <p>Mark all modified files in git to be commited in the new release:</p>
 
 <pre><code>git add -u .
@@ -104,20 +109,15 @@ Now import fresh code from "devel" repo on top of existing files:</p>
 git add -u .
 </code></pre>
 
-<p>Check again to be sure you didn't miss to remove / add any other files. Some files and folders should be excluded from "stable" repo:</p>
+<p>Check again to be sure you didn't miss to remove / add any other files. Some files and folders should be excluded from "stable" repo so this bellow command will help you to identify differences:</p>
 
 <pre><code>cd ..
-diff --brief -r bitdust bitdust.devel/ | grep -v ".git" | grep -v "__pycache__" | grep -v ".pyc" | grep "Only in"
-Only in bitdust: LICENSE
+diff --brief -r bitdust/ bitdust.devel/ | grep -v ".DS_Store" | grep -v "site-packages" | grep -v ".git" | grep -v "__pycache__" | grep -v ".pyc" | grep "Only in"
+
+Only in bitdust.devel/: HISTORY.txt
 Only in bitdust.devel/: deploy
-Only in bitdust: import
-Only in bitdust.devel/: release
-Only in bitdust.devel/: scripts
-</code></pre>
-
-<p>Turn OFF DEBUG mode in all Python files:</p>
-
-<pre><code>find . -type f -name "*.py" -exec sed -i 's/_Debug = True/_Debug = False/g' {} +
+Only in bitdust/: import
+...
 </code></pre>
 
 <p>Do not commit your changes yet!
@@ -127,10 +127,11 @@ Change back to "devel" repo and run such command to list all commits added to "d
 ./history ../bitdust/
 </code></pre>
 
-<p>File <code>HISTORY.TXT</code> was created and now it is time to describe which changes we are going to publish in the <code>CHANGELOG.txt</code>.
-Copy text block from <code>HISTORY.TXT</code> file into <code>CHANGELOG.txt</code> and make it nice-looking:</p>
+<p>File <code>HISTORY.TXT</code> was created and now it is time to describe which changes we are going to publish in the <code>CHANGELOG.txt</code>.</p>
 
-<pre><code>cat HISTORY.TXT
+<p>Copy text block from <code>HISTORY.TXT</code> file into <code>CHANGELOG.txt</code> and make it nice-looking:</p>
+
+<pre><code>head -30 HISTORY.TXT
 nano CHANGELOG.txt
 </code></pre>
 

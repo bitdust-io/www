@@ -9,7 +9,7 @@
 
     <link rel="canonical" href="https://bitdust.io">
     
-    <title>BitDust</title>
+    <title>Running BitDust seed node</title>
 
     <!-- <meta property="fb:admins" content="1097958228"/> -->
     <!-- <meta property="fb:app_id" content="543329652498581"/> -->
@@ -48,50 +48,83 @@
 <div class="Center-Block">
 <div id=page_content>
 
-<h1 id="bitdust">BitDust</h1>
+<h1 id="running-bitdust-seed-node">Running BitDust seed node</h1>
 
-<p>BitDust is a distributed network for backup data storage and independent on-line communications. Each participant of the network provides a portion of his hard drive for other users. In exchange, he is able to store his data on other peers and use them to organize self-governed digital environment.</p>
+<p>Here is a step-by-step guide about how to start a full BitDust node that supports other nodes in the network and act as a "seed" node.</p>
 
-<h2 id="beginning">Beginning</h2>
+<p>You need to own a domain name which is already pointing DNS to your server.</p>
 
-<ul>
-<li><a href="intro.html">Introduction</a></li>
-<li><a href="concept.html">Concept</a></li>
-<li><a href="definitions.html">Definitions</a></li>
-<li><a href="philosophy.html">Philosophy</a></li>
-<li><a href="principle.html">How Does It Work?</a></li>
-<li><a href="install.html">Installation</a></li>
-<li><a href="commands.html">Commands</a></li>
-<li><a href="settings.html">Settings</a></li>
-<li><a href="glossary.html">Glossary</a></li>
-</ul>
+<p>For example, you just started with a new Ubuntu server and logged in as <code>root</code> user, first create another user account to be able to run BitDust as a normal user without root priviledges:</p>
 
-<h2 id="working-principles">Working Principles</h2>
+<pre><code>    adduser bitdust
+    usermod -aG sudo bitdust
+    logout
+</code></pre>
 
-<ul>
-<li><a href="identities.html">User Identification</a></li>
-<li><a href="storage.html">Distributed Storage</a></li>
-<li><a href="security.html">Data Security</a></li>
-<li><a href="sharing.html">File Sharing</a></li>
-<li><a href="rebuilding.html">Automatic Rebuilding</a></li>
-<li><a href="dht.html">Distributed Hash-Table</a></li>
-<li><a href="services.html">Network services</a></li>
-<li><a href="transports.html">Transport protocols</a></li>
-<li><a href="crypto_contracts.html">Crypto-contracts</a></li>
-</ul>
+<p>Now log in to your server as <code>bitdust</code> user (not as <code>root</code>) and do not forget to setup proper SSH access with your Public/Private key. Remember, BitDust software do not require root permissions to run, and no one else can provide you with more privacy than you can arrange by yourself:</p>
 
-<h2 id="development">Development</h2>
+<pre><code>    ssh bitdust@my-domain-name.com
+</code></pre>
 
-<ul>
-<li><a href="roadmap.html">Roadmap</a></li>
-<li><a href="automats.html">Finite State Machines</a></li>
-<li><a href="technologies.html">Technologies</a></li>
-<li><a href="api.html">API Interface</a></li>
-<li><a href="software_releases.html">Software releases</a></li>
-<li><a href="respect.html">Contributors and Supporters</a></li>
-</ul>
+<p>Read more about <a href="install.html">BitDust installation</a> or just follow those few steps bellow.</p>
 
-<p><a href="https://bitdust.io">bitdust.io</a></p>
+<p>First clone BitDust sources locally:</p>
+
+<pre><code>    git clone https://github.com/bitdust-io/public.git bitdust
+</code></pre>
+
+<p>Create BitDust virtual Python environent:</p>
+
+<pre><code>    cd bitdust
+    python bitdust.py install
+</code></pre>
+
+<p>Few services needs to be enabled, by default they are turned off because normal user will most probably act as a customer/consumer at the beginning.</p>
+
+<p>Switch ON identity server on your node so you will help other people to identify in the netowork - other users will store their identities on your host:</p>
+
+<pre><code>    bitdust set services/identity-server/enabled true
+    bitdust set services/identity-server/host my-domain-name.com
+    bitdust set services/identity-server/web-port 8084
+</code></pre>
+
+<p>This will need a bit more configuration in order to redirect external requests to the server on port 80 to BitDust software listening on port 8084: read more about <a href="identity_server.html">Identity server configuration</a> to know how to arrange it in a few steps. </p>
+
+<p>Set UDP port number for you DHT seed:</p>
+
+<pre><code>    bitdust set services/entangled-dht/udp-port 14441
+</code></pre>
+
+<p>Disable proxy transport and customer service because you do not need those if starting a provider node:</p>
+
+<pre><code>    bitdust set services/proxy-transport/enabled false
+    bitdust set services/customer/enabled false
+</code></pre>
+
+<p>We advice every "seed" node to have a certain identifier format which is based on DNS name of the seed: <code>root@my-domain-name.com</code>. In order to do that you need to set domain name of your seed node in the settings, before you create a new identity:</p>
+
+<pre><code>    bitdust set services/identity-propagate/known-servers my-domain-name.com:80:6661
+</code></pre>
+
+<p>Start BitDust in background:</p>
+
+<pre><code>    bitdust daemon
+</code></pre>
+
+<p>Now you can interact with BitDust software running on your local machine via HTTP Rest API. Lets create a new identity for your seed node:</p>
+
+<pre><code>    curl -X POST -d '{"username": "root"}' localhost:8180/identity/create/v1
+</code></pre>
+
+<p>Make sure you also did a backup of your private key and copied that in a safe place.</p>
+
+<pre><code>    curl -X POST -d '{"destination_path": "~/bitdust_identity_backup.txt"}' localhost:8180/identity/backup/v1
+</code></pre>
+
+<p>Restart BitDust and enjoy:</p>
+
+<pre><code>    bitdust restart
+</code></pre>
 
 
 </div>

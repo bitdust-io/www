@@ -176,7 +176,7 @@ Use <code>include_private=True</code> to get Private Keys as openssh formated st
 }]}
 </code></pre>
 
-<h2 id="key_create(key_alias,-key_size=2048,-include_private=false)">key_create(key_alias, key_size=2048, include_private=False)</h2>
+<h2 id="key_create(key_alias,-key_size=none,-include_private=false)">key_create(key_alias, key_size=None, include_private=False)</h2>
 
 <p>Generate new Private Key and add it to the list of known keys with given <code>key_id</code>.</p>
 
@@ -703,7 +703,7 @@ can be used to select which protocols to list:</p>
 
 <h2 id="queue_list()">queue_list()</h2>
 
-<h2 id="user_ping(idurl_or_global_id,-timeout=10)">user_ping(idurl_or_global_id, timeout=10)</h2>
+<h2 id="user_ping(idurl_or_global_id,-timeout=10,-retries=2)">user_ping(idurl_or_global_id, timeout=10, retries=2)</h2>
 
 <p>Sends Identity packet to remote peer and wait for Ack packet to check connection status.
 The "ping" command performs following actions:
