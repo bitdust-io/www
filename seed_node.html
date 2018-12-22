@@ -121,10 +121,14 @@
 <pre><code>    curl -X POST -d '{"destination_path": "~/bitdust_identity_backup.txt"}' localhost:8180/identity/backup/v1
 </code></pre>
 
-<p>Restart BitDust and enjoy:</p>
+<p>Restart BitDust and enjoy, your identity should be accessable on <code>http://my-domain-name.com/root.xml</code> if all steps were correct.</p>
 
 <pre><code>    bitdust restart
 </code></pre>
+
+<p>If you plan to maintain your new BitDust node for awhile and support the network it make sense to include your node into a list of "well known" nodes, which are hard-coded in <a href="https://github.com/bitdust-io/public/blob/master/networks.json">networks.json</a> file.</p>
+
+<p>You can Fork <a href="https://github.com/bitdust-io/public">Public Git Repository</a>, modify <code>networks.json</code> file in your forked repository and start a <a href="https://github.com/bitdust-io/public/pulls">Pull Request</a> with your changes - this way we can collaborate all together and maintain a list of the most reliable BitDust seed nodes.</p>
 
 
 </div>
