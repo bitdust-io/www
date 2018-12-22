@@ -81,7 +81,7 @@
 
 <p>Few services needs to be enabled, by default they are turned off because normal user will most probably act as a customer/consumer at the beginning.</p>
 
-<p>Switch ON identity server on your node so you will help other people to identify in the netowork - other users will store their identities on your host:</p>
+<p>Switch ON identity server on your node so you will help other people to identify in the network - other users will store their identities on your host:</p>
 
 <pre><code>    bitdust set services/identity-server/enabled true
     bitdust set services/identity-server/host my-domain-name.com
@@ -118,7 +118,8 @@
 
 <p>Make sure you also did a backup of your private key and copied that in a safe place.</p>
 
-<pre><code>    curl -X POST -d '{"destination_path": "~/bitdust_identity_backup.txt"}' localhost:8180/identity/backup/v1
+<pre><code>    curl -X POST -d '{"destination_path": "/tmp/bitdust_identity_backup.txt"}' localhost:8180/identity/backup/v1
+    mv /tmp/bitdust_identity_backup.txt /media/USB_drive/
 </code></pre>
 
 <p>Restart BitDust and enjoy, your identity should be accessable on <code>http://my-domain-name.com/root.xml</code> if all steps were correct.</p>
@@ -130,8 +131,26 @@
 
 <p>You can Fork <a href="https://github.com/bitdust-io/public">Public Git Repository</a>, modify <code>networks.json</code> file in your forked repository and start a <a href="https://github.com/bitdust-io/public/pulls">Pull Request</a> with your changes - this way we can collaborate all together and maintain a list of the most reliable BitDust seed nodes.</p>
 
-<p><div class=fbcomments markdown="1">
-</div</p>
+<p>Contact with BitDust contributors to notify about this new Seed node was started by you and one of the developers will approve your Pull Request.</p>
+
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = "http://bitdust.io/seed_node.html";   
+        this.page.identifier = "./seed_node"
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = '//bitdust.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+</div>
 
 
 </div>
