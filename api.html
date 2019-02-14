@@ -120,7 +120,7 @@ Opens a default web browser to show the BitDust GUI.</p>
 
 <h2 id="identity_get(include_xml_source=false)">identity_get(include_xml_source=False)</h2>
 
-<h2 id="identity_create(username)">identity_create(username)</h2>
+<h2 id="identity_create(username,-preferred_servers=)">identity_create(username, preferred_servers=[])</h2>
 
 <h2 id="identity_backup(destination_filepath)">identity_backup(destination_filepath)</h2>
 
@@ -399,7 +399,7 @@ By default this method uses specified value from local settings or user home fol
 
 <h2 id="share_create(owner_id=none,-key_size=2048)">share_create(owner_id=None, key_size=2048)</h2>
 
-<h2 id="share_grant(trusted_remote_user,-key_id)">share_grant(trusted_remote_user, key_id)</h2>
+<h2 id="share_grant(trusted_remote_user,-key_id,-timeout=30)">share_grant(trusted_remote_user, key_id, timeout=30)</h2>
 
 <h2 id="share_open(key_id)">share_open(key_id)</h2>
 
@@ -800,6 +800,14 @@ network connection.</p>
 <p>Be sure BitDust software is connected to other nodes in the network.
 If all is good this method will block for <code>wait_timeout</code> seconds.
 In case of some network issues method will return result asap.</p>
+
+<h2 id="dht_node_find(node_id_64=none)">dht_node_find(node_id_64=None)</h2>
+
+<h2 id="dht_value_get(key,-record_type='skip_validation')">dht_value_get(key, record_type='skip_validation')</h2>
+
+<h2 id="dht_value_set(key,-value,-expire=none,-record_type='skip_validation')">dht_value_set(key, value, expire=None, record_type='skip_validation')</h2>
+
+<h2 id="dht_local_db_dump()">dht_local_db_dump()</h2>
 
 
 </div>
