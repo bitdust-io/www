@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -67,6 +67,16 @@
                 <li>
                     <a href="#" data-scrollto="team">Team</a>
                 </li>
+
+                <li>
+                    <select name="language">
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                        <option value="pt">Português</option>
+                        <option value="ru">Pусский</option>
+                        <option value="nl">Nederlands</option>
+                    </select>
+                </li>
             </ul><!--.navbar-nav -->
         </div><!--.ui-navigation -->
 
@@ -89,8 +99,24 @@
         <div class="container pb-4">
             <div class="row pt-2 pb-8">
                 <div class="col-sm-12" data-vertical_center="true" data-vertical_offset="16">
-                    <h1 class="heading animate" data-show="fade-in-up-big" data-delay="100">
-                        Decentralized open source online storage network
+                    <h1 data-translatable
+                        class="heading animate" data-show="fade-in-up-big" data-delay="100">
+                        <span>
+                            Decentralized open source online storage network
+                        </span>
+                        <span>
+                            Rede de armazenamento online descentralizada de código aberto
+                        </span>
+                        <span>
+                            Децентрализованная сеть хранения данных с открытым исходным кодом
+                        </span>
+                        <span>
+                            Gedecentraliseerd open source online opslagnetwerk
+                        </span>
+                        <span>
+                            分散的开源在线存储网络
+                        </span>
+
                     </h1>
                     <!-- * Replace data-video with your youtube video id -->
                     <a href="#" class="ui-video-toggle mt-4" data-video="qP0KeeO-zRY">
@@ -740,5 +766,6 @@
 <script src="assets/js/libs/bootstrap.js"></script>
 <script src="assets/js/applify/build/applify.js"></script>
 <script src="assets/js/libs/dom-i18n.min.js"></script>
+<script src="assets/js/bitdust.js"></script>
 </body>
 </html>
