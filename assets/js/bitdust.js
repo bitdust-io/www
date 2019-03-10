@@ -2,6 +2,10 @@
 
     const storageKeyBName = 'bitdust_i18n';
     const defaultLanguage = 'en';
+    const translatable = document.querySelectorAll('[data-content]');
+    const languageSelector = document.querySelector('select[name="language"]');
+    languageSelector.value = getLanguage();
+    languageSelector.onchange = changeEventHandler;
 
     function getLanguage() {
         let language = window.localStorage[storageKeyBName];
@@ -18,18 +22,16 @@
      */
     function changeEventHandler(event) {
         window.localStorage.setItem(storageKeyBName, event.target.value);
-        i18n.changeLanguage(event.target.value);
+        renderContent();
     }
 
-    const i18n = domI18n({
-        selector: '[data-translatable]',
-        languages: [defaultLanguage, 'pt', 'ru', 'nl', 'zh'],
-        defaultLanguage: defaultLanguage,
-        currentLanguage: getLanguage()
-    });
+    function renderContent() {
+        translatable.forEach(item => {
+            let contentId = item.dataset.content;
+            item.innerText = bitdust_translations[getLanguage()][contentId] || bitdust_translations[defaultLanguage][contentId] || 'Missing translation';
+        });
+    }
 
-    const languageSelector = document.querySelector('select[name="language"]');
-    languageSelector.value = getLanguage();
-    languageSelector.onchange = changeEventHandler;
+    renderContent();
 
 })();
