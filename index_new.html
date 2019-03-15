@@ -23,21 +23,21 @@
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/applify.min.css"/>
+    <link rel="stylesheet" href="assets/css/applify.min.css" />
 </head>
 <body class="ui-transparent-nav" data-fade_in="on-load">
 <!-- Navbar Fixed + Default -->
-<nav class="navbar navbar-fixed-top transparent navbar-dark bg-dark-gray">
+<nav class="navbar navbar-fixed-top transparent navbar-dark bg-dark-gray bitdust">
     <div class="container">
 
         <!-- Navbar Logo -->
         <a class="ui-variable-logo navbar-brand" href="index.html" title="BitDust">
             <!-- Default Logo -->
-            <img class="logo-default" src="assets/img/logo/bitdust-logo-white.png"
-                 alt="BitDust" data-uhd>
+            <img class="logo-default" src="assets/img/logo/bitdust-logo-white.svg"
+                 alt="BitDust">
             <!-- Transparent Logo -->
-            <img class="logo-transparent" src="assets/img/logo/bitdust-logo-white.png"
-                 alt="BitDust" data-uhd>
+            <img class="logo-transparent" src="assets/img/logo/bitdust-logo-white.svg"
+                 alt="BitDust">
         </a><!-- .navbar-brand -->
 
         <!-- Navbar Navigation -->
@@ -45,27 +45,27 @@
             <ul class="nav navbar-nav">
                 <!-- Nav Item -->
                 <li>
-                    <a href="#" data-scrollto="product">Product</a>
+                    <a href="#" data-scrollto="product" data-content="menuProducts">Product</a>
                 </li>
                 <!-- Nav Item -->
                 <li>
-                    <a href="#" data-scrollto="problem">Problem</a>
+                    <a href="#" data-scrollto="problem" data-content="menuProblem">Problem</a>
                 </li>
                 <!-- Nav Item -->
                 <li>
-                    <a href="#" data-scrollto="solution">Solution</a>
+                    <a href="#" data-scrollto="solution" data-content="menuSolutions">Solution</a>
                 </li>
                 <!-- Nav Item -->
                 <li>
-                    <a href="#" data-scrollto="ecosystem">Ecosystem</a>
+                    <a href="#" data-scrollto="ecosystem" data-content="menuEcosystem">Ecosystem</a>
                 </li>
                 <!-- Nav Item -->
                 <li>
-                    <a href="#" data-scrollto="roadmap">Roadmap</a>
+                    <a href="#" data-scrollto="roadmap" data-content="menuRoadap">Roadmap</a>
                 </li>
                 <!-- Nav Item -->
                 <li>
-                    <a href="#" data-scrollto="team">Team</a>
+                    <a href="#" data-scrollto="team" data-content="menuTeam">Team</a>
                 </li>
 
                 <li>
@@ -117,17 +117,20 @@
     <!-- Intro Image -->
     <div class="section intro-image pt-0">
         <img src="assets/img/mockups/applify-browser-mockup.png" data-uhd data-max_width="1000"
-             class="shadow-xxl responsive-on-lg" alt="BitDust APP"/>
+             class="shadow-xxl responsive-on-lg" alt="BitDust APP" />
     </div><!-- .intro-image -->
 
     <!-- App Features Section -->
     <div id="product" class="section pt-7">
         <div class="container ui-icon-blocks ui-blocks-h icons-lg">
             <div class="section-heading cente">
-                <h2 class="heading text-dark-gray">
+                <h2 class="heading text-dark-gray"
+                    data-content="sectionTitleProduct">
                     The product
                 </h2>
-                <p class="paragraph">
+
+                <p class="paragraph"
+                   data-content="sectionDescriptionProduct">
                     BitDust provides a free-to-use open source application for Windows, Mac and Linux where by you can
                     safely and securely upload and manage your personal data. In addition it offers you the ability to
                     chat and share files with your friends. Give it a try!
@@ -162,18 +165,20 @@
     </div><!-- .section -->
 
     <!-- Problem Section -->
-    <div id="problem" class="section bg-dark-gray">
+    <div id="problem" class="section ui-gradient-peach">
         <div class="container">
             <div class="row">
                 <!-- Text Column -->
                 <div class="col-lg-6 col-md-5" data-vertical_center="true">
                     <!-- Section Heading -->
                     <div class="section-heading mb-0 center-on-md">
-                        <h2 class="heading">
+                        <h2 class="heading"
+                            data-content="sectionTitleProblem">
                             The problem
                         </h2>
-                        <p class="paragraph">
-                            Nowadays we create a lot of personal data like pictures, text files and movies. However we
+                        <p class="paragraph"
+                           data-content="sectionDescriptionProblem">
+                            Nowadays we create a lot of personal data like: pictures, text files and movies. However we
                             all store them at centralized entities. We put trust in centralized authorities to keep our
                             most intimate data safe and secure. Nevertheless once uploaded we don’t have any real
                             control over it.
@@ -181,15 +186,15 @@
                         <div class="row ui-icon-blocks ui-blocks-h icons-md mt-2">
                             <div class="col-4 ui-icon-block animate text-left mb-0 center-on-md" data-show="fade-in-up">
                                 <div class="icon fa fa-user-circle"></div>
-                                <h4 class="heading mb-1">Personal Data</h4>
+                                <h5 class="heading mb-1">Personal Data</h5>
                             </div>
                             <div class="col-4 ui-icon-block animate text-left mb-0 center-on-md" data-show="fade-in-up">
                                 <div class="icon fa fa-arrows"></div>
-                                <h4 class="heading mb-1">Centralisation</h4>
+                                <h5 class="heading mb-1">Centralisation</h5>
                             </div>
                             <div class="col-4 ui-icon-block animate text-left mb-0 center-on-md" data-show="fade-in-up">
                                 <div class="icon fa fa-lock"></div>
-                                <h4 class="heading mb-1">Security</h4>
+                                <h5 class="heading mb-1">Security</h5>
                             </div>
                         </div><!-- .row -->
                     </div><!-- .section-heading -->
@@ -197,14 +202,14 @@
                 <!-- Image Column -->
                 <div class="col-lg-6 col-md-7 img-block animate" data-show="fade-in-left" data-vertical_center="true">
                     <img src="assets/img/support/applify-support.png" alt="BitDust" data-uhd
-                         class="img-fluid" data-max_width="460"/>
+                         class="img-fluid" data-max_width="460" />
                 </div>
             </div><!-- .row -->
         </div><!-- .container -->
     </div>
 
     <!-- Integration Section -->
-    <div id="solution" class="section ui-gradient-blue">
+    <div id="solution" class="section">
         <div class="container">
             <div class="row">
 
@@ -213,13 +218,16 @@
 
                     <!-- Section Heading -->
                     <div class="section-heading mb-2">
-                        <h2 class="heading">
+                        <h2 class="heading"
+                            data-content="sectionTitleSolution">
                             The solution
                         </h2>
-                        <p class="paragraph">
-                            We off course say in this section that BitDust is the answer to the problem:). In addition
-                            we wanted to provide the same key feature images like distributed storage. You need to find
-                            the icons for the following aspects:
+                        <p class="paragraph"
+                           data-content="sectionDescriptionSolution">
+                            Imagine a decentralized network where all your personal files are encrypted and only you
+                            hold the key to unlock them. Completely anonymous and secure. An easy to install application
+                            that gives you with full control over your personal data. You can share files and chat
+                            securely with whomever you want without being tracked by service providers.
                         </p>
                     </div><!-- .section-heading -->
 
@@ -227,7 +235,7 @@
                     <ul class="ui-icon-blocks ui-blocks-v icons-sm">
                         <li class="ui-icon-block">
                             <span class="icon fa fa-connectdevelop"></span>
-                            <h5 class="text-white">
+                            <h5>
                                 Distributed storage
                             </h5>
                             <p>
@@ -236,7 +244,7 @@
                         </li>
                         <li class="ui-icon-block">
                             <span class="icon icon-lock"></span>
-                            <h5 class="text-white">
+                            <h5>
                                 Encrypted
                             </h5>
                             <p>
@@ -246,7 +254,7 @@
                         </li>
                         <li class="ui-icon-block">
                             <span class="icon fa fa-user-secret"></span>
-                            <h5 class="text-white">
+                            <h5>
                                 Anonymous
                             </h5>
                             <p>
@@ -255,7 +263,7 @@
                         </li>
                         <li class="ui-icon-block">
                             <span class="icon icon-pie-chart"></span>
-                            <h5 class="text-white">
+                            <h5>
                                 Chat
                             </h5>
                             <p>
@@ -264,7 +272,7 @@
                         </li>
                         <li class="ui-icon-block">
                             <span class="icon icon-share"></span>
-                            <h5 class="text-white">
+                            <h5>
                                 Share
                             </h5>
                             <p>
@@ -273,7 +281,7 @@
                         </li>
                         <li class="ui-icon-block">
                             <span class="icon icon-layers"></span>
-                            <h5 class="text-white">
+                            <h5>
                                 Redundant
                             </h5>
                             <p>
@@ -284,85 +292,85 @@
                 </div>
 
                 <!-- Right Column -->
-                <div class="col-lg-7 col-xl-6">
+                <div class="col-lg-7 col-xl-6 d-none d-lg-block">
 
                     <!-- Logo Cloud -->
                     <div class="ui-logos-cloud">
                         <div data-size="3" class="mt-0 animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
                         <div data-size="10" class="mt-0 animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
                         <div data-size="5" class="mt-0 animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
 
                         <!-- Flex Break -->
                         <span class="flex-break"></span>
 
                         <div data-size="4" class="animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
                         <div data-size="10" class="animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
                         <div data-size="4" class="animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
                         <div data-size="8" class="animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
 
                         <!-- Flex Break -->
                         <span class="flex-break"></span>
 
                         <div data-size="8" class="animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
                         <div data-size="3" class="animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
                         <div data-size="10" class="animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
                         <div data-size="5" class="animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
                         <div data-size="10" class="animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
                         <div data-size="3" class="animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
                         <div data-size="7" class="animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
 
                         <!-- Flex Break -->
                         <span class="flex-break"></span>
 
                         <div data-size="3" class="animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
                         <div data-size="7" class="animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
                         <div data-size="10" class="animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
                         <div data-size="4" class="animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
 
                         <!-- Flex Break -->
                         <span class="flex-break"></span>
 
                         <div data-size="4" class="mb-0 animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
                         <div data-size="7" class="animate" data-show="fade-in">
-                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust"/>
+                            <img src="assets/img/3rd-party-logos/logo.png" data-uhd alt="BitDust" />
                         </div>
                     </div><!-- .ui-logo-cloud  -->
 
@@ -371,52 +379,155 @@
         </div><!-- .container -->
     </div><!-- .section -->
 
-    <!-- Showcase Section -->
-    <div class="section laptop-showcase"
-         id="ecosystem">
+    <div id="ecosystem" class="section ui-gradient-blue">
         <div class="container">
-            <div class="row">
-                <div class="col-md-5 col-lg-4" data-vertical_center="true">
-                    <div>
-                        <h2 class="heading text-dark-gray">
-                            The ecosystem
-                        </h2>
-                        <p>
-                            In this section we will explain the ecosystem. The ecosystem consists mainly out of two
-                            elements.
-                        </p>
-                        <ul class="ui-checklist mt-2">
-                            <li>
-                                <h6 class="heading text-dark-gray">Users</h6>
-                                <p>These are people that will install the consumer application of BitDust.</p>
-                            </li>
-                            <li>
-                                <h6 class="heading text-dark-gray">Supporters</h6>
-                                <p>
-                                    These are people that support the BitDust network in the role of Supplier,
-                                    Rebuilder or miner. If you can make a split between the two that would be great so
-                                    on the
-                                    left you will have users including an icon, text and a download button. On the left
-                                    you will
-                                    have supporters with an icon of supplier+text, Miner+text and rebuilder+text. As the
-                                    supporting roles need a bit more explanation for people to know if they qualify we
-                                    need to
-                                    redirect them. So below the quick overview of the supporting roles you will have a
-                                    button
-                                    with “more information”.
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-7 col-lg-8">
-                    <img class="responsive-on-sm laptop" src="assets/img/mockups/applify-mockup-11.png" data-uhd
-                         alt="BitDust" data-max_width="1000"/>
-                </div>
+            <!-- Section Heading -->
+            <div class="section-heading center">
+                <h2 class="heading text-indigo"
+                    data-content="sectionTitleEcosystem">
+                    The ecosystem
+                </h2>
             </div>
 
+            <div class='row'>
+                <div class='col-md-4'>
+                    <h4 class="heading text-indigo">
+                        Using BitDust as a customer
+                    </h4>
+                    <p class='paragraph pt-5'>
+                        It’s easy and takes just few minutes.
+                    </p>
+
+                    <ul class="ui-checklist pt-1">
+                        <li>
+                            <h6 class="heading">Install</h6>
+                        </li>
+                        <li>
+                            <h6 class="heading">Create Identity</h6>
+                        </li>
+                        <li>
+                            <h6 class="heading">Backup Private Key</h6>
+                        </li>
+                        <li>
+                            <h6 class="heading">Start using!</h6>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class='col-md-8'>
+
+                    <div class="section-heading center">
+                        <h4 class="heading text-indigo">
+                            Supporting the BitDust Network
+                        </h4>
+                    </div><!-- .section-heading -->
+                    <!-- UI Tabbed Showcase -->
+                    <div class="row ui-tabbed-showcase">
+
+                        <!-- Tabs Column -->
+                        <div class="col-md-10" data-vertical_center="true">
+                            <!-- UI Tabs -->
+                            <div class="ui-tabs ui-green">
+                                <!-- Nav Tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <!-- Nav Tab 1 -->
+                                    <li role="presentation" class="nav-item">
+                                        <a class="nav-link" href="#home" role="tab" data-toggle="tab"
+                                           data-toggle_screen="1"
+                                           data-toggle_slider="device-slider-2" aria-selected="false">
+                                            <span class="icon fa fa-hdd-o"></span> Supplier
+                                        </a>
+                                    </li>
+                                    <!-- Nav Tab 2 -->
+                                    <li role="presentation" class="nav-item">
+                                        <a class="nav-link" href="#profile" role="tab" data-toggle="tab"
+                                           data-toggle_screen="2"
+                                           data-toggle_slider="device-slider-2" aria-selected="false">
+                                            <span class="icon icon-organization"></span> Router
+                                        </a>
+                                    </li>
+                                    <!-- Nav Tab 3 -->
+                                    <li role="presentation" class="nav-item">
+                                        <a class="nav-link active show" href="#messages" role="tab" data-toggle="tab"
+                                           data-toggle_screen="3" data-toggle_slider="device-slider-2"
+                                           aria-selected="true">
+                                            <span class="icon fa fa-server"></span> ID server
+                                        </a>
+                                    </li>
+                                    <!-- Nav Tab 4 -->
+                                    <li role="presentation" class="nav-item">
+                                        <a class="nav-link" href="#settings" role="tab" data-toggle="tab"
+                                           data-toggle_screen="4"
+                                           data-toggle_slider="device-slider-2" aria-selected="false">
+                                            <span class="icon icon-diamond"></span> Miner
+                                        </a>
+                                    </li>
+                                    <li role="presentation" class="nav-item">
+                                        <a class="nav-link" href="#rebuilder" role="tab" data-toggle="tab"
+                                           data-toggle_screen="4"
+                                           data-toggle_slider="device-slider-2" aria-selected="false">
+                                            <span class="icon icon-wrench"></span> Rebuilder
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <!-- Tab Panels -->
+                                <div class="tab-content">
+                                    <!-- Tab 1 -->
+                                    <div role="tabpanel" class="tab-pane fade" id="home">
+                                        <p class="sub-heading">
+                                            A supplier contributes storage to the BitDust network, thereby enabling
+                                            customers to
+                                            store and access their encrypted files.
+                                        </p>
+                                    </div>
+                                    <!-- Tab 2 -->
+                                    <div role="tabpanel" class="tab-pane fade" id="profile">
+                                        <p class="sub-heading">
+                                            Traffic routers help other nodes to reach each other inside the BitDust
+                                            network
+                                            and
+                                            send/receive encrypted packets.
+                                        </p>
+                                    </div>
+                                    <!-- Tab 3 -->
+                                    <div role="tabpanel" class="tab-pane fade active show" id="messages">
+                                        <p class="sub-heading">
+                                            Identity servers are maintaining users authentication in the BitDust
+                                            network.
+                                            There are two major roles we are currently working on that will supporting
+                                            the
+                                            BitDust network
+                                        </p>
+                                    </div>
+                                    <!-- Tab 4 -->
+                                    <div role="tabpanel" class="tab-pane fade" id="settings">
+                                        <p class="sub-heading">
+                                            A miner validates transactions within the BitDust Blockchain. Transactions
+                                            are
+                                            the
+                                            sending and receiving of BitDust tokens from one users to another.
+                                        </p>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="rebuilder">
+                                        <p class="sub-heading">
+                                            Suppliers can go offline due to circumstances. To ensure your data has a
+                                            high
+                                            availability it is the rebuilders job to rebuild the data that was lost at
+                                            one
+                                            supplier and move it to another supplier.
+                                        </p>
+                                    </div>
+                                </div><!-- .tab-content -->
+                            </div><!-- .ui-tabs -->
+
+                        </div><!-- Tabs Column -->
+                    </div><!-- .row -->
+                </div>
+            </div>
         </div><!-- .container -->
-    </div><!-- .section -->
+    </div>
 
     <!-- Roadmap Section -->
     <div id="roadmap" class="section bg-light">
@@ -439,16 +550,12 @@
                     <div class="row">
                         <div class="col-md-6 text-right" data-vertical_center="true">
                             <h4 class="heading text-dark-gray">
-                                2018 Q3
+                                2019 Q2
                             </h4>
                             <p class="paragraph">
-                                Create an Alpha consumer version for Mac, Windows and Linux.
+                                Create a Beta consumer version for Mac, Windows and Linux.
                             </p>
                         </div>
-                        <!--<div class="col-md-6">-->
-                        <!--<img class="responsive-on-xs" src="assets/img/mockups/applify-mockup-7.png" data-uhd-->
-                        <!--alt="BitDust" data-max_width="464"/>-->
-                        <!--</div>-->
                     </div>
                 </div>
                 <!-- Step 2 -->
@@ -457,57 +564,17 @@
                     <div class="row">
                         <div class="col-md-6" data-vertical_center="true">
                             <h4 class="heading text-dark-gray">
-                                2018 Q4
-                            </h4>
-                            <p class="paragraph">
-                                Work on core stability.
-                            </p>
-                        </div>
-                        <!--<div class="col-md-6">-->
-                        <!--<img class="responsive-on-xs" src="assets/img/mockups/applify-mockup-8.png" data-uhd-->
-                        <!--alt="BitDust" data-max_width="445"/>-->
-                        <!--</div>-->
-                    </div>
-                </div>
-                <!-- Step 3 -->
-                <div class="step-wrapper">
-                    <span class="step-number ui-gradient-peach">3</span>
-                    <div class="row">
-                        <div class="col-md-6 text-right" data-vertical_center="true">
-                            <h4 class="heading text-dark-gray">
-                                2019 Q2
-                            </h4>
-                            <p class="paragraph">
-                                Create a Beta consumer version for Mac, Windows and Linux.
-                            </p>
-                        </div>
-                        <!--<div class="col-sm-6">-->
-                        <!--<img class="responsive-on-xs" src="assets/img/mockups/applify-mockup-10.png" data-uhd-->
-                        <!--alt="BitDust" data-max_width="451"/>-->
-                        <!--</div>-->
-                    </div>
-                </div>
-                <!-- Step 4 -->
-                <div class="step-wrapper">
-                    <span class="step-number ui-gradient-peach">4</span>
-                    <div class="row">
-                        <div class="col-md-6" data-vertical_center="true">
-                            <h4 class="heading text-dark-gray">
-                                2019 Q2
+                                2019 Q3
                             </h4>
                             <p class="paragraph">
                                 Implement internal Python Blockchain based on Bismuth.
                             </p>
                         </div>
-                        <!--<div class="col-sm-6">-->
-                        <!--<img class="responsive-on-xs" src="assets/img/mockups/applify-mockup-10.png" data-uhd-->
-                        <!--alt="BitDust" data-max_width="451"/>-->
-                        <!--</div>-->
                     </div>
                 </div>
-                <!-- Step 5 -->
+                <!-- Step 3 -->
                 <div class="step-wrapper">
-                    <span class="step-number ui-gradient-peach">5</span>
+                    <span class="step-number ui-gradient-peach">3</span>
                     <div class="row">
                         <div class="col-md-6 text-right" data-vertical_center="true">
                             <h4 class="heading text-dark-gray">
@@ -517,10 +584,34 @@
                                 Implement Automatic Data Rebuilding for the ReBuilders.
                             </p>
                         </div>
-                        <!--<div class="col-sm-6">-->
-                        <!--<img class="responsive-on-xs" src="assets/img/mockups/applify-mockup-10.png" data-uhd-->
-                        <!--alt="BitDust" data-max_width="451"/>-->
-                        <!--</div>-->
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="step-wrapper">
+                    <span class="step-number ui-gradient-peach">4</span>
+                    <div class="row">
+                        <div class="col-md-6" data-vertical_center="true">
+                            <h4 class="heading text-dark-gray">
+                                2019 Q4
+                            </h4>
+                            <p class="paragraph">
+                                Launch native BitDust token
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 5 -->
+                <div class="step-wrapper">
+                    <span class="step-number ui-gradient-peach">5</span>
+                    <div class="row">
+                        <div class="col-md-6 text-right" data-vertical_center="true">
+                            <h4 class="heading text-dark-gray">
+                                2020 Q1
+                            </h4>
+                            <p class="paragraph">
+                                Create an Alpha for supporting roles within the BitDust ecosystem
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <!-- Step 6 -->
@@ -529,34 +620,12 @@
                     <div class="row">
                         <div class="col-md-6" data-vertical_center="true">
                             <h4 class="heading text-dark-gray">
-                                2019 Q3/Q4
+                                2020 Q2
                             </h4>
                             <p class="paragraph">
-                                Launch native BitDust token.
+                                Mobile BitDust application.
                             </p>
                         </div>
-                        <!--<div class="col-sm-6">-->
-                        <!--<img class="responsive-on-xs" src="assets/img/mockups/applify-mockup-10.png" data-uhd-->
-                        <!--alt="BitDust" data-max_width="451"/>-->
-                        <!--</div>-->
-                    </div>
-                </div>
-                <!-- Step 7 -->
-                <div class="step-wrapper">
-                    <span class="step-number ui-gradient-peach">7</span>
-                    <div class="row">
-                        <div class="col-md-6 text-right" data-vertical_center="true">
-                            <h4 class="heading text-dark-gray">
-                                2019 Q4
-                            </h4>
-                            <p class="paragraph">
-                                Create an Alpha for supporting roles within the BitDust ecosystem.
-                            </p>
-                        </div>
-                        <!--<div class="col-sm-6">-->
-                        <!--<img class="responsive-on-xs" src="assets/img/mockups/applify-mockup-10.png" data-uhd-->
-                        <!--alt="BitDust" data-max_width="451"/>-->
-                        <!--</div>-->
                     </div>
                 </div>
             </div>
@@ -574,7 +643,7 @@
                     The team
                 </h2>
                 <p class="paragraph">
-                    Meet BitDust heroes
+                    BitDust Heroes!
                 </p>
             </div><!-- .section-heading -->
 
@@ -582,18 +651,13 @@
             <div class="ui-testimonials slider owl-carousel owl-theme">
                 <!-- Testimonials Item 1 -->
                 <div class="item">
-                    <!-- Card -->
-                    <div class="ui-card shadow-md">
-                        <p>Society will solve it for us</p>
-                    </div>
-                    <!-- User -->
                     <div class="user">
                         <div class="avatar">
                             <img alt="Veselin" src="assets/img/team/veselin.png">
                         </div>
                         <div class="info">
                             <h6 class="heading text-dark-gray">Veselin Penev</h6>
-                            <p class="sub-heading">Founder & Back-end development</p>
+                            <p class="sub-heading">Founder & <br>Back-end development</p>
                             <a href="https://www.linkedin.com/in/bitdust/" target="_blank">
                                 <span class="icon fa fa-linkedin"></span>
                             </a>
@@ -602,18 +666,13 @@
                 </div>
                 <!-- Testimonials Item 2 -->
                 <div class="item">
-                    <!-- Card -->
-                    <div class="ui-card shadow-md">
-                        <p>Bahamas let's go!</p>
-                    </div>
-                    <!-- User -->
                     <div class="user">
                         <div class="avatar">
                             <img alt="Desmond" src="assets/img/team/desmond.png">
                         </div>
                         <div class="info">
                             <h6 class="heading text-dark-gray">Desmond Dekker</h6>
-                            <p class="sub-heading">Business dev & Product management</p>
+                            <p class="sub-heading">Business development & <br>Product management</p>
                             <a href="https://www.linkedin.com/in/desmond-dekker-b5b5a6b/" target="_blank">
                                 <span class="icon fa fa-linkedin"></span>
                             </a>
@@ -622,18 +681,13 @@
                 </div>
                 <!-- Testimonials Item 3 -->
                 <div class="item">
-                    <!-- Card -->
-                    <div class="ui-card shadow-md">
-                        <p>Let's do it!</p>
-                    </div>
-                    <!-- User -->
                     <div class="user">
                         <div class="avatar">
                             <img alt="Renatex" src="assets/img/team/renato.png">
                         </div>
                         <div class="info">
                             <h6 class="heading text-dark-gray">Renato Cardoso</h6>
-                            <p class="sub-heading">Frontend Guru</p>
+                            <p class="sub-heading">Frontend Developer</p>
                             <a href="https://www.linkedin.com/in/re2005/" target="_blank">
                                 <span class="icon fa fa-linkedin"></span>
                             </a>
@@ -642,11 +696,6 @@
                 </div>
                 <!-- Testimonials Item 4 -->
                 <div class="item">
-                    <!-- Card -->
-                    <div class="ui-card shadow-md">
-                        <p>Hello my friends</p>
-                    </div>
-                    <!-- User -->
                     <div class="user">
                         <div class="avatar">
                             <img alt="Stanislav" src="assets/img/team/stanislav.png">
@@ -662,11 +711,6 @@
                 </div>
                 <!-- Testimonials Item 5-->
                 <div class="item">
-                    <!-- Card -->
-                    <div class="ui-card shadow-md">
-                        <p>Donec elementum ligula eu sapien consequat eleifend.</p>
-                    </div>
-                    <!-- User -->
                     <div class="user">
                         <div class="avatar">
                             <img alt="Petr" src="assets/img/team/petr.png">
@@ -686,8 +730,8 @@
         <div class="container pt-6 pb-6">
             <div class="row">
                 <div class="col-sm-8 footer-about footer-col center-on-sm">
-                    <img src="assets/img/logo/bitdust-logo-white.png" data-uhd
-                         alt="BitDust"/>
+                    <img src="assets/img/logo/bitdust-logo-white.svg"
+                         alt="BitDust" />
                     <p class="mt-1">
                         We are currently with a small team primarily focusing on developing our product and
                         unfortunately don’t have the resources to support a community on different channels. For now you
@@ -696,6 +740,22 @@
                 </div>
 
                 <div class="col-md-4 col-sm-6 footer-col center-on-sm">
+                    <!--<form autocomplete="on" id="sign-up-form" name="sign-up-form">-->
+                    <!--<div class="form-group">-->
+                    <!--<div class="input-group">-->
+                    <!--&lt;!&ndash; Email Input &ndash;&gt;-->
+                    <!--<input autocomplete="email" class="input form-control" data-validation="required"-->
+                    <!--data-validation-error-msg="Please enter your email" name="email"-->
+                    <!--placeholder="Email">-->
+                    <!--<div class="input-group-append">-->
+                    <!--&lt;!&ndash; Submit Button &ndash;&gt;-->
+                    <!--<button class="btn ui-gradient-peach">Subscribe <span class="fa fa-send"></span>-->
+                    <!--</button>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</form>-->
+
                     <div>
                         <a class="btn ui-gradient-blue btn-circle shadow-md"
                            href="https://github.com/bitdust-io/" target="_blank">
@@ -724,7 +784,7 @@
                     <div class="col-sm-6 text-right">
                         <ul class="footer-nav">
                             <li>
-                                <a href="#">
+                                <a href="https://bitdust.io/toc.html">
                                     Wiki
                                 </a>
                             </li>
