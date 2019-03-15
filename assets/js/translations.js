@@ -30,3 +30,9 @@ const bitdust_translations = {
         "pageTitle": "BitDust - 分散的开源在线存储网络",
     }
 };
+
+
+let data = document.querySelectorAll('[data-content]');
+for (let  i = 0; i < data.length; i++) {
+    console.log(data[i].getAttribute('data-content'));
+}

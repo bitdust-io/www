@@ -28,7 +28,7 @@
     function renderContent() {
         translatable.forEach(item => {
             let contentId = item.dataset.content;
-            item.innerText = bitdust_translations[getLanguage()][contentId] || bitdust_translations[defaultLanguage][contentId] || 'Missing translation';
+            item.innerText = bitdust_translations[getLanguage()][contentId] || bitdust_translations[defaultLanguage][contentId] || item.innerText || 'Missing translation';
         });
     }
 
