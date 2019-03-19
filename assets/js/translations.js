@@ -1,9 +1,9 @@
 const bitdust_translations = {
     en: {
-        "getStarted": "Get started reeee",
+        "getStarted": "Get started",
         "headerTitle": "Decentralized open source online storage network",
         "howItWorks": "How it works",
-        "pageTitle": "BitDust - decentralized on-line storage network"
+        "pageTitle": "BitDust - Decentralized on-line storage network"
     },
     pt: {
         "getStarted": "Comece agora",
