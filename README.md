@@ -1,3 +1,5 @@
+![Nuxt CMS](https://bitdust.io/assets/img/og/og-image.jpg)
+
 # BitDust
 
 
@@ -127,5 +129,18 @@ After your changes got merged you need to pull latest changes from upstream and 
 BitDust team is doing public code reviews and we will be in touch with you to go further. If you like the project, join [BitDust contributors](https://github.com/bitdust-io) on GitHub.
 
 
-[bitdust.io](https://bitdust.io)
+## Development
+    npm i
 
+### Generate CSS from sass files
+    npm run build-css
+
+### Generate index (english translations)
+
+    npm run translate
+
+### Develop mode
+    npm start
+
+
+[bitdust.io](https://bitdust.io)
