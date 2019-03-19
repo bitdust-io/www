@@ -10,3 +10,4 @@ service_*.html
 .ssl
 
 /.idea
+/node_modules
