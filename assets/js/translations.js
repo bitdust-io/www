@@ -3,13 +3,15 @@ const bitdust_translations = {
         "getStarted": "Get started",
         "headerTitle": "Decentralized open source online storage network",
         "howItWorks": "How it works",
-        "pageTitle": "BitDust - Decentralized on-line storage network"
+        "pageTitle": "BitDust - Decentralized on-line storage network",
+        "menuProducts": "Products"
     },
     pt: {
         "getStarted": "Comece agora",
         "headerTitle": "Rede de armazenamento online descentralizada de código aberto",
         "howItWorks": "Como funciona",
         "pageTitle": "BitDust - rede de armazenamento online descentralizada de código aberto",
+        "menuProducts": "Produtos"
     },
     ru: {
         "getStarted": "Начать",

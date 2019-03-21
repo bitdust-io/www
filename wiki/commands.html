@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-content="pageTitle">BitDust - Decentralized on-line storage network</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:image:height" content="1257">
+    <meta property="og:image:width" content="2400">
+    <meta property="og:title" content="BitDust - decentralized on-line storage network">
+    <meta property="og:description"
+          content="BitDust is distributed secure anonymous on-line storage, where only the owner has access and absolute control over its data.">
+    <meta property="og:url" content="https://bitdust.io">
+    <meta property="og:image" content="https://bitdust.io//assets/img/og/og-image.jpg">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/applify.min.css" />
+</head>
+<body data-fade_in="on-load">
+
+<nav class="navbar navbar-fixed-top navbar-dark bg-indigo">
+    <div class="container">
+
+        <!-- Navbar Logo -->
+        <a class="ui-variable-logo navbar-brand" href="index.html" title="BitDust">
+            <!-- Default Logo -->
+            <img class="logo-default" src="/assets/img/logo/bitdust-logo-white.svg"
+                 alt="BitDust">
+            <!-- Transparent Logo -->
+            <img class="logo-transparent" src="/assets/img/logo/bitdust-logo-white.svg"
+                 alt="BitDust">
+        </a><!-- .navbar-brand -->
+
+
+        <!-- Navbar Button -->
+        <a href="/#product"
+           class="btn btn-sm ui-gradient-peach pull-right">
+            Get Started
+        </a>
+
+
+    </div><!-- .container -->
+</nav> <!-- nav -->
+
+
+<div class="main wiki" role="main">
+
+    <!-- Api Docs -->
+    <div id="ui-api-docs" class="section bg-light">
+        <div class="container">
+
+            <div class="ui-card">
+                <div class="card-body">
+                    <div class="row">
+
+                        <!-- Docs Sidebar -->
+                        <div class="docs-sidebar col-md-3">
+                            <h6 class="heading">
+                                Beginning
+                            </h6>
+                            <ul>
+                                <li><a href="intro.html">Introduction</a></li>
+                                <li><a href="concept.html">Concept</a></li>
+                                <li><a href="definitions.html">Definitions</a></li>
+                                <li><a href="philosophy.html">Philosophy</a></li>
+                                <li><a href="principle.html">How Does It Work?</a></li>
+                                <li><a href="install.html">Installation</a></li>
+                                <li><a href="seed_node.html">Seed node</a></li>
+                                <li><a href="commands.html">Commands</a></li>
+                                <li><a href="settings.html">Settings</a></li>
+                                <li><a href="glossary.html">Glossary</a></li>
+                            </ul>
+                            <h6 class="heading">
+                                Principles
+                            </h6>
+                            <ul>
+                                <li><a href="identities.html">User Identification</a></li>
+                                <li><a href="storage.html">Distributed Storage</a></li>
+                                <li><a href="security.html">Data Security</a></li>
+                                <li><a href="sharing.html">File Sharing</a></li>
+                                <li><a href="rebuilding.html">Automatic Rebuilding</a></li>
+                                <li><a href="dht.html">Distributed Hash-Table</a></li>
+                                <li><a href="services.html">Network services</a></li>
+                                <li><a href="transports.html">Transport protocols</a></li>
+                                <li><a href="crypto_contracts.html">Crypto-contracts</a></li>
+                            </ul>
+                            <h6 class="heading">Development</h6>
+                            <ul>
+                                <li><a href="roadmap.html">Roadmap</a></li>
+                                <li><a href="automats.html">Finite State Machines</a></li>
+                                <li><a href="technologies.html">Technologies</a></li>
+                                <li><a href="api.html">API Interface</a></li>
+                                <li><a href="software_releases.html">Software releases</a></li>
+                                <li><a href="respect.html">Contributors and Supporters</a></li>
+                            </ul>
+                            <h6 class="heading">Repositories</h6>
+                            <ul>
+                                <li>
+                                    <a href="https://github.com/bitdust-io"
+                                       target="blank">
+                                        <i class="fa fa-github text-purple"></i>
+                                        GitHub/bitdust-io
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://bitbucket.org/bitdust_io"
+                                       target="blank">
+                                        <i class="fa fa-github text-purple"></i>
+                                        BitBucket/bitdust_io
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://gitlab.com/bitdust.io"
+                                       target="blank">
+                                        <i class="fa fa-github text-purple"></i>
+                                        GitLab/bitdust.io
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://dev.bitdust.io/explore/projects"
+                                       target="blank">
+                                        <i class="fa fa-github text-purple"></i>
+                                        dev.bitdust.io
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="docs-content col-md-9">
+
+
+                            <div class="docs-section doc-action-cards">
+                                <h1 id="bitdust-command-line">BitDust command line</h1>
+
+<h2 id="commands">Commands</h2>
+
+<h3 id="start">start</h3>
+
+<p>start main BitDust process</p>
+
+<h3 id="detach">detach</h3>
+
+<p>start BitDust in as a daemon process</p>
+
+<h3 id="restart">restart</h3>
+
+<p>restart BitDust </p>
+
+<h3 id="stop">stop</h3>
+
+<p>stop BitDust</p>
+
+<h3 id="show">show</h3>
+
+<p>start BitDust and show the main window</p>
+
+<h3 id="integrate">integrate</h3>
+
+<p>creates a <code>bitdust</code> alias in OS
+in /usr/local/bin/bitdust or in
+~/bin/bitdust if no access to /usr/local/ </p>
+
+<h3 id="identity-create-nickname-private-key-size">identity create [nickname] [private key size]</h3>
+
+<p>generate a new private key and 
+new identity file for you
+key size can be 1024, 2048 or 4096</p>
+
+<h3 id="identity-restore-private-key-source-file-idurl">identity restore [private key source file] [IDURL]</h3>
+
+<p>recover existing identity file
+with your private key file</p>
+
+<h3 id="identity-erase">identity erase</h3>
+
+<p>delete local identity from this machine </p>
+
+<h3 id="key-copy">key copy</h3>
+
+<p>copy private key to clipboard,
+use Ctrl+V to paste it</p>
+
+<h3 id="key-backup-a-filename-for-copy-of-private-key">key backup [a filename for copy of private key]</h3>
+
+<p>copy private key into file</p>
+
+<h3 id="key-print">key print</h3>
+
+<p>print private key to console
+WARNING!!! do not publish your key  </p>
+
+<h3 id="get-option">get [option]</h3>
+
+<p>print current value for given program setting</p>
+
+<h3 id="set-option-value">set [option] [value]</h3>
+
+<p>use this command to set program setting</p>
+
+<h3 id="set-list">set list</h3>
+
+<p>print all available settings and its values</p>
+
+<h3 id="file-list">file list</h3>
+
+<p>show a full catalog of registered
+files and folders</p>
+
+<h3 id="file-idlist">file idlist</h3>
+
+<p>show a list of items already uploaded
+on remote peers </p>
+
+<h3 id="file-bind-local-path">file bind [local path]</h3>
+
+<p>add given path as a top level item in the catalog</p>
+
+<h3 id="file-add-local-path">file add [local path]</h3>
+
+<p>replicate given path into the catalog,
+this will add to catalog all parent folders too</p>
+
+<h3 id="file-addtree-local-folder-path">file addtree [local folder path]</h3>
+
+<p>replicate given folder with
+all sub folders to the catalog,
+be aware if you add too much items to catalog
+the software may operate inefficient    </p>
+
+<h3 id="file-start-local-path-or-id">file start [local path or ID]</h3>
+
+<p>start uploading a catalog item on to remote peers,
+bind a new local file/folder if path is not yet
+existing in the catalog </p>
+
+<h3 id="file-delete-local-path,-id-or-full-backup-id">file delete [local path, ID or full backup ID]</h3>
+
+<p>remove a file or folder (with all sub folders)
+from catalog or only erase a given remote copy</p>
+
+<h3 id="file-delete-local-full-backup-id">file delete local [full backup ID]</h3>
+
+<p>remove only local copy of given backup,
+keep remote copy on suppliers HDD</p>
+
+<h3 id="file-queue">file queue</h3>
+
+<p>show a list of paths to be uploaded</p>
+
+<h3 id="file-progress">file progress</h3>
+
+<p>show a list of currently running uploads</p>
+
+<h3 id="file-sync">file sync</h3>
+
+<p>request all suppliers to check/restart uploads</p>
+
+<h3 id="restore-list">restore list</h3>
+
+<p>show a list of items already uploaded on remote peers</p>
+
+<h3 id="restore-start-local-path-or-id-destination-path">restore start [local path or ID] [destination path]</h3>
+
+<p>download personal data back to local machine
+from remote peers, you can specify 
+the destination path on your local drive,
+WARNING! source path is default location,
+so it will overwrite existing files by default</p>
+
+<h3 id="restore-abort-backup-id">restore abort [backup ID]</h3>
+
+<p>abort currently running restore process of given item</p>
+
+<h3 id="restore-progress">restore progress</h3>
+
+<p>show currently running downloads </p>
+
+<h3 id="supplier-list">supplier list</h3>
+
+<p>show list of your suppliers
+nodes who stores your data on own machines</p>
+
+<h3 id="supplier-replace-idurl-or-position">supplier replace [IDURL or position]</h3>
+
+<p>execute a fire/hire process for given supplier,
+another random node will replace him</p>
+
+<h3 id="supplier-change-idurl-or-position-new-idurl">supplier change [IDURL or position] [new IDURL]</h3>
+
+<p>replace a supplier by given node</p>
+
+<h3 id="supplier-ping">supplier ping</h3>
+
+<p>send Identity packet to all suppliers
+and wait Ack packets to check their statuses</p>
+
+<h3 id="customer-list">customer list</h3>
+
+<p>show list of your customers
+nodes who stores own data on your machine</p>
+
+<h3 id="customer-remove-idurl">customer remove [IDURL]</h3>
+
+<p>reject supporting given customer and
+remove all local files stored for him</p>
+
+<h3 id="customer-ping">customer ping</h3>
+
+<p>send Identity packet to all customers
+and wait Ack packets to check their statuses</p>
+
+<h3 id="storage">storage</h3>
+
+<p>show donated/needed storage statistic </p>
+
+<h3 id="automat-list">automat list</h3>
+
+<p>list all running state machines and current states</p>
+
+<h3 id="service-list">service list</h3>
+
+<p>list all registered services</p>
+
+<h3 id="service-service-name">service [service name]</h3>
+
+<p>print detailed info for given service</p>
+
+<h3 id="ping-idurl">ping [IDURL]</h3>
+
+<p>send Identity packet to this node
+and wait Ack packet to check his status</p>
+
+<h3 id="chat">chat</h3>
+
+<p>start a chat session, send/listen text
+messages from other users</p>
+
+<h3 id="chat-send-idurl-"text-message"">chat send [IDURL] ["text message"]</h3>
+
+<p>send a single text message to remote user</p>
+
+<h3 id="api-method-params">api [method] [params]</h3>
+
+<p>execute API method and return JSON response</p>
+
+<h3 id="version">version</h3>
+
+<p>display current software version</p>
+
+<h3 id="help">help</h3>
+
+<p>print a detailed info for command line usage</p>
+
+<h3 id="usage">usage</h3>
+
+<p>print a brief list of available commands</p>
+
+<h2 id="options:">Options:</h2>
+
+<p>-h, --help <br />
+show this help message and exit</p>
+
+<p>-d DEBUG, --debug=DEBUG
+set debug level</p>
+
+<p>-q, --quite <br />
+quite mode, do not print any messages to stdout</p>
+
+<p>-v, --verbose <br />
+verbose mode, print more messages</p>
+
+<p>-n, --no-logs <br />
+do not use logs</p>
+
+<p>-o OUTPUT, --output=OUTPUT
+print log messages to the file</p>
+
+<p>-a APPDIR, --appdir=APPDIR
+set alternative location 
+for application data files,
+default is ~/.bitdust/</p>
+
+<p>--twisted <br />
+show twisted log messages too</p>
+
+<h2 id="examples">Examples</h2>
+
+<h4 id="create-an-identity">Create an identity</h4>
+
+<pre><code>bitdust id create alice
+</code></pre>
+
+<h4 id="backup-the-private-key">Backup the Private Key</h4>
+
+<pre><code>bitdust key backup ~/bitdust-alice-private.key
+</code></pre>
+
+<h4 id="some-basic-configuration">Some basic configuration</h4>
+
+<pre><code>bitdust set needed 100Mb
+bitdust set donated 250Mb
+bitdust set suppliers 7
+</code></pre>
+
+<h4 id="start/stop-software">Start/Stop software</h4>
+
+<pre><code>bitdust
+bitdust detach
+bitdust stop
+bitdust restart
+</code></pre>
+
+<h4 id="upload-files/folders">Upload files/folders</h4>
+
+<pre><code>bitdust backup start ~/examples.desktop
+</code></pre>
+
+<h4 id="list-of-uploaded-items">List of uploaded items</h4>
+
+<pre><code>bitdust backups
+bitdust backup list
+bitdust backup idlist
+</code></pre>
+
+<h4 id="download-from-remote-peers">Download from remote peers</h4>
+
+<pre><code>rm ~/examples.desktop
+bitdust restore 0/0/0
+ls ~/examples.desktop
+
+bitdust restore /home/veselin/examples.desktop /tmp
+ls /tmp/examples.desktop
+</code></pre>
+
+<h4 id="remove-remote-data">Remove remote data</h4>
+
+<pre><code>bitdust backup delete /home/veselin/examples.desktop
+</code></pre>
+
+<h4 id="request-the-actual-info-from-remote-nodes">Request the actual info from remote nodes</h4>
+
+<pre><code>bitdust backups updated
+</code></pre>
+
+<h4 id="ping-all-suppliers-to-check-their-current-status">Ping all suppliers to check their current status</h4>
+
+<pre><code>bitdust suppliers ping
+</code></pre>
+
+<h4 id="ping-a-given-node-by-idurl">Ping a given node by IDURL</h4>
+
+<pre><code>bitdust ping http://p2p-id.ru/veselin.xml
+</code></pre>
+
+<h4 id="get-some-info-about-donated-and-consumed-space-usage">Get some info about donated and consumed space usage</h4>
+
+<pre><code>bitdust storage
+</code></pre>
+
+<h4 id="print-a-list-of-program-settings">Print a list of program settings</h4>
+
+<pre><code>bitdust set list
+</code></pre>
+
+<h4 id="modify-a-single-setting">Modify a single setting</h4>
+
+<pre><code>bitdust set logs/debug-level 8
+</code></pre>
+
+                            </div>
+
+
+                        </div><!-- .docs-content -->
+                    </div><!-- .row -->
+                </div><!-- .card-body -->
+            </div><!-- .ui-card -->
+
+        </div><!-- .container -->
+    </div><!-- #ui-api-docs -->
+
+    <!-- Footer -->
+    <footer class="ui-footer bg-gray">
+        <div class="container pt-6 pb-6">
+            <div class="row">
+                <div class="col-sm-8 footer-about footer-col center-on-sm">
+                    <img src="/assets/img/logo/bitdust-logo-white.svg"
+                         alt="BitDust" />
+                    <p class="mt-1">
+                        We are currently with a small team primarily focusing on developing our product and
+                        unfortunately don’t have the resources to support a community on different channels. For now you
+                        can join the discussion on Telegram or if you have a business related question you can email us.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 footer-col center-on-sm">
+                    <form autocomplete="on" id="sign-up-form" name="sign-up-form">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <!-- Email Input -->
+                                <input autocomplete="email" class="input form-control" data-validation="required"
+                                       data-validation-error-msg="Please enter your email" name="email"
+                                       placeholder="Email">
+                                <div class="input-group-append">
+                                    <!-- Submit Button -->
+                                    <button class="btn ui-gradient-peach">Subscribe <span class="fa fa-send"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div>
+                        <a class="btn ui-gradient-purple btn-circle shadow-md"
+                           href="https://t.me/bitdust" target="_blank">
+                            <span class="fa fa-telegram"></span>
+                        </a>
+                        <a class="btn ui-gradient-blue btn-circle shadow-md"
+                           href="https://github.com/bitdust-io/" target="_blank">
+                            <span class="fa fa-github"></span>
+                        </a>
+                        <a class="btn ui-gradient-green btn-circle shadow-md"
+                           href="https://twitter.com/bitdust_io" target="_blank">
+                            <span class="fa fa-twitter"></span>
+                        </a>
+                    </div>
+                </div>
+            </div><!-- .row -->
+        </div><!-- .container -->
+
+        <!-- Footer Copyright -->
+        <div class="footer-copyright bg-dark-gray">
+            <div class="container">
+                <div class="row">
+                    <!-- Copyright -->
+                    <div class="col-sm-6 center-on-sm">
+                        <p>
+                            &copy; 2019 <a href="http://bitdust.io" target="_blank" title="BitDust">BitDust</a>
+                        </p>
+                    </div>
+                    <!-- Social Icons -->
+                    <div class="col-sm-6 text-right">
+                        <ul class="footer-nav">
+                            <li>
+                                <a href="https://bitdust.io/wiki">
+                                    Wiki
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/bitdust-io/">
+                                    Github
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- .container -->
+        </div><!-- .footer-copyright -->
+
+    </footer><!-- .ui-footer -->
+
+</div><!-- .main -->
+
+
+<!-- Scripts -->
+<script src="/assets/js/libs/jquery/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/libs/slider-pro/jquery.sliderPro.min.js"></script>
+<script src="/assets/js/libs/owl.carousel/owl.carousel.min.js"></script>
+
+<script src="/assets/js/applify/ui-map.js"></script>
+<script src="/assets/js/libs/form-validator/form-validator.min.js"></script>
+<script src="/assets/js/libs/bootstrap.js"></script>
+<script src="/assets/js/applify/build/applify.js"></script>
+
+
+<script>
+
+    $('a[href*=\\#]').on('click', function (event) {
+        if ($(this.hash).offset().top) {
+            event.preventDefault();
+            $('html,body').animate({scrollTop: $(this.hash).offset().top - 100}, 500);
+            window.location.hash = this.hash;
+        }
+    });
+
+
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function () {
+            try {
+                w.yaCounter28171152 = new Ya.Metrika({
+                    id: 28171152,
+                    webvisor: true, clickmap: true, trackLinks: true, accurateTrackBounce: true
+                });
+            } catch (e) {
+            }
+        });
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () {
+                n.parentNode.insertBefore(s, n);
+            };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = (d.location.protocol == "https:" ? "https:" : "https:") + "//mc.yandex.ru/metrika/watch.js";
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else {
+            f();
+        }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript>
+    <div><img src="//mc.yandex.ru/watch/28171152" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109832032-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-109832032-1');
+</script>
+
+
+</body>
+</html>
