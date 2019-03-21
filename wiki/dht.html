@@ -141,16 +141,18 @@
                             <div class="docs-section doc-action-cards">
                                 <h1 id="distributed-hash-table">Distributed Hash-table</h1>
 
+<p>(in progress)</p>
+
 <h2 id="description">Description</h2>
 
 <p><a href="https://en.wikipedia.org/wiki/Distributed_hash_table">Distributed hash-table</a>,
 or <code>DHT</code>, provides an interface close to associative array or dictionary with key/value pair where storage of all pairs (key, value) is distributed into multiple nodes.</p>
 
-<p>Thanks to such DHT’s characteristics as decentralization, scalability and fault-tolerance it creates an integrated space for service information storage. This means switching to absolutely different approach to organization of network infrastructure rather than common centralized client-server solutions.</p>
+<p>Because of such useful DHT’s characteristics as decentralization, scalability and fault-tolerance it is possible to creates an integrated space for service information storage. This means switching to absolutely different approach to organization of network infrastructure rather than common centralized client-server solutions.</p>
 
-<p>Each computer running a BitDust program is a node in DHT network and stores key/value pairs created by other users.</p>
+<p>Each computer running a BitDust program can be a node in DHT network and stores key/value pairs created by other users.</p>
 
-<p>BitDust software includes functional realizing DHT network by means of <a href="http://entangled.sourceforge.net/">Entangled</a> library – its source code is wholly included in the source code of BitDust and is distributed jointly.</p>
+<p>BitDust software runs DHT network based on implementation from <a href="http://entangled.sourceforge.net/">Entangled</a> library – its source code is wholly included in the source code of BitDust and is distributed together.</p>
 
 <h2 id="data-types">Data types</h2>
 
@@ -160,18 +162,27 @@ or <code>DHT</code>, provides an interface close to associative array or diction
 
 <ul>
 <li><p><code>[IDURL]</code> 
-user identity file stuff</p></li>
+user identity file source</p></li>
 <li><p><code>[username]@[id-server]:address</code>
 external net address in [IP]:[PORT] format for receiving incoming connections</p></li>
 <li><p><code>[username]@[id-server]:incoming</code>
 list of nodes trying to connect to the user at the moment</p></li>
+<li><p><code>customer_supplier:[index]:[prefix]:[version]</code>
+list of relations for given customer with other suppliers </p></li>
 </ul>
 
 <h2 id="support-bitdust-network">Support BitDust network</h2>
 
-<p>If you wish to support BitDust project, willing to support other nodes when they are connecting to the netowork and be sure your machine will work reliable - you can become a part of BitDust "proto-netowork". BitDust will be running constantly ony your device and re-route incoming DHT requests from other nodes.</p>
+<p>If you agree to support other BitDust users when they are connecting to the network and would like to become a "Seed node" in BitDust network you can add your node to the <a href="https://github.com/bitdust-io/public/blob/master/networks.json">networks.json</a> file which is located in the root of BitDust repository.</p>
 
-<p>Contact with BitDust team to notify about this new DHT node was started by you and we will add your IP:port in the list of <a href="https://github.com/bitdust-io/public/blob/fd536b01983f419030fa070b95d18c11da502b46/dht/known_nodes.py#L36">known_nodes.py</a>.</p>
+<p>Make sure BitDust is running constantly on you machine and it works reliable and connected to the Internet.
+You will be a part of BitDust "proto-network" and receive incoming DHT requests from other nodes when they are connecting to the network first time.</p>
+
+<p>This is how Distributed Hash Table works - it is well-scalable, but requires some of the nodes to be on-line all the time. But it shouldn't create a lot of traffic on those nodes because any other node will hit "seed node" only once - when they are joining DHT network for the first time.</p>
+
+<p>To include yourself into a list of "well-known" seed nodes - first create a fork of <a href="https://github.com/bitdust-io/public">Public Git Repository</a>, modify <code>networks.json</code> file in your forked repository and start a <a href="https://github.com/bitdust-io/public/pulls">Pull Request</a> with your changes - this way we can collaborate all together and maintain a list of the most reliable BitDust seed nodes.</p>
+
+<p>Contact with BitDust contributors to notify about this new DHT node was started by you and one of the developers will approve your Pull Request.</p>
 
 
 <div id="disqus_thread"></div>

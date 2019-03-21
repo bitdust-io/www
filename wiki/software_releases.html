@@ -139,159 +139,183 @@
 
 
                             <div class="docs-section doc-action-cards">
-                                <h1 id="how-to-start-a-new-identity-server-in-bitdust-network">How to start a new Identity Server in BitDust network</h1>
+                                <h1 id="software-releases">Software releases</h1>
+
+<ul>
+<li><a href="software_releases.html#intro">Intro</a></li>
+<li><a href="software_releases.html#release-run-book">Release run book</a></li>
+<li><a href="software_releases.html#update-documentation">Update Documentation</a></li>
+<li><a href="software_releases.html#update-web-site">Update web-site</a></li>
+</ul>
 
 <h2 id="intro">Intro</h2>
 
-<p>You need to create new identity for your own to be able to communicate with other nodes and access BitDust community.
-Identity files are distributed across identity servers in the network, other nodes holding and exposing copies of your identity.</p>
-
-<p>The third node can access that ID server and download your identity to be able to talk to you.
-So any node in the network can start own ID server and help to maintain network and make it more reliable.</p>
-
-<p>Your global IDURL is formed based on your nickname and DNS name (or IP address) of the first ID server.</p>
-
-<p>If one of your ID servers is down, you can find a fresh one and "propagate" your identity there
-and then remove dead ID server from the list of your sources: "identity migration" (not implemented yet).
-This process will be automated and network identification will become much more reliable.</p>
-
-<h2 id="install-and-configure-apache2">Install and configure apache2</h2>
-
-<p>Lets setup a hostname on your machine if you did not do it before:</p>
-
-<pre><code>    sudo hostname -b my-own-identity-server.com
-</code></pre>
-
-<p>And you will need to install Apache server if you do not have it yet on your machine:</p>
-
-<pre><code>    sudo apt-get install apache2
-</code></pre>
-
-<p>Edit Apache2 main config file:</p>
-
-<pre><code>    sudo nano /etc/apache2/apache2.conf
-</code></pre>
-
-<p>You need to add a line to set your domain name:</p>
-
-<pre><code>    ServerName my-own-identity-server.com
-</code></pre>
-
-<p>Create a new my-own-identity-server_com.conf file in /etc/apache2/conf-available/ :</p>
-
-<pre><code>    &lt;VirtualHost *:80&gt;
-      ServerName my-own-identity-server.com
-      ServerAlias www.my-own-identity-server.com
-      ProxyPreserveHost on
-      ProxyRequests Off
-      RewriteEngine on
-      ProxyPass / http://localhost:8084/
-      ProxyPassReverse / http://localhost:8084/
-      Redirect / http://localhost:8084/
-      RewriteRule ^/(.*) http://localhost:8084/$1 [P,L]
-    &lt;/VirtualHost&gt;
-</code></pre>
-
-<p>Enable this configuration in apache2, run command:</p>
-
-<pre><code>    sudo a2enconf my-own-identity-server_com
-</code></pre>
-
-<p>Configure proxy_http and rewrite modes in apache2, run commands:</p>
-
-<pre><code>    sudo a2enmod proxy_http 
-    sudo a2enmod rewrite
-</code></pre>
-
-<p>Now restart apache2 server:</p>
-
-<pre><code>    sudo service apache2 restart
-</code></pre>
-
-<h2 id="configure-bitdust-software">Configure BitDust software</h2>
-
-<p>First you need to install <a href="https://bitdust.io/install.html">BitDust software</a> on your machine. </p>
-
-<p>Now configure BitDust on your node to set domain name for this new identity server, run commands:</p>
-
-<pre><code>    bitdust set services/identity-server/host my-own-identity-server.com
-    bitdust set services/identity-server/enabled true
-</code></pre>
-
-<p>You can manually set a port number for incoming connections using such command:</p>
-
-<pre><code>    bitdust set services/identity-server/web-port 8084
-</code></pre>
-
-<h2 id="run-standalone-identity-server">Run standalone Identity Server</h2>
-
-<p>Run this command to start Identity server process in current terminal:</p>
-
-<pre><code>    bitdust identity server start
-</code></pre>
-
-<p>Now open your favority WEB browser and navigate to <a href="http://127.0.0.1:8084">http://127.0.0.1:8084</a> or <a href="my-own-identity-server.com">my-own-identity-server.com</a>. You should see an empty page with title "Identities on my-own-identity-server.com".</p>
-
-<p>Congratulations! You are running your own identity server now and able to register your own identity there or help other people by hosting their identity files on your machine.</p>
-
-<h2 id="run-identity-server-as-daemon-process">Run Identity Server as daemon process</h2>
-
-<p>Be sure network service identity_server is enabled in settings (check configuration above) and start BitDust software in "daemon" mode:</p>
-
-<pre><code>    bitdust daemon
-</code></pre>
-
-<p>Be sure ID server is up and running:</p>
-
-<pre><code>    bitdust states | grep id_server
-    36: id_server(LISTEN)
-</code></pre>
-
-<p>Open your browser and go to <a href="http://127.0.0.1:8084">http://127.0.0.1:8084</a> or <a href="my-own-identity-server.com">my-own-identity-server.com</a> to check server status.</p>
-
-<h2 id="create-dedicated-identity">Create dedicated identity</h2>
-
-<p>Normally, when you creating a new identity, software will do all stuff for you automatically and just select few random ID servers, ping them and "propagate" your new identity to those nodes.</p>
-
-<p>But you can decide which ID servers you prefer, in case if you would like to control where your identity will be distributed exactly, and modify your "known" ID servers:</p>
-
-<pre><code>bitdust set services/identity-propagate/known-servers first-server.com:80:6661,second-host.net:8080:6661
-</code></pre>
-
-<p>Now if you will create a new identity with <code>bitdust id create my_dedicate_identity</code> command it will be "propagated" to <code>first-server.com</code> and <code>second-host.net</code> and your global IDURL can be like that:</p>
-
-<pre><code>http://first-server.com/my_dedicate_identity.xml
-</code></pre>
-
-<h2 id="support-bitdust-network">Support BitDust network</h2>
-
-<p>Contact with BitDust team to notify about this new ID server was started on your machine and we will add your domain name in the file <strong>known_servers.py</strong> storing list of all known BitDust identity servers: </p>
+<p>BitDust project development flow is based on two independent GIT repositories:</p>
 
 <ul>
-<li><a href="https://github.com/bitdust-io/devel/blob/master/userid/known_servers.py">mirror on GitHub</a></li>
-<li><a href="https://dev.bitdust.io/code/devel/blob/master/userid/known_servers.py">mirror on dev.bitdust.io</a></li>
+<li><a href="https://github.com/bitdust-io/devel">Development repository</a></li>
+<li><a href="https://github.com/bitdust-io/public">Stable repository</a></li>
 </ul>
 
-<p>You can Fork BitDust <a href="https://dev.bitdust.io/code/devel">development repository</a> and open a Pull Request to modify the list of known servers in place.</p>
+<p>When changes in the development repo are considered to be "good enough" files are manually copied by one of the developers to the stable repo and new Pull Request is started.
+This process can be considered as a new "Release" - we do not have any versioning of the releases.
+After Pull Request gets merged - release is done.</p>
 
+<p>Every BitDust node periodically "check &amp; fetch" fresh commits from GIT repository where it was cloned from.
+This way BitDust software automatically "updating itself" and stay in sync with "Stable" repository.</p>
 
-<div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
-        this.page.url = "http://bitdust.io/identity_server.html";   
-        this.page.identifier = "./wiki/identity_server"
-    };
-    (function() { 
-        var d = document, s = d.createElement('script');
-        s.src = '//bitdust.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<p>Bellow is a step-by-step guide to deliver changes from "Development" repository into "Stable".</p>
 
+<h2 id="release-run-book">Release run book</h2>
 
-</div>
+<p>Change to "stable" repo folder, you must have it already cloned locally in <code>./bitdust</code> folder:</p>
+
+<pre><code>cd ./bitdust/
+</code></pre>
+
+<p>Development repository must be already cloned in <code>./bitdust.devel</code> folder in same parent folder.
+Now import fresh code from "devel" repo on top of existing files:</p>
+
+<pre><code>./import ../bitdust.devel/
+</code></pre>
+
+<p>Turn OFF DEBUG mode in all Python files:</p>
+
+<pre><code>find . -type f -name "*.py" -exec sed -i 's/_Debug = True/_Debug = False/g' {} +
+</code></pre>
+
+<p>Mark all modified files in git to be commited in the new release:</p>
+
+<pre><code>git add -u .
+</code></pre>
+
+<p>Add all other new files to git manually - this is important here to not miss any files:</p>
+
+<pre><code>git add ...
+</code></pre>
+
+<p>If some files or folders was removed from "devel" repo - do not forget to also remove them from "stable" repo and mark those changes to be commited:</p>
+
+<pre><code>rm ...
+git add -u .
+</code></pre>
+
+<p>Check again to be sure you didn't miss to remove / add any other files. Some files and folders should be excluded from "stable" repo so this bellow command will help you to identify differences:</p>
+
+<pre><code>cd ..
+diff --brief -r bitdust/ bitdust.devel/ | grep -v ".DS_Store" | grep -v "site-packages" | grep -v ".git" | grep -v "__pycache__" | grep -v ".pyc" | grep "Only in"
+
+Only in bitdust.devel/: HISTORY.txt
+Only in bitdust.devel/: deploy
+Only in bitdust/: import
+...
+</code></pre>
+
+<p>Do not commit your changes yet!
+Change back to "devel" repo and run such command to list all commits added to "devel" repo after last release of the "stable" repo was published:</p>
+
+<pre><code>cd ./bitdust.devel/
+./history ../bitdust/
+</code></pre>
+
+<p>File <code>HISTORY.TXT</code> was created and now it is time to describe which changes we are going to publish in the <code>CHANGELOG.txt</code>.</p>
+
+<p>Copy text block from <code>HISTORY.TXT</code> file into <code>CHANGELOG.txt</code> and make it nice-looking:</p>
+
+<pre><code>head -30 HISTORY.TXT
+nano CHANGELOG.txt
+</code></pre>
+
+<p>Commit <code>CHANGELOG.txt</code> in the "devel" repo:</p>
+
+<pre><code>git add CHANGELOG.txt
+git commit -m "updated CHANGELOG, prepare next release"
+</code></pre>
+
+<p>And also copy <code>CHANGELOG.txt</code> to the "stable" repo:</p>
+
+<pre><code>cp CHANGELOG.txt ../bitdust/
+</code></pre>
+
+<p>Now you can finally commit changes in the "stable" repo:</p>
+
+<pre><code>cd ../bitdust/
+git add CHANGELOG.txt
+git commit -m "&lt;glorious name of the new release&gt;"
+</code></pre>
+
+<p>Push changes to your "stable" repo - you must already have a Fork of "stable" repo:</p>
+
+<pre><code>git push origin master
+</code></pre>
+
+<p>Create new <a href="https://github.com/bitdust-io/public/pulls">Pull Request</a> to the "stable" repository ...</p>
+
+<p>Review ...</p>
+
+<p>Merge ... </p>
+
+<p>Congratulations, YOU ARE LIVE NOW!!!</p>
+
+<p>Update your fork to stay in sync:</p>
+
+<pre><code>git pull upstream master
+git push origin master
+</code></pre>
+
+<h2 id="update-documentation">Update Documentation</h2>
+
+<p>BitDust project Documentation are fully open-sourced and everyone are welcome to contribute and improve it the <a href="https://github.com/bitdust-io/docs">Documentation repository</a>.
+Those steps are required to keep documentation in sync with the code.
+Update "docs" repo first, you must already have it forked and cloned in <code>./bitdust.docs/</code> folder in same parent folder as "devel" and "stable" repos:</p>
+
+<pre><code>cd ../bitdust.docs/
+./build_api
+./build_settings
+# TODO: ./build_changelog
+</code></pre>
+
+<p>Push changes to your fork of documentation repository and start new <a href="https://github.com/bitdust-io/docs/pulls">Pull Request</a> to the upstream:</p>
+
+<pre><code>git push origin master
+# Open &amp; Merge Pull Request
+</code></pre>
+
+<p>Update your fork to stay in sync after merge:</p>
+
+<pre><code>git pull upstream master
+git push origin master
+</code></pre>
+
+<h2 id="update-web-site">Update web-site</h2>
+
+<p>Main BitDust web site at <a href="https://bitdust.io">www.bitdust.io</a> is also fully open-sourced in <a href="https://github.com/bitdust-io/www">WWW repository</a>.
+However only "core" developers have SSH access to the hosting server, anyone are welcome to contribute and improve the web-site via GIT.</p>
+
+<p>You can "auto-generate" all HTML pages based on Markdown sources from documentation repository:</p>
+
+<pre><code>cd ../bitdust.www/
+./build
+</code></pre>
+
+<p>Push changes to your fork of WWW repository and start new <a href="https://github.com/bitdust-io/www/pulls">Pull Request</a> to the upstream:</p>
+
+<pre><code>git push origin master
+# Open &amp; Merge Pull Request
+</code></pre>
+
+<p>Update your fork to stay in sync:</p>
+
+<pre><code>git pull upstream master
+git push origin master
+</code></pre>
+
+<p>After merging changes, ask one of the developers to runs "git pull" command on the server via SSH and web site will be immediately updated:</p>
+
+<pre><code>./update
+</code></pre>
+
+<p>ALL DONE!</p>
 
                             </div>
 
