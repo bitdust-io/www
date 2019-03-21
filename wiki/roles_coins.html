@@ -139,159 +139,69 @@
 
 
                             <div class="docs-section doc-action-cards">
-                                <h1 id="how-to-start-a-new-identity-server-in-bitdust-network">How to start a new Identity Server in BitDust network</h1>
+                                <h1 id="bitdust-roles-and-coins">BitDust Roles and Coins</h1>
 
-<h2 id="intro">Intro</h2>
+<h4 id="draft-2">Draft 2</h4>
 
-<p>You need to create new identity for your own to be able to communicate with other nodes and access BitDust community.
-Identity files are distributed across identity servers in the network, other nodes holding and exposing copies of your identity.</p>
+<h2 id="roles">Roles</h2>
 
-<p>The third node can access that ID server and download your identity to be able to talk to you.
-So any node in the network can start own ID server and help to maintain network and make it more reliable.</p>
-
-<p>Your global IDURL is formed based on your nickname and DNS name (or IP address) of the first ID server.</p>
-
-<p>If one of your ID servers is down, you can find a fresh one and "propagate" your identity there
-and then remove dead ID server from the list of your sources: "identity migration" (not implemented yet).
-This process will be automated and network identification will become much more reliable.</p>
-
-<h2 id="install-and-configure-apache2">Install and configure apache2</h2>
-
-<p>Lets setup a hostname on your machine if you did not do it before:</p>
-
-<pre><code>    sudo hostname -b my-own-identity-server.com
-</code></pre>
-
-<p>And you will need to install Apache server if you do not have it yet on your machine:</p>
-
-<pre><code>    sudo apt-get install apache2
-</code></pre>
-
-<p>Edit Apache2 main config file:</p>
-
-<pre><code>    sudo nano /etc/apache2/apache2.conf
-</code></pre>
-
-<p>You need to add a line to set your domain name:</p>
-
-<pre><code>    ServerName my-own-identity-server.com
-</code></pre>
-
-<p>Create a new my-own-identity-server_com.conf file in /etc/apache2/conf-available/ :</p>
-
-<pre><code>    &lt;VirtualHost *:80&gt;
-      ServerName my-own-identity-server.com
-      ServerAlias www.my-own-identity-server.com
-      ProxyPreserveHost on
-      ProxyRequests Off
-      RewriteEngine on
-      ProxyPass / http://localhost:8084/
-      ProxyPassReverse / http://localhost:8084/
-      Redirect / http://localhost:8084/
-      RewriteRule ^/(.*) http://localhost:8084/$1 [P,L]
-    &lt;/VirtualHost&gt;
-</code></pre>
-
-<p>Enable this configuration in apache2, run command:</p>
-
-<pre><code>    sudo a2enconf my-own-identity-server_com
-</code></pre>
-
-<p>Configure proxy_http and rewrite modes in apache2, run commands:</p>
-
-<pre><code>    sudo a2enmod proxy_http 
-    sudo a2enmod rewrite
-</code></pre>
-
-<p>Now restart apache2 server:</p>
-
-<pre><code>    sudo service apache2 restart
-</code></pre>
-
-<h2 id="configure-bitdust-software">Configure BitDust software</h2>
-
-<p>First you need to install <a href="https://bitdust.io/install.html">BitDust software</a> on your machine. </p>
-
-<p>Now configure BitDust on your node to set domain name for this new identity server, run commands:</p>
-
-<pre><code>    bitdust set services/identity-server/host my-own-identity-server.com
-    bitdust set services/identity-server/enabled true
-</code></pre>
-
-<p>You can manually set a port number for incoming connections using such command:</p>
-
-<pre><code>    bitdust set services/identity-server/web-port 8084
-</code></pre>
-
-<h2 id="run-standalone-identity-server">Run standalone Identity Server</h2>
-
-<p>Run this command to start Identity server process in current terminal:</p>
-
-<pre><code>    bitdust identity server start
-</code></pre>
-
-<p>Now open your favority WEB browser and navigate to <a href="http://127.0.0.1:8084">http://127.0.0.1:8084</a> or <a href="my-own-identity-server.com">my-own-identity-server.com</a>. You should see an empty page with title "Identities on my-own-identity-server.com".</p>
-
-<p>Congratulations! You are running your own identity server now and able to register your own identity there or help other people by hosting their identity files on your machine.</p>
-
-<h2 id="run-identity-server-as-daemon-process">Run Identity Server as daemon process</h2>
-
-<p>Be sure network service identity_server is enabled in settings (check configuration above) and start BitDust software in "daemon" mode:</p>
-
-<pre><code>    bitdust daemon
-</code></pre>
-
-<p>Be sure ID server is up and running:</p>
-
-<pre><code>    bitdust states | grep id_server
-    36: id_server(LISTEN)
-</code></pre>
-
-<p>Open your browser and go to <a href="http://127.0.0.1:8084">http://127.0.0.1:8084</a> or <a href="my-own-identity-server.com">my-own-identity-server.com</a> to check server status.</p>
-
-<h2 id="create-dedicated-identity">Create dedicated identity</h2>
-
-<p>Normally, when you creating a new identity, software will do all stuff for you automatically and just select few random ID servers, ping them and "propagate" your new identity to those nodes.</p>
-
-<p>But you can decide which ID servers you prefer, in case if you would like to control where your identity will be distributed exactly, and modify your "known" ID servers:</p>
-
-<pre><code>bitdust set services/identity-propagate/known-servers first-server.com:80:6661,second-host.net:8080:6661
-</code></pre>
-
-<p>Now if you will create a new identity with <code>bitdust id create my_dedicate_identity</code> command it will be "propagated" to <code>first-server.com</code> and <code>second-host.net</code> and your global IDURL can be like that:</p>
-
-<pre><code>http://first-server.com/my_dedicate_identity.xml
-</code></pre>
-
-<h2 id="support-bitdust-network">Support BitDust network</h2>
-
-<p>Contact with BitDust team to notify about this new ID server was started on your machine and we will add your domain name in the file <strong>known_servers.py</strong> storing list of all known BitDust identity servers: </p>
+<h3 id="customer">Customer</h3>
 
 <ul>
-<li><a href="https://github.com/bitdust-io/devel/blob/master/userid/known_servers.py">mirror on GitHub</a></li>
-<li><a href="https://dev.bitdust.io/code/devel/blob/master/userid/known_servers.py">mirror on dev.bitdust.io</a></li>
+<li><p>Consume resources from other nodes: storage, network traffic, CPU time</p></li>
+<li><p>Pay to Miner with BTC or ETH to "buy a service"</p></li>
+<li><p>Receive "empty" BitDust coin from Miner</p></li>
+<li><p>Send BitDust coin to Supplier to "pay for service"</p></li>
 </ul>
 
-<p>You can Fork BitDust <a href="https://dev.bitdust.io/code/devel">development repository</a> and open a Pull Request to modify the list of known servers in place.</p>
+<h3 id="supplier">Supplier</h3>
 
+<ul>
+<li><p>Donate part of own HDD/SSD drive to Customer so that he can store something</p></li>
+<li><p>Receive "signed" BitDust coin from Customer</p></li>
+<li><p>Send "confirmed" BitDust coin to Miner to "sell storage service"</p></li>
+<li><p>Receive BTC or ETH from Miner</p></li>
+</ul>
 
-<div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
-        this.page.url = "http://bitdust.io/identity_server.html";   
-        this.page.identifier = "./wiki/identity_server"
-    };
-    (function() { 
-        var d = document, s = d.createElement('script');
-        s.src = '//bitdust.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<h3 id="router-(proxy-server)">Router (Proxy Server)</h3>
 
+<ul>
+<li><p>Help other nodes to connect each other and send/receive packets: re-route network traffic</p></li>
+<li><p>Help other nodes to "hide" real IP address</p></li>
+<li><p>Receive "signed" BitDust coin from Customer</p></li>
+<li><p>Send "confirmed" BitDust coin to Miner to "sell network bandwidth service"</p></li>
+<li><p>Receive BTC or ETH from Miner</p></li>
+</ul>
 
-</div>
+<h3 id="rebuilder">Rebuilder</h3>
+
+<ul>
+<li><p>Help new Supplier to reconstruct "missed" data fragments an store Customer data</p></li>
+<li><p>Receive "signed" BitDust coin from Supplier</p></li>
+<li><p>Send "confirmed" BitDust coin to Miner to "sell CPU service"</p></li>
+<li><p>Receive BTC or ETH from Miner</p></li>
+</ul>
+
+<h3 id="miner">Miner</h3>
+
+<ul>
+<li><p>Help other nodes to get read-access to blockchain</p></li>
+<li><p>Publish transactions on blockchain for other nodes</p></li>
+<li><p>Receive BTC or ETH from Customer</p></li>
+<li><p>Generate "empty" BitDust coin and give it to Customer</p></li>
+<li><p>Receive "confirmed" BitDust coin from Supplier, Rebuilder or Router</p></li>
+<li><p>Send BTC or ETH to Supplier, Rebuilder or Router</p></li>
+<li><p>Finally he "burn" BitDust coin to "proof storage"</p></li>
+</ul>
+
+<h2 id="rules">Rules</h2>
+
+<ol>
+<li><p>Every Customer can make only one transaction per Miner. If he requires more coins - he will have to find another Miner in the network</p></li>
+<li><p>Every Supplier, Rebuilder or Router can make only one transaction per Miner. If you want to sell more "confirmed" coins to "burn" them - you will have to find another Miner in the network</p></li>
+<li><p>BitDust coin can not be transferred after it was "burn"</p></li>
+<li><p>A fixed maximum life-cycle duration for each BitDust coin will be decided later (3-12 months) - the whole BitDust blockchain will be periodically cleaned up and mining will start from scratch all over again in next cycle</p></li>
+</ol>
 
                             </div>
 

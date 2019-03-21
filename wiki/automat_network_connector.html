@@ -151,18 +151,18 @@
 
 <h2 id="description">Description</h2>
 
-<p>Automat <code>network_connector ()</code> is needed to monitor the status of the connection to the Internet and start the redirection procedures on the network in various parts of the software when the network connection is subsequently restored.</p>
+<p>Automat <code>network_connector()</code> is needed to monitor the status of the connection to the Internet and start the redirection procedures on the network in various parts of the software when the network connection is subsequently restored.</p>
 
 <p>In the <strong>CONNECTED</strong> state, it will periodically check for the next traffic and determine the current state of the connection.</p>
 
 <p>The two main methods control the switch-over:</p>
 
 <ul>
-<li>doSetUp ()</li>
-<li>doSetDown ()</li>
+<li>doSetUp()</li>
+<li>doSetDown()</li>
 </ul>
 
-<p>If some network interfaces are active at the moment, but the software still can not connect to other nodes, Automat will try to ping the site https://bitdust.io (this part will be re-reworked soon) and decide whether there is any connection to the Internet.</p>
+<p>If some network interfaces are active at the moment, but the software still can not connect to other nodes, <code>network_connector()</code> will try to ping few other nodes and decide whether there is any connection to the Internet or not.</p>
 
 <h2 id="events:">Events:</h2>
 
