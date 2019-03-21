@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-content="pageTitle">BitDust - Decentralized on-line storage network</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:image:height" content="1257">
+    <meta property="og:image:width" content="2400">
+    <meta property="og:title" content="BitDust - decentralized on-line storage network">
+    <meta property="og:description"
+          content="BitDust is distributed secure anonymous on-line storage, where only the owner has access and absolute control over its data.">
+    <meta property="og:url" content="https://bitdust.io">
+    <meta property="og:image" content="https://bitdust.io//assets/img/og/og-image.jpg">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/applify.min.css" />
+</head>
+<body data-fade_in="on-load">
+
+<nav class="navbar navbar-fixed-top navbar-dark bg-indigo">
+    <div class="container">
+
+        <!-- Navbar Logo -->
+        <a class="ui-variable-logo navbar-brand" href="index.html" title="BitDust">
+            <!-- Default Logo -->
+            <img class="logo-default" src="/assets/img/logo/bitdust-logo-white.svg"
+                 alt="BitDust">
+            <!-- Transparent Logo -->
+            <img class="logo-transparent" src="/assets/img/logo/bitdust-logo-white.svg"
+                 alt="BitDust">
+        </a><!-- .navbar-brand -->
+
+
+        <!-- Navbar Button -->
+        <a href="/#product"
+           class="btn btn-sm ui-gradient-peach pull-right">
+            Get Started
+        </a>
+
+
+    </div><!-- .container -->
+</nav> <!-- nav -->
+
+
+<div class="main wiki" role="main">
+
+    <!-- Api Docs -->
+    <div id="ui-api-docs" class="section bg-light">
+        <div class="container">
+
+            <div class="ui-card">
+                <div class="card-body">
+                    <div class="row">
+
+                        <!-- Docs Sidebar -->
+                        <div class="docs-sidebar col-md-3">
+                            <h6 class="heading">
+                                Beginning
+                            </h6>
+                            <ul>
+                                <li><a href="intro.html">Introduction</a></li>
+                                <li><a href="concept.html">Concept</a></li>
+                                <li><a href="definitions.html">Definitions</a></li>
+                                <li><a href="philosophy.html">Philosophy</a></li>
+                                <li><a href="principle.html">How Does It Work?</a></li>
+                                <li><a href="install.html">Installation</a></li>
+                                <li><a href="seed_node.html">Seed node</a></li>
+                                <li><a href="commands.html">Commands</a></li>
+                                <li><a href="settings.html">Settings</a></li>
+                                <li><a href="glossary.html">Glossary</a></li>
+                            </ul>
+                            <h6 class="heading">
+                                Principles
+                            </h6>
+                            <ul>
+                                <li><a href="identities.html">User Identification</a></li>
+                                <li><a href="storage.html">Distributed Storage</a></li>
+                                <li><a href="security.html">Data Security</a></li>
+                                <li><a href="sharing.html">File Sharing</a></li>
+                                <li><a href="rebuilding.html">Automatic Rebuilding</a></li>
+                                <li><a href="dht.html">Distributed Hash-Table</a></li>
+                                <li><a href="services.html">Network services</a></li>
+                                <li><a href="transports.html">Transport protocols</a></li>
+                                <li><a href="crypto_contracts.html">Crypto-contracts</a></li>
+                            </ul>
+                            <h6 class="heading">Development</h6>
+                            <ul>
+                                <li><a href="roadmap.html">Roadmap</a></li>
+                                <li><a href="automats.html">Finite State Machines</a></li>
+                                <li><a href="technologies.html">Technologies</a></li>
+                                <li><a href="api.html">API Interface</a></li>
+                                <li><a href="software_releases.html">Software releases</a></li>
+                                <li><a href="respect.html">Contributors and Supporters</a></li>
+                            </ul>
+                            <h6 class="heading">Repositories</h6>
+                            <ul>
+                                <li>
+                                    <a href="https://github.com/bitdust-io"
+                                       target="blank">
+                                        <i class="fa fa-github text-purple"></i>
+                                        GitHub/bitdust-io
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://bitbucket.org/bitdust_io"
+                                       target="blank">
+                                        <i class="fa fa-github text-purple"></i>
+                                        BitBucket/bitdust_io
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://gitlab.com/bitdust.io"
+                                       target="blank">
+                                        <i class="fa fa-github text-purple"></i>
+                                        GitLab/bitdust.io
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://dev.bitdust.io/explore/projects"
+                                       target="blank">
+                                        <i class="fa fa-github text-purple"></i>
+                                        dev.bitdust.io
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="docs-content col-md-9">
+
+
+                            <div class="docs-section doc-action-cards">
+                                <h1 id="finite-state-machines">Finite State-Machines</h1>
+
+<ul>
+<li><a href="automats.html#introduction">Introduction</a></li>
+<li><a href="automats.html#method">Method</a></li>
+<li><a href="automats.html#example">Example</a></li>
+<li><a href="automats.html#the-core">The Core</a></li>
+<li><a href="automats.html#relation-to-the-code">Relation to Code</a></li>
+<li><a href="automats.html#transition-graphs">Transition Graphs</a></li>
+<li><a href="automats.html#visio2python">visio2python</a></li>
+<li><a href="automats.html#bitdust-automatas-list">BitDust automatas list</a></li>
+<li><a href="automats.html#microservices-tree">Microservices Tree</a></li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>BitDust project is developed on the principles of <a href="https://en.wikipedia.org/wiki/automata-based_programming">automata-based programming</a> and <a href="http://is.ifmo.ru/works/open_doc/">open project documentation movement</a>.</p>
+
+<p>This is a programming paradigm in which a program or its fragment is represented as a model of some <a href="glossary.html#finite-state-machine">finite state machine</a>.
+The distinctive feature of this approach consists in picking out each condition in which that process is in order to analyze the program behavior on the whole.
+State machines transition graphs are used on each stage of software development and final documentation.</p>
+
+<p>SWITCH-technology of automata-based programming was first introduced by Anatoliy Abramovich Shalyto in 1991.
+You are welcome to study suggested approach more in detail on the website of the academic department of "Programming Techniques" <a href="http://is.ifmo.ru/automata_en/">is.ifmo.ru</a> of Saint-Petersburg National Research University of Information Technologies, Mechanics and Optics,
+and also by reading an article <a href="https://en.wikipedia.org/wiki/automata-based_programming">Automata-based Programming</a>
+on Wikipedia.</p>
+
+<p>As a general principle the use of finite state machines for the realization of program logic as well as the automation of compilation of transition graphs to the source code in Python allow to optimize the development process considerably.</p>
+
+<h2 id="method">Method</h2>
+
+<p>I use a slightly modified method of automata-based programming. On the arcs of transition graphs the events, conditions and actions are marked in the format which is as close as possible to Python language syntax, moreover the color keys and text formatting are used. </p>
+
+<p>As compared to the classic method of Anatoliy Shalyto my approach has some small differences: </p>
+
+<ul>
+<li>color differentiation helps better visualization </li>
+<li>use of function names instead of number indications creates more "talking" drawings</li>
+<li>you can write whole statements on Python on the arcs, which opens more possibilities to the developer</li>
+</ul>
+
+<p>Each automat is a descendant of the
+<a href="https://github.com/bitdust-io/public/blob/fd536b01983f419030fa070b95d18c11da502b46/automats/automat.py#L256">Automat</a> class, which establishes all key collaborations in the BitDust program:</p>
+
+<ul>
+<li>initializes a conceptual machine increment by its production</li>
+<li>does its clean termination</li>
+<li>keeps a global index of all existing state machines</li>
+<li>tracks current states of the state machine</li>
+<li>receives, sends and handles the events</li>
+<li>manages adjustable timers</li>
+<li>manages debug log in the program</li>
+</ul>
+
+<h2 id="example">Example</h2>
+
+<p>As an example, consider a simple finite state machine which is designed for tracking the current status of user’s  connection to the given node in the BitDust network.</p>
+
+<p>In this picture you can see an automat called
+<a href="https://github.com/bitdust-io/public/blob/fd536b01983f419030fa070b95d18c11da502b46/p2p/contact_status.py#L308">contact_status()</a>,
+which has four states.</p>
+
+<div class=automatpng>
+
+<p><a href="p2p/contact_status.pdf"><img src="p2p/contact_status.png" alt="contact_status()" /></a></p>
+
+</div>
+
+<p>There are following elements:</p>
+
+<div id=table01>
+
+<style>
+div#table01 td, th { padding: 0px 15px; white-space: nowrap; }
+div#table01 img { max-width: 100px; }
+</style> </p>
+
+<table>
+<thead>
+<tr>
+  <th align="left">states</th>
+  <th align="left">events</th>
+  <th align="left">conditions</th>
+  <th align="left">actions</th>
+  <th align="left">variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td align="left"><strong>OFFLINE</strong></td>
+  <td align="left">outbox-packet</td>
+  <td align="left">isPingPacket()</td>
+  <td align="left">doRepaint()</td>
+  <td align="left">AckCounter</td>
+</tr>
+<tr>
+  <td align="left"><strong>CONNECTED</strong></td>
+  <td align="left">inbox-packet</td>
+  <td align="left">isDataPacket()</td>
+  <td align="left">doRememberTime()</td>
+  <td align="left">&nbsp;</td>
+</tr>
+<tr>
+  <td align="left"><strong>PING</strong></td>
+  <td align="left">file-sent</td>
+  <td align="left">&nbsp;</td>
+  <td align="left">&nbsp;</td>
+  <td align="left">&nbsp;</td>
+</tr>
+<tr>
+  <td align="left"><strong>ACK?</strong></td>
+  <td align="left">sent-done</td>
+  <td align="left"></td>
+  <td align="left"></td>
+  <td align="left">&nbsp;</td>
+</tr>
+<tr>
+  <td align="left"></td>
+  <td align="left">sent-failed</td>
+  <td align="left"></td>
+  <td align="left"></td>
+  <td align="left"></td>
+</tr>
+<tr>
+  <td align="left"></td>
+  <td align="left">timer-20sec</td>
+  <td align="left"></td>
+  <td align="left"></td>
+  <td align="left"></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<p>The automat <code>contact_status()</code> works as follows:</p>
+
+<ul>
+<li>at the moment of creation it starts in the <strong>OFFLINE</strong> state</li>
+<li>when receiving the incoming packet from the target node it turns to <strong>CONNECTED</strong> state and the current moment of time is "registered" to keep track the duration of node connection</li>
+<li>if the special service packet was sent from the program to check the current status of connection and condition <code>isPingPacket()</code> triggered, the automat will pass to the <strong>PING</strong> state and wait for response from the remote machine</li>
+<li>in case of request time out or packet sending to the target node was failed, the state machine will turn to <strong>OFFLINE</strong> state</li>
+</ul>
+
+<p>Proper operation of the automat helps constantly tracking the current status of connection with the given node – you just need to check the value written in the <code>state</code> variable, which is the <code>ContactStatus</code> class member. 
+For instance <code>self.state == 'CONNECTED'</code> means that user is on-line at the current moment.</p>
+
+<h2 id="the-core">The Core</h2>
+
+<p>All this logic is concentrated in the kernel of the finite state machine in the method <a href="https://github.com/bitdust-io/public/blob/fd536b01983f419030fa070b95d18c11da502b46/p2p/contact_status.py#L330">A(event, arg)</a>
+of <code>ContactStatus</code> class:</p>
+
+<pre><code> def A(self, event, arg):
+    #---CONNECTED---
+    if self.state == 'CONNECTED':
+        if event == 'sent-failed' and self.Fails &gt;= 3 and self.isDataPacket(arg):
+            self.state = 'OFFLINE'
+            self.doRepaint(arg)
+        elif event == 'sent-failed' and self.isDataPacket(arg) and self.Fails &lt; 3:
+            self.Fails += 1
+    #---OFFLINE---
+    elif self.state == 'OFFLINE':
+        if event == 'outbox-packet' and self.isPingPacket(arg):
+            self.state = 'PING'
+            self.AckCounter = 0
+            self.doRepaint(arg)
+        elif event == 'inbox-packet':
+            self.state = 'CONNECTED'
+            self.Fails = 0
+            self.doRememberTime(arg)
+            self.doRepaint(arg)
+    #---PING---
+    elif self.state == 'PING':
+        if event == 'sent-done':
+            self.state = 'ACK?'
+            self.AckCounter = 0
+        elif event == 'inbox-packet':
+            self.state = 'CONNECTED'
+            self.Fails = 0
+            self.doRememberTime(arg)
+            self.doRepaint(arg)
+        elif event == 'file-sent':
+            self.AckCounter += 1
+        elif event == 'sent-failed' and self.AckCounter &gt; 1:
+            self.AckCounter -= 1
+        elif event == 'timer-20sec' or (event == 'sent-failed' and self.AckCounter == 1):
+            self.state = 'OFFLINE'
+            self.doRepaint(arg)
+    #---ACK?---
+    elif self.state == 'ACK?':
+        if event == 'inbox-packet':
+            self.state = 'CONNECTED'
+            self.Fails = 0
+            self.doRememberTime(arg)
+            self.doRepaint(arg)
+        elif event == 'timer-20sec':
+            self.state = 'OFFLINE'
+        elif event == 'outbox-packet' and self.isPingPacket(arg):
+            self.state = 'PING'
+            self.AckCounter = 0
+            self.doRepaint(arg)
+    return None
+</code></pre>
+
+<p>This code is automatically generated from transition graph vector diagram of the finite state machine and you do not need to code all that lines and so have no chance to made the mistake.
+The source files of the project can be automatically updated after any modifications applied in the finite state machine, how it works is described below. </p>
+
+<p>Within the concept of the open project documentation the transition graphs are used not only at the stage of design and development, but also in documentation and product description plan. This helps eliminate errors in programming logic – with this process automation the working code becomes absolutely identical to the visual framework of finite automat. Also it helps all sides to understand each other more clearly: customers, developers, testers, end-users.</p>
+
+<p>This allows to split software development process in at least two paths and significantly optimizes the whole working process on the project: </p>
+
+<ul>
+<li>behavior design of the program</li>
+<li>functional development and tests</li>
+</ul>
+
+<h2 id="relation-to-the-code">Relation to the Code</h2>
+
+<p>Let's see on example below, the given method
+<a href="https://github.com/bitdust-io/public/blob/fd536b01983f419030fa070b95d18c11da502b46/p2p/contact_status.py#L395">doRememberTime()</a>
+of <code>ContactStatus</code> class makes a record of the current time moment – this is exactly the part of the functional, which is managed by the finite automat:</p>
+
+<pre><code>def doRememberTime(self, arg):
+    self.time_connected = time.time()
+</code></pre>
+
+<p>This is very simple code, but it makes a useful action and calls an external code - actions and conditions become separated from the state machine and target logic.</p>
+
+<p>For every new network connection a new single instance of this automat will be created, method
+<a href="https://github.com/bitdust-io/public/blob/fd536b01983f419030fa070b95d18c11da502b46/p2p/contact_status.py#L292">A(idurl, event, arg)</a>
+creates new instances and refers to existing instances of the automat.</p>
+
+<p>External reference to the automat is carried out through <a href="https://github.com/bitdust-io/public/blob/fd536b01983f419030fa070b95d18c11da502b46/automats/automat.py#L425">automat(event, args)</a> 
+method of <code>Automat</code> class, for example after receiving new incoming packet from the target node an event <code>inbox-packet</code> will be passed to the state machine:</p>
+
+<pre><code>def Inbox(newpacket, info, status, message):
+    A(newpacket.OwnerID, 'inbox-packet', (newpacket, info, status, message))
+    ...
+</code></pre>
+
+<p>In other words we can divide useful logic from the rest of the code within the development process and also structure the key interactions throughout the software. This is depends from developer and his understanding of the whole process. </p>
+
+<p>In fact, there is no need to create the machines only for the machines themselves. In my understanding, the purpose of automata-based programming is to highlight the key abstractions and processes described in the program and make their logic more clearly understandable. </p>
+
+<p>In the future, you can always go back and instantly remember how this piece of code works and very easily change the program behaviour. The majority of the Bitdust code is implemented a traditional programming methods and machines are used only for the construction of the top level classes. As usual, the best product is obtained when the balance was struck.</p>
+
+<p>This approach reduces the likelihood of logic errors in the program to zero, while troubleshooting in most cases is the most complex and high-runner process at the stage of development and tests. As a rule the functional of software is divided into multiple methods, which can be programmed and tweaked separately or in a specially created test environment with the use of different automatic test and tweak procedures. </p>
+
+<h2 id="transition-graphs">Transition Graphs</h2>
+
+<p>Transition graph is a graphical representation of the multiple conditions of the automat and functions of transitions between them. In the visual framework of the finite state machine you can see the logic of algorithm and all the possible process stages, outcomes and interconnections. States and transitions form the program behavioral model of the control over the specific unit or process.</p>
+
+<p>State is the key element of the finite automat, it divides the stages which the algorithm does. While the program runs the automat does transition between its states. It can get in the same state several times or on the opposite not get in any predefined state.</p>
+
+<p>By transition from one state to another the testing of the condition, which is assigned to given transition, is preliminary conducted. The condition can be written as a statement in Python and can consist of function invocations, access to variables or status inspection of other automats.</p>
+
+<p>If the condition works, the transition to other state is conducted and the actions assigned for this transition are taken. These may include functions, statements in Python or other finite state machines invocations.</p>
+
+<p>All interactions of the finite state machine are done through events accepting and communication. They are transferred directly into the automat kernel and launch inspection of the transition between states.</p>
+
+<p>Events, conditions and actions form the finite statement for the transition function from one state to another. Below are given the examples of elements which can be used for the text record of these statements on the transition graph:</p>
+
+<table>
+<thead>
+<tr>
+  <th align="left">element</th>
+  <th align="left">example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td align="left">event</td>
+  <td align="left">inbox-packet</td>
+</tr>
+<tr>
+  <td align="left"></td>
+  <td align="left">contact_status.state is PING</td>
+</tr>
+<tr>
+  <td align="left"></td>
+  <td align="left">timer-30sec</td>
+</tr>
+<tr>
+  <td align="left">condition</td>
+  <td align="left">isDataPacket()</td>
+</tr>
+<tr>
+  <td align="left"></td>
+  <td align="left">AckCounter>1</td>
+</tr>
+<tr>
+  <td align="left"></td>
+  <td align="left">sent-failed and AckCounter==1</td>
+</tr>
+<tr>
+  <td align="left">action</td>
+  <td align="left">doRepaint()</td>
+</tr>
+<tr>
+  <td align="left"></td>
+  <td align="left">AckCounter=0</td>
+</tr>
+<tr>
+  <td align="left"></td>
+  <td align="left">Attempts+=1</td>
+</tr>
+<tr>
+  <td align="left"></td>
+  <td align="left">contact_status(init)</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="visio2python">visio2python</h2>
+
+<p>Microsoft Visio 2007 is used for creation of the vector schemes of transition graphs. Transition graphs of finite state machines, which control the behavior of BitDust client software, reside in *.vsd files.</p>
+
+<p>A small tool called <a href="https://github.com/vesellov/visio2python/blob/master/README.html">visio2python</a> was developed, it optimizes and facilitates the development of programs, which use the finite state machines. 
+It can translate the transition graphs, created in Microsoft Visio into the code in Python or JavaScript languages.</p>
+
+<p><a href="https://github.com/vesellov/visio2python">https://github.com/vesellov/visio2python</a></p>
+
+<h2 id="bitdust-automatas-list">BitDust automatas list</h2>
+
+<p>Below is a list of state machines currently introduced in BitDust software.
+You can click on every item in the list to look at transition graph of the state.</p>
+
+<ul>
+<li><a href="automat_backup.html">backup()</a></li>
+<li><a href="automat_backup_db_keeper.html">backup_db_keeper()</a></li>
+<li><a href="automat_backup_monitor.html">backup_monitor()</a></li>
+<li><a href="automat_backup_rebuilder.html">backup_rebuilder()</a></li>
+<li><a href="automat_contact_status.html">contact_status()</a></li>
+<li><a href="automat_customers_rejector.html">customers_rejector()</a></li>
+<li><a href="automat_data_sender.html">data_sender()</a></li>
+<li><a href="automat_fire_hire.html">fire_hire()</a></li>
+<li><a href="automat_id_registrator.html">id_registrator()</a></li>
+<li><a href="automat_id_restorer.html">id_restorer()</a></li>
+<li><a href="automat_id_server.html">id_server()</a></li>
+<li><a href="automat_initializer.html">initializer()</a></li>
+<li><a href="automat_install_wizard.html">install_wizard()</a></li>
+<li><a href="automat_installer.html">installer()</a></li>
+<li><a href="automat_list_files_orator.html">list_files_orator()</a></li>
+<li><a href="automat_local_service.html">local_service()</a></li>
+<li><a href="automat_network_connector.html">network_connector()</a></li>
+<li><a href="automat_network_transport.html">network_transport()</a></li>
+<li><a href="automat_nickname_holder.html">nickname_holder()</a></li>
+<li><a href="automat_nickname_observer.html">nickname_observer()</a></li>
+<li><a href="automat_p2p_connector.html">p2p_connector()</a></li>
+<li><a href="automat_packet_in.html">packet_in()</a></li>
+<li><a href="automat_packet_out.html">packet_out()</a></li>
+<li><a href="automat_raid_worker.html">raid_worker()</a></li>
+<li><a href="automat_restore.html">restore()</a></li>
+<li><a href="automat_shutdowner.html">shutdowner()</a></li>
+<li><a href="automat_stun_client.html">stun_client()</a></li>
+<li><a href="automat_stun_server.html">stun_server()</a></li>
+<li><a href="automat_supplier_connector.html">supplier_connector()</a></li>
+<li><a href="automat_supplier_finder.html">supplier_finder()</a></li>
+<li><a href="automat_tcp_connection.html">tcp_connection()</a></li>
+<li><a href="automat_udp_connector.html">udp_connector()</a></li>
+<li><a href="automat_udp_node.html">udp_node()</a></li>
+<li><a href="automat_udp_session.html">udp_session()</a></li>
+<li><a href="automat_udp_stream.html">udp_stream()</a></li>
+</ul>
+
+<h2 id="microservices-tree">Microservices Tree</h2>
+
+<p>BitDust software was developed using <a href="https://en.wikipedia.org/wiki/Microservices">service-oriented architecture</a> and bellow you can see a dependencies tree of all <a href="services.html">network services</a> currently exist in the software.</p>
+
+<p>Most network services were implemented using finite state machines, on the picture you can see corresponding automatas as a blue labels. </p>
+
+<div class=automatpng>
+
+<p><a href="services/bitdust_services_tree.pdf"><img src="services/bitdust_services_tree.png" alt="BitDust Microservices Tree" /></a></p>
+
+</div>
+
+<p><a href="services/bitdust_services_tree.vsd">bitdust<em>services</em>tree.vsd</a></p>
+
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = "http://bitdust.io/automats.html";   
+        this.page.identifier = "./wiki/automats"
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = '//bitdust.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+                            </div>
+
+
+                        </div><!-- .docs-content -->
+                    </div><!-- .row -->
+                </div><!-- .card-body -->
+            </div><!-- .ui-card -->
+
+        </div><!-- .container -->
+    </div><!-- #ui-api-docs -->
+
+    <!-- Footer -->
+    <footer class="ui-footer bg-gray">
+        <div class="container pt-6 pb-6">
+            <div class="row">
+                <div class="col-sm-8 footer-about footer-col center-on-sm">
+                    <img src="/assets/img/logo/bitdust-logo-white.svg"
+                         alt="BitDust" />
+                    <p class="mt-1">
+                        We are currently with a small team primarily focusing on developing our product and
+                        unfortunately don’t have the resources to support a community on different channels. For now you
+                        can join the discussion on Telegram or if you have a business related question you can email us.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 footer-col center-on-sm">
+                    <form autocomplete="on" id="sign-up-form" name="sign-up-form">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <!-- Email Input -->
+                                <input autocomplete="email" class="input form-control" data-validation="required"
+                                       data-validation-error-msg="Please enter your email" name="email"
+                                       placeholder="Email">
+                                <div class="input-group-append">
+                                    <!-- Submit Button -->
+                                    <button class="btn ui-gradient-peach">Subscribe <span class="fa fa-send"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div>
+                        <a class="btn ui-gradient-purple btn-circle shadow-md"
+                           href="https://t.me/bitdust" target="_blank">
+                            <span class="fa fa-telegram"></span>
+                        </a>
+                        <a class="btn ui-gradient-blue btn-circle shadow-md"
+                           href="https://github.com/bitdust-io/" target="_blank">
+                            <span class="fa fa-github"></span>
+                        </a>
+                        <a class="btn ui-gradient-green btn-circle shadow-md"
+                           href="https://twitter.com/bitdust_io" target="_blank">
+                            <span class="fa fa-twitter"></span>
+                        </a>
+                    </div>
+                </div>
+            </div><!-- .row -->
+        </div><!-- .container -->
+
+        <!-- Footer Copyright -->
+        <div class="footer-copyright bg-dark-gray">
+            <div class="container">
+                <div class="row">
+                    <!-- Copyright -->
+                    <div class="col-sm-6 center-on-sm">
+                        <p>
+                            &copy; 2019 <a href="http://bitdust.io" target="_blank" title="BitDust">BitDust</a>
+                        </p>
+                    </div>
+                    <!-- Social Icons -->
+                    <div class="col-sm-6 text-right">
+                        <ul class="footer-nav">
+                            <li>
+                                <a href="https://bitdust.io/wiki">
+                                    Wiki
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/bitdust-io/">
+                                    Github
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- .container -->
+        </div><!-- .footer-copyright -->
+
+    </footer><!-- .ui-footer -->
+
+</div><!-- .main -->
+
+
+<!-- Scripts -->
+<script src="/assets/js/libs/jquery/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/libs/slider-pro/jquery.sliderPro.min.js"></script>
+<script src="/assets/js/libs/owl.carousel/owl.carousel.min.js"></script>
+
+<script src="/assets/js/applify/ui-map.js"></script>
+<script src="/assets/js/libs/form-validator/form-validator.min.js"></script>
+<script src="/assets/js/libs/bootstrap.js"></script>
+<script src="/assets/js/applify/build/applify.js"></script>
+
+
+<script>
+
+    $('a[href*=\\#]').on('click', function (event) {
+        if ($(this.hash).offset().top) {
+            event.preventDefault();
+            $('html,body').animate({scrollTop: $(this.hash).offset().top - 100}, 500);
+            window.location.hash = this.hash;
+        }
+    });
+
+
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function () {
+            try {
+                w.yaCounter28171152 = new Ya.Metrika({
+                    id: 28171152,
+                    webvisor: true, clickmap: true, trackLinks: true, accurateTrackBounce: true
+                });
+            } catch (e) {
+            }
+        });
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () {
+                n.parentNode.insertBefore(s, n);
+            };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = (d.location.protocol == "https:" ? "https:" : "https:") + "//mc.yandex.ru/metrika/watch.js";
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else {
+            f();
+        }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript>
+    <div><img src="//mc.yandex.ru/watch/28171152" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109832032-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-109832032-1');
+</script>
+
+
+</body>
+</html>
