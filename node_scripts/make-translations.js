@@ -29,15 +29,19 @@ changeJs().then(data => {
 
     const $ = cheerio.load(data);
     let html = $('[data-content]');
+    let tags = {};
 
     for (let key in html) {
         if (html[key].type === 'tag') {
-            console.log(translations.en[html[key].attribs['data-content']]);
+            tags[html[key].attribs['data-content']] = html[key].children[0].data.replace(/^\s* |\\n+(\s*)/gm, '');
             $(html[key]).text(translations.en[html[key].attribs['data-content']]);
         }
     }
 
-    saveFile($.html());
+
+    saveFile(JSON.stringify(tags), './node_scripts/all.json');
+    saveFile($.html(), 'test.html');
+
     removeTempTranslations();
 });
 
@@ -49,8 +53,8 @@ function removeTempTranslations() {
     }
 }
 
-function saveFile(file) {
-    fs.writeFile('./test.html', file, function (err) {
+function saveFile(file, name) {
+    fs.writeFile(name, file, function (err) {
         if (err) throw err;
         console.log('Index generated');
     });
