@@ -33,7 +33,7 @@
     <div class="container">
 
         <!-- Navbar Logo -->
-        <a class="ui-variable-logo navbar-brand" href="index.html" title="BitDust">
+        <a class="ui-variable-logo navbar-brand" href="/wiki" title="BitDust">
             <!-- Default Logo -->
             <img class="logo-default" src="/assets/img/logo/bitdust-logo-white.svg"
                  alt="BitDust">
@@ -42,9 +42,43 @@
                  alt="BitDust">
         </a><!-- .navbar-brand -->
 
+        <!-- Navbar Navigation -->
+        <div class="ui-navigation navbar-center">
+            <ul class="nav navbar-nav">
+                <!-- Nav Item -->
+                <li>
+                    <a href="/index.html#product">Product</a>
+                </li>
+                <!-- Nav Item -->
+                <li>
+                    <a href="/index.html#problem">Problem</a>
+                </li>
+                <!-- Nav Item -->
+                <li>
+                    <a href="/index.html#solution">Solution</a>
+                </li>
+                <!-- Nav Item -->
+                <li>
+                    <a href="/index.html#ecosystem">Ecosystem</a>
+                </li>
+                <!-- Nav Item -->
+                <li>
+                    <a href="/index.html#roadmap">Roadmap</a>
+                </li>
+                <!-- Nav Item -->
+                <li>
+                    <a href="/index.html#team">Team</a>
+                </li>
+                <!-- Nav Item -->
+                <li class="active">
+                    <a href="/wiki">Wiki</a>
+                </li>
+
+            </ul><!--.navbar-nav -->
+        </div><!--.ui-navigation -->
 
         <!-- Navbar Button -->
-        <a href="/#product"
+        <a href="/index.html#product"
            class="btn btn-sm ui-gradient-peach pull-right">
             Get Started
         </a>
@@ -190,22 +224,6 @@ for agreeing on other methods of supporting BitDust project.</p>
                 </div>
 
                 <div class="col-md-4 col-sm-6 footer-col center-on-sm">
-                    <form autocomplete="on" id="sign-up-form" name="sign-up-form">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <!-- Email Input -->
-                                <input autocomplete="email" class="input form-control" data-validation="required"
-                                       data-validation-error-msg="Please enter your email" name="email"
-                                       placeholder="Email">
-                                <div class="input-group-append">
-                                    <!-- Submit Button -->
-                                    <button class="btn ui-gradient-peach">Subscribe <span class="fa fa-send"></span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-
                     <div>
                         <a class="btn ui-gradient-purple btn-circle shadow-md"
                            href="https://t.me/bitdust" target="_blank">
@@ -270,47 +288,18 @@ for agreeing on other methods of supporting BitDust project.</p>
 
 
 <script>
-
-    $('a[href*=\\#]').on('click', function (event) {
-        if ($(this.hash).offset().top) {
-            event.preventDefault();
-            $('html,body').animate({scrollTop: $(this.hash).offset().top - 100}, 500);
-            window.location.hash = this.hash;
-        }
-    });
-
-
-    (function (d, w, c) {
-        (w[c] = w[c] || []).push(function () {
-            try {
-                w.yaCounter28171152 = new Ya.Metrika({
-                    id: 28171152,
-                    webvisor: true, clickmap: true, trackLinks: true, accurateTrackBounce: true
-                });
-            } catch (e) {
-            }
-        });
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function () {
-                n.parentNode.insertBefore(s, n);
-            };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = (d.location.protocol == "https:" ? "https:" : "https:") + "//mc.yandex.ru/metrika/watch.js";
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else {
-            f();
-        }
-    })(document, window, "yandex_metrika_callbacks");
+    // $('a[href*=\\#]').on('click', function (event) {
+    //     if ($(this.hash).offset() && $(this.hash).offset().top) {
+    //         event.preventDefault();
+    //         $('html,body').animate({scrollTop: $(this.hash).offset().top - 100}, 500);
+    //         window.location.hash = this.hash;
+    //     }
+    //     debugger;
+    // });
 </script>
-<noscript>
-    <div><img src="//mc.yandex.ru/watch/28171152" style="position:absolute; left:-9999px;" alt="" /></div>
-</noscript>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109832032-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-25753370-1"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -319,9 +308,9 @@ for agreeing on other methods of supporting BitDust project.</p>
     }
 
     gtag('js', new Date());
+
     gtag('config', 'UA-109832032-1');
 </script>
-
 
 </body>
 </html>
