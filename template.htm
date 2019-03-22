@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title data-content="pageTitle">BitDust - Decentralized on-line storage network</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="%(basepath)s/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="%(basepath)s/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="%(basepath)s/favicon-16x16.png">
-    <link rel="manifest" href="%(basepath)s/site.webmanifest">
-    <link rel="mask-icon" href="%(basepath)s/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="%(basepath)sapple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="%(basepath)sfavicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="%(basepath)sfavicon-16x16.png">
+    <link rel="manifest" href="%(basepath)ssite.webmanifest">
+    <link rel="mask-icon" href="%(basepath)ssafari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
@@ -18,12 +18,14 @@
     <meta property="og:title" content="BitDust - decentralized on-line storage network">
     <meta property="og:description"
           content="BitDust is distributed secure anonymous on-line storage, where only the owner has access and absolute control over its data.">
-    <meta property="og:url" content="https://bitdust.io">
-    <meta property="og:image" content="https://bitdust.io//assets/img/og/og-image.jpg">
+    <meta property="og:url" content="%(site_url)s">
+    <meta property="og:image" content="%(basepath)sassets/img/og/og-image.jpg">
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
-    <link rel="stylesheet" href="%(basepath)s/assets/css/applify.min.css" />
+
+    <link rel="stylesheet" href="%(basepath)sassets/css/applify.min.css" />
+    <link rel="stylesheet" href="%(basepath)scss/automat.css" type="text/css">
 </head>
 <body data-fade_in="on-load">
 
@@ -33,10 +35,10 @@
         <!-- Navbar Logo -->
         <a class="ui-variable-logo navbar-brand" href="index.html" title="BitDust">
             <!-- Default Logo -->
-            <img class="logo-default" src="%(basepath)s/assets/img/logo/bitdust-logo-white.svg"
+            <img class="logo-default" src="%(basepath)sassets/img/logo/bitdust-logo-white.svg"
                  alt="BitDust">
             <!-- Transparent Logo -->
-            <img class="logo-transparent" src="%(basepath)s/assets/img/logo/bitdust-logo-white.svg"
+            <img class="logo-transparent" src="%(basepath)sassets/img/logo/bitdust-logo-white.svg"
                  alt="BitDust">
         </a><!-- .navbar-brand -->
 
@@ -68,39 +70,39 @@
                                 Beginning
                             </h6>
                             <ul>
-                                <li><a href="%(basepath)sintro.html">Introduction</a></li>
-                                <li><a href="%(basepath)sconcept.html">Concept</a></li>
-                                <li><a href="%(basepath)sdefinitions.html">Definitions</a></li>
-                                <li><a href="%(basepath)sphilosophy.html">Philosophy</a></li>
-                                <li><a href="%(basepath)sprinciple.html">How Does It Work?</a></li>
-                                <li><a href="%(basepath)sinstall.html">Installation</a></li>
-                                <li><a href="%(basepath)sseed_node.html">Seed node</a></li>
-                                <li><a href="%(basepath)scommands.html">Commands</a></li>
-                                <li><a href="%(basepath)ssettings.html">Settings</a></li>
-                                <li><a href="%(basepath)sglossary.html">Glossary</a></li>
+                                <li><a href="%(wikipath)sintro.html">Introduction</a></li>
+                                <li><a href="%(wikipath)sconcept.html">Concept</a></li>
+                                <li><a href="%(wikipath)sdefinitions.html">Definitions</a></li>
+                                <li><a href="%(wikipath)sphilosophy.html">Philosophy</a></li>
+                                <li><a href="%(wikipath)sprinciple.html">How Does It Work?</a></li>
+                                <li><a href="%(wikipath)sinstall.html">Installation</a></li>
+                                <li><a href="%(wikipath)sseed_node.html">Seed node</a></li>
+                                <li><a href="%(wikipath)scommands.html">Commands</a></li>
+                                <li><a href="%(wikipath)ssettings.html">Settings</a></li>
+                                <li><a href="%(wikipath)sglossary.html">Glossary</a></li>
                             </ul>
                             <h6 class="heading">
                                 Principles
                             </h6>
                             <ul>
-                                <li><a href="%(basepath)sidentities.html">User Identification</a></li>
-                                <li><a href="%(basepath)sstorage.html">Distributed Storage</a></li>
-                                <li><a href="%(basepath)ssecurity.html">Data Security</a></li>
-                                <li><a href="%(basepath)ssharing.html">File Sharing</a></li>
-                                <li><a href="%(basepath)srebuilding.html">Automatic Rebuilding</a></li>
-                                <li><a href="%(basepath)sdht.html">Distributed Hash-Table</a></li>
-                                <li><a href="%(basepath)sservices.html">Network services</a></li>
-                                <li><a href="%(basepath)stransports.html">Transport protocols</a></li>
-                                <li><a href="%(basepath)scrypto_contracts.html">Crypto-contracts</a></li>
+                                <li><a href="%(wikipath)sidentities.html">User Identification</a></li>
+                                <li><a href="%(wikipath)sstorage.html">Distributed Storage</a></li>
+                                <li><a href="%(wikipath)ssecurity.html">Data Security</a></li>
+                                <li><a href="%(wikipath)ssharing.html">File Sharing</a></li>
+                                <li><a href="%(wikipath)srebuilding.html">Automatic Rebuilding</a></li>
+                                <li><a href="%(wikipath)sdht.html">Distributed Hash-Table</a></li>
+                                <li><a href="%(wikipath)sservices.html">Network services</a></li>
+                                <li><a href="%(wikipath)stransports.html">Transport protocols</a></li>
+                                <li><a href="%(wikipath)scrypto_contracts.html">Crypto-contracts</a></li>
                             </ul>
                             <h6 class="heading">Development</h6>
                             <ul>
-                                <li><a href="%(basepath)sroadmap.html">Roadmap</a></li>
-                                <li><a href="%(basepath)sautomats.html">Finite State Machines</a></li>
-                                <li><a href="%(basepath)stechnologies.html">Technologies</a></li>
-                                <li><a href="%(basepath)sapi.html">API Interface</a></li>
-                                <li><a href="%(basepath)ssoftware_releases.html">Software releases</a></li>
-                                <li><a href="%(basepath)srespect.html">Contributors and Supporters</a></li>
+                                <li><a href="%(wikipath)sroadmap.html">Roadmap</a></li>
+                                <li><a href="%(wikipath)sautomats.html">Finite State Machines</a></li>
+                                <li><a href="%(wikipath)stechnologies.html">Technologies</a></li>
+                                <li><a href="%(wikipath)sapi.html">API Interface</a></li>
+                                <li><a href="%(wikipath)ssoftware_releases.html">Software releases</a></li>
+                                <li><a href="%(wikipath)srespect.html">Contributors and Supporters</a></li>
                             </ul>
                             <h6 class="heading">Repositories</h6>
                             <ul>
@@ -156,7 +158,7 @@
         <div class="container pt-6 pb-6">
             <div class="row">
                 <div class="col-sm-8 footer-about footer-col center-on-sm">
-                    <img src="%(basepath)s/assets/img/logo/bitdust-logo-white.svg"
+                    <img src="%(basepath)sassets/img/logo/bitdust-logo-white.svg"
                          alt="BitDust" />
                     <p class="mt-1">
                         We are currently with a small team primarily focusing on developing our product and
@@ -207,14 +209,14 @@
                     <!-- Copyright -->
                     <div class="col-sm-6 center-on-sm">
                         <p>
-                            &copy; 2019 <a href="http://bitdust.io" target="_blank" title="BitDust">BitDust</a>
+                            &copy; 2019 <a href="%(site_url)s" target="_blank" title="BitDust">BitDust</a>
                         </p>
                     </div>
                     <!-- Social Icons -->
                     <div class="col-sm-6 text-right">
                         <ul class="footer-nav">
                             <li>
-                                <a href="https://bitdust.io/wiki">
+                                <a href="%(site_url)s/wiki">
                                     Wiki
                                 </a>
                             </li>
@@ -235,14 +237,14 @@
 
 
 <!-- Scripts -->
-<script src="%(basepath)s/assets/js/libs/jquery/jquery-3.2.1.min.js"></script>
-<script src="%(basepath)s/assets/js/libs/slider-pro/jquery.sliderPro.min.js"></script>
-<script src="%(basepath)s/assets/js/libs/owl.carousel/owl.carousel.min.js"></script>
+<script src="%(basepath)sassets/js/libs/jquery/jquery-3.2.1.min.js"></script>
+<script src="%(basepath)sassets/js/libs/slider-pro/jquery.sliderPro.min.js"></script>
+<script src="%(basepath)sassets/js/libs/owl.carousel/owl.carousel.min.js"></script>
 
-<script src="%(basepath)s/assets/js/applify/ui-map.js"></script>
-<script src="%(basepath)s/assets/js/libs/form-validator/form-validator.min.js"></script>
-<script src="%(basepath)s/assets/js/libs/bootstrap.js"></script>
-<script src="%(basepath)s/assets/js/applify/build/applify.js"></script>
+<script src="%(basepath)sassets/js/applify/ui-map.js"></script>
+<script src="%(basepath)sassets/js/libs/form-validator/form-validator.min.js"></script>
+<script src="%(basepath)sassets/js/libs/bootstrap.js"></script>
+<script src="%(basepath)sassets/js/applify/build/applify.js"></script>
 
 
 <script>
