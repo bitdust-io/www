@@ -1,20 +1,20 @@
 import os
 import sys
 import re
-md_base = ''
 # gitlab_base = 'http://gitlab.bitdust.io/devel/bitdust/blob/master/'
+md_base = ''
+site_url = "https://bitdust.io"
+wikipath = '/wiki/'
 template = open('template.htm').read()
 keywords = open('keywords.txt').read().replace('\n', ', ')
 src = sys.argv[1]
 dest = sys.argv[2]
 basepath = '/'
-wikipath = '/wiki/'
 if len(sys.argv) > 3:
     basepath = sys.argv[3]
 if not os.path.isdir(os.path.dirname(dest)):
     print "create", os.path.dirname(dest)
     os.makedirs(os.path.dirname(dest))
-site_url = "https://bitdust.io"
 sbody = open(src).read()
 sbody = re.sub('a href="(.+?)\.md"', 'a href="%s\g<1>.html"' % md_base, sbody)
 sbody = re.sub('a href="(.+?)\.md\#(.+?)"', 'a href="%s\g<1>.html#\g<2>"' % md_base, sbody)

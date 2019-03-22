@@ -33,7 +33,7 @@
     <div class="container">
 
         <!-- Navbar Logo -->
-        <a class="ui-variable-logo navbar-brand" href="/wiki" title="BitDust">
+        <a class="ui-variable-logo navbar-brand" href="%(site_url)s" title="BitDust">
             <!-- Default Logo -->
             <img class="logo-default" src="%(basepath)sassets/img/logo/bitdust-logo-white.svg"
                  alt="BitDust">
@@ -47,31 +47,31 @@
             <ul class="nav navbar-nav">
                 <!-- Nav Item -->
                 <li>
-                    <a href="/index.html#product">Product</a>
+                    <a href="%(basepath)sindex.html#product">Product</a>
                 </li>
                 <!-- Nav Item -->
                 <li>
-                    <a href="/index.html#problem">Problem</a>
+                    <a href="%(basepath)sindex.html#problem">Problem</a>
                 </li>
                 <!-- Nav Item -->
                 <li>
-                    <a href="/index.html#solution">Solution</a>
+                    <a href="%(basepath)sindex.html#solution">Solution</a>
                 </li>
                 <!-- Nav Item -->
                 <li>
-                    <a href="/index.html#ecosystem">Ecosystem</a>
+                    <a href="%(basepath)sindex.html#ecosystem">Ecosystem</a>
                 </li>
                 <!-- Nav Item -->
                 <li>
-                    <a href="/index.html#roadmap">Roadmap</a>
+                    <a href="%(basepath)sindex.html#roadmap">Roadmap</a>
                 </li>
                 <!-- Nav Item -->
                 <li>
-                    <a href="/index.html#team">Team</a>
+                    <a href="%(basepath)sindex.html#team">Team</a>
                 </li>
                 <!-- Nav Item -->
                 <li class="active">
-                    <a href="/wiki">Wiki</a>
+                    <a href="%(wikipath)s">Wiki</a>
                 </li>
 
             </ul><!--.navbar-nav -->
@@ -234,7 +234,7 @@
                     <div class="col-sm-6 text-right">
                         <ul class="footer-nav">
                             <li>
-                                <a href="%(site_url)s/wiki">
+                                <a href="%(site_url)s%(wikipath)s">
                                     Wiki
                                 </a>
                             </li>
@@ -264,17 +264,6 @@
 <script src="%(basepath)sassets/js/libs/bootstrap.js"></script>
 <script src="%(basepath)sassets/js/applify/build/applify.js"></script>
 
-
-<script>
-    // $('a[href*=\\#]').on('click', function (event) {
-    //     if ($(this.hash).offset() && $(this.hash).offset().top) {
-    //         event.preventDefault();
-    //         $('html,body').animate({scrollTop: $(this.hash).offset().top - 100}, 500);
-    //         window.location.hash = this.hash;
-    //     }
-    //     debugger;
-    // });
-</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-25753370-1"></script>
