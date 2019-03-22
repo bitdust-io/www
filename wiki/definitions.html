@@ -31,7 +31,7 @@
     <div class="container">
 
         <!-- Navbar Logo -->
-        <a class="ui-variable-logo navbar-brand" href="index.html" title="BitDust">
+        <a class="ui-variable-logo navbar-brand" href="/wiki" title="BitDust">
             <!-- Default Logo -->
             <img class="logo-default" src="/assets/img/logo/bitdust-logo-white.svg"
                  alt="BitDust">
@@ -40,9 +40,43 @@
                  alt="BitDust">
         </a><!-- .navbar-brand -->
 
+        <!-- Navbar Navigation -->
+        <div class="ui-navigation navbar-center">
+            <ul class="nav navbar-nav">
+                <!-- Nav Item -->
+                <li>
+                    <a href="/index.html#product">Product</a>
+                </li>
+                <!-- Nav Item -->
+                <li>
+                    <a href="/index.html#problem">Problem</a>
+                </li>
+                <!-- Nav Item -->
+                <li>
+                    <a href="/index.html#solution">Solution</a>
+                </li>
+                <!-- Nav Item -->
+                <li>
+                    <a href="/index.html#ecosystem">Ecosystem</a>
+                </li>
+                <!-- Nav Item -->
+                <li>
+                    <a href="/index.html#roadmap">Roadmap</a>
+                </li>
+                <!-- Nav Item -->
+                <li>
+                    <a href="/index.html#team">Team</a>
+                </li>
+                <!-- Nav Item -->
+                <li class="active">
+                    <a href="/wiki">Wiki</a>
+                </li>
+
+            </ul><!--.navbar-nav -->
+        </div><!--.ui-navigation -->
 
         <!-- Navbar Button -->
-        <a href="/#product"
+        <a href="/index.html#product"
            class="btn btn-sm ui-gradient-peach pull-right">
             Get Started
         </a>
@@ -310,13 +344,14 @@ information flows in the network.</p>
 
 
 <script>
-    $('a[href*=\\#]').on('click', function (event) {
-        if ($(this.hash).offset().top) {
-            event.preventDefault();
-            $('html,body').animate({scrollTop: $(this.hash).offset().top - 100}, 500);
-            window.location.hash = this.hash;
-        }
-    });
+    // $('a[href*=\\#]').on('click', function (event) {
+    //     if ($(this.hash).offset() && $(this.hash).offset().top) {
+    //         event.preventDefault();
+    //         $('html,body').animate({scrollTop: $(this.hash).offset().top - 100}, 500);
+    //         window.location.hash = this.hash;
+    //     }
+    //     debugger;
+    // });
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
