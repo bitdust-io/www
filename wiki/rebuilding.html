@@ -456,14 +456,13 @@ Currently implemented a very basic scenario when only one active upload/download
 
 
 <script>
-    // $('a[href*=\\#]').on('click', function (event) {
-    //     if ($(this.hash).offset() && $(this.hash).offset().top) {
-    //         event.preventDefault();
-    //         $('html,body').animate({scrollTop: $(this.hash).offset().top - 100}, 500);
-    //         window.location.hash = this.hash;
-    //     }
-    //     debugger;
-    // });
+    $('a[href*=\\#]').on('click', function (event) {
+        if ($(this.hash).offset() && $(this.hash).offset().top) {
+            event.preventDefault();
+            $('html,body').animate({scrollTop: $(this.hash).offset().top - 100}, 500);
+            window.location.hash = this.hash;
+        }
+    });
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->

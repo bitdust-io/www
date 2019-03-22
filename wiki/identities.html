@@ -495,14 +495,13 @@ compact media just after the program set up and hide them in secure places.
 
 
 <script>
-    // $('a[href*=\\#]').on('click', function (event) {
-    //     if ($(this.hash).offset() && $(this.hash).offset().top) {
-    //         event.preventDefault();
-    //         $('html,body').animate({scrollTop: $(this.hash).offset().top - 100}, 500);
-    //         window.location.hash = this.hash;
-    //     }
-    //     debugger;
-    // });
+    $('a[href*=\\#]').on('click', function (event) {
+        if ($(this.hash).offset() && $(this.hash).offset().top) {
+            event.preventDefault();
+            $('html,body').animate({scrollTop: $(this.hash).offset().top - 100}, 500);
+            window.location.hash = this.hash;
+        }
+    });
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
