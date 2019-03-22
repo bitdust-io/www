@@ -273,6 +273,15 @@
 <script src="/assets/js/libs/bootstrap.js"></script>
 <script src="/assets/js/applify/build/applify.js"></script>
 
+<script>
+    $('a[href*=\\#]').on('click', function (event) {
+        if ($(this.hash).offset() && $(this.hash).offset().top) {
+            event.preventDefault();
+            $('html,body').animate({scrollTop: $(this.hash).offset().top - 100}, 500);
+            window.location.hash = this.hash;
+        }
+    });
+</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-25753370-1"></script>
