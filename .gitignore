@@ -11,3 +11,4 @@ service_*.html
 
 /.idea
 /node_modules
+/node_scripts/all.json
