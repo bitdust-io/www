@@ -65,8 +65,8 @@ const bitdust_translations = {
         "section_Roadmap_Title_6": "Mobile BitDust application.",
         "section_Team_Title": "The team",
         "section_Team_Description": "BitDust Heroes!",
-        "section_Team_Veselin": "Founder & \n Software development",
-        "section_Team_Desmond": "Business development & \n  Product management",
+        "section_Team_Veselin": "Founder & \n <br>Software development",
+        "section_Team_Desmond": "Business development & \n <br> Product management",
         "section_Team_Software_Developer": "Software development",
         "section_Team_Petr": "Co-Founder & \n Business analyses",
         "section_Footer_Description": "We are currently with a small team primarily focusing on developing our product and unfortunately don’t have the resources to support a community on different channels. For now you can join the discussion on Telegram or if you have a business related question you can email us."
