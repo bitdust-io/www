@@ -68,7 +68,7 @@ const bitdust_translations = {
         "section_Team_Veselin": "Founder & \n <br>Software development",
         "section_Team_Desmond": "Business development & \n <br> Product management",
         "section_Team_Software_Developer": "Software development",
-        "section_Team_Petr": "Co-Founder & \n Business analyses",
+        "section_Team_Petr": "Co-Founder & \n Business analysis",
         "section_Footer_Description": "We are currently with a small team primarily focusing on developing our product and unfortunately don’t have the resources to support a community on different channels. For now you can join the discussion on Telegram or if you have a business related question you can email us."
     },
     pt: {
