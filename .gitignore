@@ -1,5 +1,6 @@
 .DS_Store
 */.DS_Store
+.old
 .dist
 .backup
 .repos
@@ -8,7 +9,6 @@ index_.html
 intro_short.html
 service_*.html
 .ssl
-
 /.idea
 /node_modules
 /node_scripts/all.json
