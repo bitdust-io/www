@@ -175,7 +175,9 @@
 
 
                             <div class="docs-section doc-action-cards">
-                                <h1 id="data-storage">Data Storage</h1>
+                                <h1 id="distributed-storage">Distributed Storage</h1>
+
+<p>In this section you can find information on how your data is stored within the BitDust network.</p>
 
 <ul>
 <li><a href="storage.html#intro">Introduction</a></li>
@@ -188,42 +190,42 @@
 
 <h2 id="intro">Intro</h2>
 
-<p>BitDust network consists of many equal and self-governed nodes, whose owners voluntarily give a part of hardware resources of their personal computers to each other. By consuming hardware resources from BitDust network, users get access to more private, secure and fully independent storage to protect own data and private on-line communicaion, because all data stored in BitDust network is allways encrypted.</p>
+<p>The BitDust network consists out of many equal and self-governing nodes, whose owners provide a part of their hardware resources to the network. By consuming data resources from the BitDust network, users get access to a more private, secure and fully independent storage to protect their data and have the ability to chat securely with their contacts. Securly since data that is stored within the BitDust network is always encrypted.</p>
 
 <h2 id="suppliers-and-customers">Suppliers and Customers</h2>
 
-<p>User data allocation takes place on a fixed combination of nodes chosen beforehand, these nodes are called "suppliers". The user at the same time becomes a "customer" for all these nodes – figuratively speaking he "rents" a portion of hard disk drive from each of his suppliers. However at any moment customer is free to "fire" any of his suppliers, find another user in BitDust and "hire" him to be able to store his files on his device.</p>
+<p>User data allocation takes place on a fixed combination of nodes chosen beforehand, these nodes are called "suppliers". The user at the same time becomes a "customer" for all of these nodes – figuratively speaking a user "rents" a portion of the hard disk drive from each of their suppliers. However is free to "fire" any of their suppliers at any moment in time and find another supplier within the BitDust Network. </p>
 
-<p>Before the user can start the first data upload, the BitDust program on his device has to search and connect to his suppliers and request "needed space" for his data. At any time, in the program settings, user can adjust two key parameters of his distributed storage environment:</p>
+<p>Before the user can start their first data upload, the BitDust program on the user's device has to search and connect to the user's suppliers and request "needed space" for their data. At any time, in the program settings, a user can adjust two key parameters of their distributed storage environment:</p>
 
 <ul>
 <li>a volume of "needed" space</li>
 <li>a desired number of suppliers</li>
 </ul>
 
-<p>Knowing this data you we can count the amount of space that should be provided by every node:</p>
+<p>By providing this data the system calculates the amount of space that should be provided by every node:</p>
 
 <pre><code>&lt;supplier quota&gt; = ( &lt;needed space&gt; / &lt;number of suppliers&gt; ) * 2
 </code></pre>
 
-<p>In the formula we have to multiply final quota by 2 because of redundancy. Data, stored on supplier machine, takes twice more space than original file, but might be less, because file can be compressed before it will be encrypted.</p>
+<p>In the formula we have to multiply final quota by 2 because of redundancy. Data, stored on sthe supplier's machine, takes twice more space than original file. In some cases it might be less, because files are compressed before they will be encrypted.</p>
 
 <p>The number of suppliers you can use can be one of these values:
-<code>2</code>, <code>4</code>, <code>7</code>, <code>13</code>, <code>18</code>, <code>26</code>, <code>64</code>. Further you will find a detailed description how the data allocation is done and how the combinations of suppliers are formed.</p>
+<code>2</code>, <code>4</code>, <code>7</code>, <code>13</code>, <code>18</code>, <code>26</code>, <code>64</code>. Further you will find a detailed description on how the data allocation is done and how the combinations of suppliers are formed.</p>
 
-<p>The number of customers whom each user can support theoretically is not limited. However by supporting too many nodes the possible sessions number can be exceeded – this parameter depends on operation system, which runs the given BitDust node and local network limitations.</p>
+<p>The number of customers whom each supplier can support theoretically is not limited. However by supporting too many customers the possible sessions number can be exceeded – this parameter depends on your operation system, which runs the given BitDust node and the local network limitations.</p>
 
-<p>Apart from this by simultaneous upload/download from user machine the network channel which each customer receives will be severely restricted – only nodes with very high bandwidth will be able to support a great number of nodes.</p>
+<p>Apart from the simultaneous upload/download from a user's machine it can happen that the network channel which each customer receives will be severely restricted – only nodes with very high bandwidth will be able to support a great number of nodes.</p>
 
 <h2 id="upload-to-the-network">Upload to the Network</h2>
 
-<p>Each of the suppliers receives equal portions of the total volume of uploaded user data. Each fragment of uploaded data is marked with a number of the supplier from the general combination to whom it is designed. By changing one supplier for another the new node gets exactly those data which correspond to his order number in the combination. </p>
+<p>Each of the suppliers receives equal portions of the total volume of uploaded user data. Each fragment of uploaded data is marked with a number of the supplier from the general combination. By changing one supplier for another the new node gets exactly the data which corresponds to his their number within the combination. </p>
 
-<p>For regular and stable upload input data are archived and divided into blocks. This phase is practically identical to creation of regular archive from the folder content or a file on the hard disk drive and divided by volumes.</p>
+<p>For a regular and stable upload input the data is archived and divided into blocks. This phase is practically identical to the creation of a regular archive from the folder content or a file on the hard disk drive and divided by the volumes.</p>
 
-<p>Then each block is encrypted with one of the user's private keys. Yyou can use different keys to encrypt your data - this way you can share given piece of data with another user, more information about group access you can find in <a href="security.html">Data Security</a> section. </p>
+<p>Afterwards each block is encrypted with one of the user's private keys. Different keys derived from your Master key is used to encrypt your data - this way you can share a given file of data with another user, more information about group access can be found in the <a href="security.html">Data Security</a> section. </p>
 
-<p>Further, your encrypted data will be divided into fragments of equal size, which are temporary saved on local hard disk drive. At the final stage these local files which are ready for sending are uploaded on the remote suppliers’ nodes. There they are stored as it is (in encrypted state), but are fully distributed over the whole combination of suppliers – each supplier receives exactly those fragments which were prepared for his position in the combination. </p>
+<p>Furthermore, your encrypted data will be divided into fragments of equal size, which are temporary saved on your local hard disk drive. At the final stage these local files, which are ready for sending, are uploaded oonto the remote suppliers’ nodes. There they are stored as it is (in encrypted state), but are fully distributed over the whole combination of suppliers – each supplier receives exactly those fragments which were prepared for their position within the combination. </p>
 
 <p>Here is the general sequence of actions to run a new distributed data copy of your data:</p>
 
@@ -238,47 +240,47 @@
 <li>deleting temporary files from the local disk drive (optional)</li>
 </ol>
 
-<p>In the settings user can state maximum and desired block size for data backups – this will influence the final portion size, which one by one will be uploaded and stored at suppliers’.</p>
+<p>In the settings the user can state a maximum and desired block size for all data backups – this will influence the final portion size, which will be uploaded one by one and stored at your suppliers.</p>
 
-<p>For data uploads made of big blocks the amount of loss increases critically and it can lead to low data reliability. On the other hand in case of very small block size the total number of fragments increases and this creates influence on overall program performance and amount of required memory on customer machine.</p>
+<p>For uploading data which consist out of big blocks, the amount of loss increases critically and it can lead to low data reliability. On the other hand in case of small block sizes the total number of fragments increases and this creates influence on the overall program performance and amount of required memory on the customer machine.</p>
 
 <h2 id="data-redundancy">Data Redundancy</h2>
 
-<p>In the section <a href="rebuilding.html">Automatic Data Rebuilding</a> the method of converting the input data before allocating them on suppliers’ nodes is explained more in detail. Uploaded in the network data are stored with double redundancy and organized in a RAID array for ensuring a possibility of their recovery in the case of loss. </p>
+<p>In the section <a href="rebuilding.html">Automatic Data Rebuilding</a> the method of converting the input data before allocating them on the nodes of suppliers is explained in more in detail. Data uploaded within the network comes with double redundancy and is organized in a RAID array for ensuring a possibility of their recovery in the case of loss. </p>
 
-<p>Two parallel layers, Data and Parity, have the same size, but different content:</p>
+<p>There are two parallel layers which are Data and Parity. They have the same size, but have a different content:</p>
 
 <ul>
-<li>Data layer completely consists of input data </li>
-<li>Parity layer has modified content, built with the help of a RAID procedure</li>
+<li>The Data layer consists completely out of input data </li>
+<li>The Parity layer has modified content, built with the help of a RAID procedure</li>
 </ul>
 
-<p>For generating Parity layer during backup processing data are byte-wise taken and XOR operation is applied between Data fragments of other suppliers. Final RAID array is organized in a way that each Parity fragment allows restoring corresponding Data fragment on the machine of a new supplier, which replaces the lost one.</p>
+<p>For generating a Parity layer during the backup processing data byte-wise taken and a XOR operation is applied between the Data fragments of your other suppliers. The final RAID array is organized in a way that each Parity fragment allows restoring the corresponding Data fragment onto the machine of a new supplier, which replaces the lost one.</p>
 
-<p>By building a RAID array so-called EEC codes are used – this are the combinations of Data and Parity allocation on suppliers’ machines. For each of the possible suppliers combinations the optimal EEC code was calculated – it defines the framework of the mutual bracing of the Data and Parity fragments in the layers and maximum quantity of simultaneous errors, which may occur without block sustainability loss.</p>
+<p>By building a RAID array so-called EEC codes are used – these are the combinations of Data and Parity allocation on the suppliers machines. For each of the possible supplier combinations the optimal EEC code was calculated before – it basically defines the framework of the mutual bracing of the Data and Parity fragments in the layers and a maximum quantity of simultaneous errors, which may occur without block sustainability loss.</p>
 
 <h2 id="download-from-the-network">Download from the Network</h2>
 
-<p>For downloading already existing data from the BitDust network software performs following steps: </p>
+<p>For downloading existing data from the BitDust network our software performs the following steps: </p>
 
 <ol>
-<li>sending requests to download already existing data fragments from suppliers</li>
-<li>restore each block from the reassembled together fragments of data</li>
+<li>sending requests to download existing data fragments from suppliers</li>
+<li>restore each block from the reassembled together with the fragments of data</li>
 <li>decrypt each restored block and check its sustainability by e-signature</li>
 <li>assemble all restored blocks in a single archive</li>
 <li>extract data from the archive to the user’s hard disk drive</li>
 <li>delete temporary files and archive file</li>
 </ol>
 
-<p>In case some fragments are lost, for example, due to the fault in connection to some of suppliers, the mechanism of <a href="rebuilding.html">data recovery</a> in the Data layer from the on hand fragments of Parity layer will be started - see point 2. above.</p>
+<p>In the case some of the fragments were lost, for example, due to the fault in connection of some of your suppliers, the mechanism of <a href="rebuilding.html">data recovery</a> in the Data layer from the on hand fragments of Parity layer will be started - see point 2. above.</p>
 
 <h2 id="hardware-resources">Hardware Resources</h2>
 
-<p>All nodes in BitDust network are absolutely equal in thir possible roles and self-governed. There are no dedicated servers of the higher order, having special authority, managing global processes and network structure, doing global routing, monitoring or data acquisition etc.</p>
+<p>All nodes in BitDust network are absolutely equal in their possible roles and are self goverened. There are no dedicated servers of a higher order, having special authority, managing global processes and network structure, doing global routing, monitoring or data acquisition, etc.</p>
 
-<p>Each and every user always voluntarily start BitDust program on own device and posses full control over BitDust software process. So everyone have an opportunity to consume hardware resources of other nodes from one side and also donate part of own PC resources to other users in the network. BitDust software should take care about all operations going on on your device and all processes are fully automated.</p>
+<p>Each and every user always voluntarily starts the BitDust program on own device and posses full control over the BitDust software process. So everyone will have an opportunity to consume hardware resources of other nodes from one side and also donate part of own PC resources to other users in the network. Meaning that besides being a consumer you can also fulfill a supporting role within the BitDust network, depending on your hardware. The BitDust software should take care about all operations going on on your device and all processes are/will be fully automated.</p>
 
-<p>Finally such hardware resources can be requested and consumed from other users by you:</p>
+<p>Finally hardware resources can be requested and consumed from other users by you:</p>
 
 <ul>
 <li>space on the hard disk drive of your "suppliers"</li>
@@ -286,17 +288,14 @@
 <li>network bandwith of your "routers"</li>
 </ul>
 
-<p>In the program settings user sets the following key data:</p>
+<p>In the program settings a user can set the following key data:</p>
 
 <ul>
-<li>storage quota requested from others for own purposses</li>
-<li>storage quota on local drive which user is ready to provide to other nodes</li>
+<li>storage quota requested from others for own use</li>
 <li>desired number of suppliers for your distributed storage</li>
-<li>network bandwith limit of data uploading / downloading</li>
-<li>number of CPU cores which he is ready to load with calculations useful for other nodes</li>
 </ul>
 
-<p>At the moment BitDust program does not have a mechanism of sponsoring users and provision of personal computer resources for other users is done on a non-repayable basis. However one of the key points in our development plan is the design of such a methodic in order to give users a chance to make profit from providing part of their PC resources to others.</p>
+<p>These program settings are from a users perspective. We will be working on a easy to use application for all the supporting roles within the BitDust network. You can read more about these supporting roles in the supporting roles section and how you can set them up from command line.</p>
 
 <p><div class=fbcomments markdown="1">
 </div</p>
