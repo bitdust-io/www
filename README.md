@@ -61,12 +61,15 @@ We invite all who are interested in this direction - primarily developers and en
 
 You can just open "index.html" file in the root folder of your local "www" repository and fully automated and independent copy of the web site will be rendered in your web browser. The web site do not require database to be avaialble on your host and only serve static HTML pages at the moment.
 
-On the live machine serving https://bitdust.io resource "www" repository is cloned and direcly loaded into WWW folder maintained by Apache2 web server. When your "Pull Request" will be merged we will execute "./update" caommand to pull changes on the live machine.
+On the live machine serving https://bitdust.io resource "www" repository is cloned and direcly loaded into WWW folder maintained by Apache2 web server.
+
+On live machine cron job is runnig every 5 minutes and executes `./deploy` script from repository root. After your "Pull Request" gets merged changes will be automatically delivered to BitDust web site in a short period.
+
 
 
 ## Contributing
 
-This repository contains .html files generated from [BitDust documentation](https://github.com/bitdust-io/docs) sources built in Markdown format. If you want to modify any page on the web site, create a fork of both repositories on GitHub and clone it locally:
+This repository  uses .html files generated from [BitDust documentation](https://github.com/bitdust-io/docs) sources built in Markdown format. If you want to modify any page on the web site, create a fork of both repositories on GitHub and clone it locally:
 
     git clone git@github.com:<your github username>/docs.git bitdust.docs
     cd bitdust.docs
@@ -89,7 +92,8 @@ Next make a fork and clone BitDust web site repository:
 Also please be sure you have markdown2 package installed globally:
 
     sudo apt-get install python-pip
-    pip install markdown2
+    pip install --user six
+    pip install --user markdown2
 
 
 Now you can start making changes in .md files of your local "bitdust.docs" repo. Save modified .md file and run `make html` in "bitdust.www" repo - a new .html file will be generated with fresh changes you just did in the corresponding .md file.
