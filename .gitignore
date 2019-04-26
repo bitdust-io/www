@@ -1,5 +1,6 @@
 .DS_Store
-wiki/*.html
+pull
+push
 */.DS_Store
 .old
 .dist

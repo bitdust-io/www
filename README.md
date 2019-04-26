@@ -134,9 +134,11 @@ BitDust team is doing public code reviews and we will be in touch with you to go
 
 
 ## Development
+
     npm i
 
 ### Generate CSS from sass files
+
     npm run build-css
 
 ### Generate index (english translations)
@@ -144,6 +146,7 @@ BitDust team is doing public code reviews and we will be in touch with you to go
     npm run translate
 
 ### Develop mode
+
     npm start
 
 
