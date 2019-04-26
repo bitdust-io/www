@@ -10,5 +10,3 @@ do
     python fix_html.py "./wiki/$htmlfile" "./wiki/$htmlfile"
     echo "$SOURCE_DIR/$mdfile -> ./wiki/$htmlfile"
 done
-
-

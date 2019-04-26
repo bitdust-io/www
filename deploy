@@ -1,10 +1,37 @@
 #!/bin/bash
+#
+# Other BitDust repositories must be already cloned in home folder like that:
+#
+#     cd ~
+#     git clone https://github.com/bitdust-io/public bitdust
+#     git clone https://github.com/bitdust-io/states bitdust.states
+#     git clone https://github.com/bitdust-io/docs.git bitdust.docs
+#     git clone https://github.com/bitdust-io/www.git bitdust.www
+#
+# Then you can just run that script to rebuild the web site files in-place:
+#
+#     ./deploy
+#
+
+
+cd ~/bitdust/
+git pull
+
+
+cd ~/bitdust.docs/
+git pull
+python build_api.py ../bitdust/interface/api.py api.md
+python build_settings.py ../bitdust/ settings.md
+
+
+cd ~/bitdust.states/
+git pull
+
 
 cd ~/bitdust.www/
+git pull
+./build
+./build_visual
 
-sudo cp -r -v * /var/www/
-
-sudo chown www-data:www-data -R /var/www/
 
 echo "DONE!"
-

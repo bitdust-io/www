@@ -1,51 +1,63 @@
 #!/bin/bash
 
-VISUAL_DIR=../bitdust.visual
+VISUAL_DIR=../bitdust.states
 
-cp -rf $VISUAL_DIR/bitdust_services_tree.png  ./services/
-cp -rf $VISUAL_DIR/bitdust_services_tree.pdf  ./services/
-cp -rf $VISUAL_DIR/bitdust_services_tree.vsd  ./services/
+cp -rvf $VISUAL_DIR/bitdust_services_tree.png  ./wiki/services/
+cp -rvf $VISUAL_DIR/bitdust_services_tree.pdf  ./wiki/services/
+cp -rvf $VISUAL_DIR/bitdust_services_tree.vsd  ./wiki/services/
 
-cp -rf $VISUAL_DIR/chat/*.png  ./chat
-cp -rf $VISUAL_DIR/chat/*.pdf  ./chat
-cp -rf $VISUAL_DIR/chat/*.vsd  ./chat
+cp -rvf $VISUAL_DIR/access/*.png  ./wiki/access
+cp -rvf $VISUAL_DIR/access/*.pdf  ./wiki/access
+cp -rvf $VISUAL_DIR/access/*.vsd  ./wiki/access
 
-cp -rf $VISUAL_DIR/customer/*.png  ./customer
-cp -rf $VISUAL_DIR/customer/*.pdf  ./customer
-cp -rf $VISUAL_DIR/customer/*.vsd  ./customer
+cp -rvf $VISUAL_DIR/broadcast/*.png  ./wiki/broadcast
+cp -rvf $VISUAL_DIR/broadcast/*.pdf  ./wiki/broadcast
+cp -rvf $VISUAL_DIR/broadcast/*.vsd  ./wiki/broadcast
 
-cp -rf $VISUAL_DIR/main/*.png  ./main
-cp -rf $VISUAL_DIR/main/*.pdf  ./main
-cp -rf $VISUAL_DIR/main/*.vsd  ./main
+cp -rvf $VISUAL_DIR/chat/*.png  ./wiki/chat
+cp -rvf $VISUAL_DIR/chat/*.pdf  ./wiki/chat
+cp -rvf $VISUAL_DIR/chat/*.vsd  ./wiki/chat
 
-cp -rf $VISUAL_DIR/p2p/*.png  ./p2p
-cp -rf $VISUAL_DIR/p2p/*.pdf  ./p2p
-cp -rf $VISUAL_DIR/p2p/*.vsd  ./p2p
+cp -rvf $VISUAL_DIR/coins/*.png  ./wiki/coins
+cp -rvf $VISUAL_DIR/coins/*.pdf  ./wiki/coins
+cp -rvf $VISUAL_DIR/coins/*.vsd  ./wiki/coins
 
-cp -rf $VISUAL_DIR/raid/*.png  ./raid
-cp -rf $VISUAL_DIR/raid/*.pdf  ./raid
-cp -rf $VISUAL_DIR/raid/*.vsd  ./raid
+cp -rvf $VISUAL_DIR/customer/*.png  ./wiki/customer
+cp -rvf $VISUAL_DIR/customer/*.pdf  ./wiki/customer
+cp -rvf $VISUAL_DIR/customer/*.vsd  ./wiki/customer
 
-cp -rf $VISUAL_DIR/services/*.png  ./services
-cp -rf $VISUAL_DIR/services/*.pdf  ./services
-cp -rf $VISUAL_DIR/services/*.vsd  ./services
+cp -rvf $VISUAL_DIR/main/*.png  ./wiki/main
+cp -rvf $VISUAL_DIR/main/*.pdf  ./wiki/main
+cp -rvf $VISUAL_DIR/main/*.vsd  ./wiki/main
 
-cp -rf $VISUAL_DIR/storage/*.png  ./storage
-cp -rf $VISUAL_DIR/storage/*.pdf  ./storage
-cp -rf $VISUAL_DIR/storage/*.vsd  ./storage
+cp -rvf $VISUAL_DIR/p2p/*.png  ./wiki/p2p
+cp -rvf $VISUAL_DIR/p2p/*.pdf  ./wiki/p2p
+cp -rvf $VISUAL_DIR/p2p/*.vsd  ./wiki/p2p
 
-cp -rf $VISUAL_DIR/stun/*.png  ./stun
-cp -rf $VISUAL_DIR/stun/*.pdf  ./stun
-cp -rf $VISUAL_DIR/stun/*.vsd  ./stun
+cp -rvf $VISUAL_DIR/raid/*.png  ./wiki/raid
+cp -rvf $VISUAL_DIR/raid/*.pdf  ./wiki/raid
+cp -rvf $VISUAL_DIR/raid/*.vsd  ./wiki/raid
 
-cp -rf $VISUAL_DIR/supplier/*.png  ./supplier
-cp -rf $VISUAL_DIR/supplier/*.pdf  ./supplier
-cp -rf $VISUAL_DIR/supplier/*.vsd  ./supplier
+cp -rvf $VISUAL_DIR/services/*.png  ./wiki/services
+cp -rvf $VISUAL_DIR/services/*.pdf  ./wiki/services
+cp -rvf $VISUAL_DIR/services/*.vsd  ./wiki/services
 
-cp -rf $VISUAL_DIR/transport/*.png  ./transport
-cp -rf $VISUAL_DIR/transport/*.pdf  ./transport
-cp -rf $VISUAL_DIR/transport/*.vsd  ./transport
+cp -rvf $VISUAL_DIR/storage/*.png  ./wiki/storage
+cp -rvf $VISUAL_DIR/storage/*.pdf  ./wiki/storage
+cp -rvf $VISUAL_DIR/storage/*.vsd  ./wiki/storage
 
-cp -rf $VISUAL_DIR/userid/*.png  ./userid
-cp -rf $VISUAL_DIR/userid/*.pdf  ./userid
-cp -rf $VISUAL_DIR/userid/*.vsd  ./userid
+cp -rvf $VISUAL_DIR/stun/*.png  ./wiki/stun
+cp -rvf $VISUAL_DIR/stun/*.pdf  ./wiki/stun
+cp -rvf $VISUAL_DIR/stun/*.vsd  ./wiki/stun
+
+cp -rvf $VISUAL_DIR/supplier/*.png  ./wiki/supplier
+cp -rvf $VISUAL_DIR/supplier/*.pdf  ./wiki/supplier
+cp -rvf $VISUAL_DIR/supplier/*.vsd  ./wiki/supplier
+
+cp -rvf $VISUAL_DIR/transport/*.png  ./wiki/transport
+cp -rvf $VISUAL_DIR/transport/*.pdf  ./wiki/transport
+cp -rvf $VISUAL_DIR/transport/*.vsd  ./wiki/transport
+
+cp -rvf $VISUAL_DIR/userid/*.png  ./wiki/userid
+cp -rvf $VISUAL_DIR/userid/*.pdf  ./wiki/userid
+cp -rvf $VISUAL_DIR/userid/*.vsd  ./wiki/userid
