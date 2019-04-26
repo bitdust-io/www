@@ -10,6 +10,7 @@
 #
 # Then you can just run that script to rebuild the web site files in-place:
 #
+#     cd bitdust.www
 #     ./deploy
 #
 
