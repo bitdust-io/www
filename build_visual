@@ -2,50 +2,62 @@
 
 VISUAL_DIR=../bitdust.states
 
-cp -rf $VISUAL_DIR/bitdust_services_tree.png  ./wiki/services/
-cp -rf $VISUAL_DIR/bitdust_services_tree.pdf  ./wiki/services/
-cp -rf $VISUAL_DIR/bitdust_services_tree.vsd  ./wiki/services/
+cp -rvf $VISUAL_DIR/bitdust_services_tree.png  ./wiki/services/
+cp -rvf $VISUAL_DIR/bitdust_services_tree.pdf  ./wiki/services/
+cp -rvf $VISUAL_DIR/bitdust_services_tree.vsd  ./wiki/services/
 
-cp -rf $VISUAL_DIR/chat/*.png  ./wiki/chat
-cp -rf $VISUAL_DIR/chat/*.pdf  ./wiki/chat
-cp -rf $VISUAL_DIR/chat/*.vsd  ./wiki/chat
+cp -rvf $VISUAL_DIR/access/*.png  ./wiki/access
+cp -rvf $VISUAL_DIR/access/*.pdf  ./wiki/access
+cp -rvf $VISUAL_DIR/access/*.vsd  ./wiki/access
 
-cp -rf $VISUAL_DIR/customer/*.png  ./wiki/customer
-cp -rf $VISUAL_DIR/customer/*.pdf  ./wiki/customer
-cp -rf $VISUAL_DIR/customer/*.vsd  ./wiki/customer
+cp -rvf $VISUAL_DIR/broadcast/*.png  ./wiki/broadcast
+cp -rvf $VISUAL_DIR/broadcast/*.pdf  ./wiki/broadcast
+cp -rvf $VISUAL_DIR/broadcast/*.vsd  ./wiki/broadcast
 
-cp -rf $VISUAL_DIR/main/*.png  ./wiki/main
-cp -rf $VISUAL_DIR/main/*.pdf  ./wiki/main
-cp -rf $VISUAL_DIR/main/*.vsd  ./wiki/main
+cp -rvf $VISUAL_DIR/chat/*.png  ./wiki/chat
+cp -rvf $VISUAL_DIR/chat/*.pdf  ./wiki/chat
+cp -rvf $VISUAL_DIR/chat/*.vsd  ./wiki/chat
 
-cp -rf $VISUAL_DIR/p2p/*.png  ./wiki/p2p
-cp -rf $VISUAL_DIR/p2p/*.pdf  ./wiki/p2p
-cp -rf $VISUAL_DIR/p2p/*.vsd  ./wiki/p2p
+cp -rvf $VISUAL_DIR/coins/*.png  ./wiki/coins
+cp -rvf $VISUAL_DIR/coins/*.pdf  ./wiki/coins
+cp -rvf $VISUAL_DIR/coins/*.vsd  ./wiki/coins
 
-cp -rf $VISUAL_DIR/raid/*.png  ./wiki/raid
-cp -rf $VISUAL_DIR/raid/*.pdf  ./wiki/raid
-cp -rf $VISUAL_DIR/raid/*.vsd  ./wiki/raid
+cp -rvf $VISUAL_DIR/customer/*.png  ./wiki/customer
+cp -rvf $VISUAL_DIR/customer/*.pdf  ./wiki/customer
+cp -rvf $VISUAL_DIR/customer/*.vsd  ./wiki/customer
 
-cp -rf $VISUAL_DIR/services/*.png  ./wiki/services
-cp -rf $VISUAL_DIR/services/*.pdf  ./wiki/services
-cp -rf $VISUAL_DIR/services/*.vsd  ./wiki/services
+cp -rvf $VISUAL_DIR/main/*.png  ./wiki/main
+cp -rvf $VISUAL_DIR/main/*.pdf  ./wiki/main
+cp -rvf $VISUAL_DIR/main/*.vsd  ./wiki/main
 
-cp -rf $VISUAL_DIR/storage/*.png  ./wiki/storage
-cp -rf $VISUAL_DIR/storage/*.pdf  ./wiki/storage
-cp -rf $VISUAL_DIR/storage/*.vsd  ./wiki/storage
+cp -rvf $VISUAL_DIR/p2p/*.png  ./wiki/p2p
+cp -rvf $VISUAL_DIR/p2p/*.pdf  ./wiki/p2p
+cp -rvf $VISUAL_DIR/p2p/*.vsd  ./wiki/p2p
 
-cp -rf $VISUAL_DIR/stun/*.png  ./wiki/stun
-cp -rf $VISUAL_DIR/stun/*.pdf  ./wiki/stun
-cp -rf $VISUAL_DIR/stun/*.vsd  ./wiki/stun
+cp -rvf $VISUAL_DIR/raid/*.png  ./wiki/raid
+cp -rvf $VISUAL_DIR/raid/*.pdf  ./wiki/raid
+cp -rvf $VISUAL_DIR/raid/*.vsd  ./wiki/raid
 
-cp -rf $VISUAL_DIR/supplier/*.png  ./wiki/supplier
-cp -rf $VISUAL_DIR/supplier/*.pdf  ./wiki/supplier
-cp -rf $VISUAL_DIR/supplier/*.vsd  ./wiki/supplier
+cp -rvf $VISUAL_DIR/services/*.png  ./wiki/services
+cp -rvf $VISUAL_DIR/services/*.pdf  ./wiki/services
+cp -rvf $VISUAL_DIR/services/*.vsd  ./wiki/services
 
-cp -rf $VISUAL_DIR/transport/*.png  ./wiki/transport
-cp -rf $VISUAL_DIR/transport/*.pdf  ./wiki/transport
-cp -rf $VISUAL_DIR/transport/*.vsd  ./wiki/transport
+cp -rvf $VISUAL_DIR/storage/*.png  ./wiki/storage
+cp -rvf $VISUAL_DIR/storage/*.pdf  ./wiki/storage
+cp -rvf $VISUAL_DIR/storage/*.vsd  ./wiki/storage
 
-cp -rf $VISUAL_DIR/userid/*.png  ./wiki/userid
-cp -rf $VISUAL_DIR/userid/*.pdf  ./wiki/userid
-cp -rf $VISUAL_DIR/userid/*.vsd  ./wiki/userid
+cp -rvf $VISUAL_DIR/stun/*.png  ./wiki/stun
+cp -rvf $VISUAL_DIR/stun/*.pdf  ./wiki/stun
+cp -rvf $VISUAL_DIR/stun/*.vsd  ./wiki/stun
+
+cp -rvf $VISUAL_DIR/supplier/*.png  ./wiki/supplier
+cp -rvf $VISUAL_DIR/supplier/*.pdf  ./wiki/supplier
+cp -rvf $VISUAL_DIR/supplier/*.vsd  ./wiki/supplier
+
+cp -rvf $VISUAL_DIR/transport/*.png  ./wiki/transport
+cp -rvf $VISUAL_DIR/transport/*.pdf  ./wiki/transport
+cp -rvf $VISUAL_DIR/transport/*.vsd  ./wiki/transport
+
+cp -rvf $VISUAL_DIR/userid/*.png  ./wiki/userid
+cp -rvf $VISUAL_DIR/userid/*.pdf  ./wiki/userid
+cp -rvf $VISUAL_DIR/userid/*.vsd  ./wiki/userid
