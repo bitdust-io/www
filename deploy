@@ -30,7 +30,8 @@ git pull
 
 
 cd ~/bitdust.www/
-git pull
+git fetch --all
+git reset --hard origin/master
 ./build
 ./build_visual
 

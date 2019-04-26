@@ -1,7 +1,18 @@
 
 How to setup the web site on Ubuntu:
 
-    git clone -o upstream https://github.com/bitdust-io/www.git bitdust.www
+
+    cd ~
+
+    git clone https://github.com/bitdust-io/public bitdust
+
+    git clone https://github.com/bitdust-io/states bitdust.states
+
+    git clone https://github.com/bitdust-io/docs.git bitdust.docs
+
+    git clone https://github.com/bitdust-io/www.git bitdust.www
+
+
 
     sudo apt-get install apache2
 
@@ -9,11 +20,15 @@ How to setup the web site on Ubuntu:
 
     sudo nano /etc/hosts  # add line "<IP> bitdust.io" in the end
 
+
+
     sudo cp bitdust.www/conf/bitdust.io.conf /etc/apache2/sites-available/
 
     sudo a2dissite 000-default.conf
 
     sudo sudo a2ensite bitdust.io.conf 
+
+
 
     sudo a2enmod ssl
 
@@ -21,9 +36,16 @@ How to setup the web site on Ubuntu:
 
     # place certificate files "bitdust.key", "bitdust.crt", "bitdust.chain" in /etc/apache2/ssl/ folder 
 
+
+
     sudo apt-get install php -y
 
     sudo apt-get install -y php-{bcmath,bz2,intl,gd,mbstring,mcrypt,mysql,zip} && sudo apt-get install libapache2-mod-php  -y
 
     sudo service apache2 restart
+
+
+
+    cd bitdust.www
+    ./deploy
 
