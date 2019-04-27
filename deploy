@@ -23,6 +23,7 @@ cd ~/bitdust.docs/
 git pull
 python build_api.py ../bitdust/interface/api.py api.md
 python build_settings.py ../bitdust/ settings.md
+python build_changelog.py ../bitdust/CHANGELOG.txt changelog.md
 
 
 cd ~/bitdust.states/
