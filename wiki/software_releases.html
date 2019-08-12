@@ -108,7 +108,6 @@
                                 <li><a href="/wiki/concept.html">Concept</a></li>
                                 <li><a href="/wiki/principle.html">How Does It Work?</a></li>
                                 <li><a href="/wiki/install.html">Installation</a></li>
-                                <li><a href="/wiki/seed_node.html">Seed node</a></li>
                                 <li><a href="/wiki/commands.html">Commands</a></li>
                                 <li><a href="/wiki/settings.html">Settings</a></li>
                                 <li><a href="/wiki/glossary.html">Glossary</a></li>
@@ -124,8 +123,6 @@
                                 <li><a href="/wiki/rebuilding.html">Automatic Rebuilding</a></li>
                                 <li><a href="/wiki/dht.html">Distributed Hash-Table</a></li>
                                 <li><a href="/wiki/services.html">Network services</a></li>
-                                <li><a href="/wiki/transports.html">Transport protocols</a></li>
-                                <li><a href="/wiki/crypto_contracts.html">Crypto-contracts</a></li>
                             </ul>
                             <h6 class="heading">Development</h6>
                             <ul>
@@ -134,6 +131,7 @@
                                 <li><a href="/wiki/technologies.html">Technologies</a></li>
                                 <li><a href="/wiki/api.html">API Interface</a></li>
                                 <li><a href="/wiki/software_releases.html">Software releases</a></li>
+                                <li><a href="/wiki/seed_node.html">Seed node</a></li>
                                 <li><a href="/wiki/respect.html">Contributors and Supporters</a></li>
                             </ul>
                             <h6 class="heading">Repositories</h6>
@@ -177,9 +175,9 @@
 
 <ul>
 <li><a href="software_releases.html#intro">Intro</a></li>
-<li><a href="software_releases.html#release-run-book">Release run book</a></li>
+<li><a href="software_releases.html#prepare-environment">Prepare environment</a></li>
+<li><a href="software_releases.html#runbook">Runbook</a></li>
 <li><a href="software_releases.html#update-documentation">Update Documentation</a></li>
-<li><a href="software_releases.html#update-web-site">Update web-site</a></li>
 </ul>
 
 <h2 id="intro">Intro</h2>
@@ -200,98 +198,90 @@ This way the BitDust software automatically "updates itself" and stays in sync w
 
 <p>As a user of BitDust software you can disabled automatic updates at any moment in the program settings.</p>
 
-<p>You can fork BitDust "stable" repo and clone locally to quickly run main python code. Just like any other github project you forked, your fork will be fully independent from the main repo. This will work for developers and for those who wish to stay in sync with main network manually.</p>
+<p>You can also fork BitDust "stable" repo and clone locally your fork to quickly check and run main python code. Just like any other github project you forked, your fork will be fully independent from the main repo. This will work for developers and for those who wish to stay in sync with main network manually.</p>
+
+<p>Most BitDust users are starting from main web site and download installer from <a href="https://github.com/bitdust-io/desktop/releases">BitDust desktop</a> release files - they automatically stay in sync with "Stable" repository.</p>
 
 <p>Below is a step-by-step guide to deliver changes from the "Development" repository into the "Stable" repository.</p>
 
-<h2 id="release-run-book">Release run book</h2>
+<h2 id="prepare-environment">Prepare environment</h2>
 
-<p>Change to the "stable" repo folder, you must have it already cloned locally in the <code>./bitdust</code> folder:</p>
+<p>To be able to run a new BitDust release you must fork and clone both repositories already.
+Basically those actions you need to do only one time and just keep your repositories up-to-date with the main branches.</p>
 
-<pre><code>cd ./bitdust/
+<p>Here we assume your fork will be "origin" and main repository will be added as "upstream":</p>
+
+<pre><code># fork and clone development repo
+git clone git@github.com:&lt;your GitHub username here&gt;/devel.git bitdust.devel
+cd bitdust.devel
+git remote add upstream https://github.com/bitdust-io/devel.git
+cd ..
+
+# fork and clone stable repo
+git clone git@github.com:&lt;your GitHub username here&gt;/public.git bitdust
+cd bitdust
+git remote add upstream https://github.com/bitdust-io/public.git
+cd ..
 </code></pre>
 
-<p>Development repository must be already cloned in the <code>./bitdust.devel</code> folder within the same parent folder.
-Now import the fresh code from "devel" repo on top of the existing files:</p>
+<h2 id="runbook">Runbook</h2>
 
-<pre><code>./import ../bitdust.devel/
+<p>Change to <code>devops/</code> folder inside development repository and run <code>release_prepare</code> script:</p>
+
+<pre><code>cd bitdust.devel/devops/
+./release_prepare
 </code></pre>
 
-<p>Turn OFF DEBUG mode in all Python files:</p>
+<p>This will prepare all files to be commited into "Stable" repository. All modified/added/removed files will be displayed in your terminal output. That script is doing a bunch of things:</p>
 
-<pre><code>find . -type f -name "*.py" -exec sed -i '' -e 's/_Debug = True/_Debug = False/g' {} +
-</code></pre>
+<ul>
+<li>copy files from "devel" to "stable" repo</li>
+<li>disable DEBUG mode in all Python files</li>
+<li>compare all files in both repositories</li>
+<li>updates <code>HISTORY.txt</code> file in "devel" repo</li>
+</ul>
 
-<p>Mark all modified files in git to be commited in the new release:</p>
+<p>Now edit <code>bitdust.devel/CHANGELOG.txt</code> file manually - you need to provide some info about your changes. After running <code>release_prepare</code> you should see in your terminal console output a list of most recent commits. Just copy those lines and paste on top of <code>CHANGELOG.txt</code> file:</p>
 
-<pre><code>git add -u .
-</code></pre>
-
-<p>Add all other new files to git manually - this is important here to not miss any files:</p>
-
-<pre><code>git add ...
-</code></pre>
-
-<p>If some files or folders were removed from "devel" repo - do not forget to also remove them from  the "stable" repo and mark those changes to be commited:</p>
-
-<pre><code>rm ...
-git add -u .
-</code></pre>
-
-<p>Check again to be sure you didn't miss to remove / add any other files. Some files and folders should be excluded from the "stable" repo so this below command will help you to identify any differences:</p>
-
-<pre><code>cd ..
-diff --brief -r bitdust/ bitdust.devel/ | grep -v ".DS_Store" | grep -v "site-packages" | grep -v ".git" | grep -v "__pycache__" | grep -v ".pyc" | grep "Only in"
-
-Only in bitdust.devel/: HISTORY.txt
-Only in bitdust.devel/: deploy
-Only in bitdust/: import
-...
-</code></pre>
-
-<p>Do not commit your changes yet!
-Change back to "devel" repo and run such command to list all commits added to the "devel" repo after the last release of the "stable" repo was published:</p>
-
-<pre><code>cd ./bitdust.devel/
-./history ../bitdust/
-</code></pre>
-
-<p>File <code>HISTORY.TXT</code> was created and now it is time to describe which changes we are going to publish in the <code>CHANGELOG.txt</code>.</p>
-
-<p>Copy text block from <code>HISTORY.TXT</code> file into <code>CHANGELOG.txt</code> and make it look nice:</p>
-
-<pre><code>head -30 HISTORY.TXT
+<pre><code># copy text block from `HISTORY.TXT` file into `CHANGELOG.txt` and make it look nice
+cd ..
 nano CHANGELOG.txt
 </code></pre>
 
-<p>Commit <code>CHANGELOG.txt</code> in the "devel" repo:</p>
+<p>Now you need to change to the "stable" repository and run <code>git add ...</code> / <code>git rm ...</code> commands to confirm changes.</p>
 
-<pre><code>git add CHANGELOG.txt
-git commit -m "updated CHANGELOG, prepare next release"
+<p>First mark all modified files in git to be commited in the new release:</p>
+
+<pre><code>cd ../bitdust
+git add -u .
 </code></pre>
 
-<p>And also copy <code>CHANGELOG.txt</code> to the "stable" repo:</p>
+<p>Add all other new files to git manually - this is important here to not miss any files created recently in "devel" repo:</p>
 
-<pre><code>cp CHANGELOG.txt ../bitdust/
+<pre><code>git add &lt;some new file&gt;
 </code></pre>
 
-<p>Now you can finally commit changes in the "stable" repo:</p>
+<p>If some files or folders were removed from "devel" repo - do not forget to also remove them from the "stable" repo and mark those changes to be commited:</p>
 
-<pre><code>cd ../bitdust/
-git add CHANGELOG.txt
-git commit -m "&lt;glorious name of the new release&gt;"
+<pre><code>git rm &lt;some old file&gt;
 </code></pre>
 
-<p>Push changes to your "stable" repo - you must already have a Fork of the "stable" repo:</p>
+<p>We are almost done!
+Change back to <code>devops/</code> folder inside development repository and run <code>release_start</code> script:</p>
 
-<pre><code>git push origin master
+<pre><code>cd ../bitdust.devel/devops/
+./release_start
 </code></pre>
 
-<p>Create new <a href="https://github.com/bitdust-io/public/pulls">Pull Request</a> to the "stable" repository ...</p>
+<p>That script will push all prepared changes to your forked repositories.</p>
 
-<p>Review ...</p>
+<p>All you need to do now is to create new <a href="https://github.com/bitdust-io/public/pulls">Pull Request</a> to the "stable" repository ...</p>
 
-<p>Merge ... </p>
+<p>Make sure Travis build is green ...</p>
+
+<p>Review changes ...</p>
+
+<p>Click Merge button ... </p>
 
 <p>Congratulations, YOU ARE LIVE NOW!!!</p>
 
@@ -304,8 +294,9 @@ git push origin master
 <h2 id="update-documentation">Update Documentation</h2>
 
 <p>The BitDust project Documentation is fully open-sourced and everyone is welcome to contribute and improve it the <a href="https://github.com/bitdust-io/docs">Documentation repository</a>.
-Those steps are required to keep documentation in sync with the code.
-Update "docs" repo first, you must already have it forked and cloned in the<code>./bitdust.docs/</code> folder in same parent folder as the "devel" and the "stable" repos:</p>
+Those steps are required to keep documentation in sync with the code.</p>
+
+<p>Update "docs" repo first, you must already have it forked and cloned in the<code>./bitdust.docs/</code> folder in same parent folder as the "devel" and the "stable" repos:</p>
 
 <pre><code>cd ../bitdust.docs/
 ./build_api
@@ -316,7 +307,7 @@ Update "docs" repo first, you must already have it forked and cloned in the<code
 <p>Push changes to your fork of the documentation repository and start a new <a href="https://github.com/bitdust-io/docs/pulls">Pull Request</a> to the upstream:</p>
 
 <pre><code>git push origin master
-# Open &amp; Merge Pull Request
+# Open &amp; Review &amp; Merge Pull Request
 </code></pre>
 
 <p>Update your fork to stay in sync after a merge:</p>
@@ -325,35 +316,26 @@ Update "docs" repo first, you must already have it forked and cloned in the<code
 git push origin master
 </code></pre>
 
-<h2 id="update-web-site">Update web-site</h2>
-
-<p>The main BitDust web site at <a href="https://bitdust.io">www.bitdust.io</a> is also fully open-sourced in <a href="https://github.com/bitdust-io/www">WWW repository</a>.
-However only "core" developers have SSH access to the hosting server, anyone is welcome to contribute and improve the web-site via GIT.</p>
-
-<p>You can "auto-generate" all HTML pages based on the markdown sources from the documentation repository:</p>
-
-<pre><code>cd ../bitdust.www/
-./build
-</code></pre>
-
-<p>Push changes to your fork of the WWW repository and start a new <a href="https://github.com/bitdust-io/www/pulls">Pull Request</a> to the upstream:</p>
-
-<pre><code>git push origin master
-# Open &amp; Merge Pull Request
-</code></pre>
-
-<p>Update your fork to stay in sync:</p>
-
-<pre><code>git pull upstream master
-git push origin master
-</code></pre>
-
-<p>After merging changes, ask one of the developers to run "git pull" command on the server via SSH and web site will be immediately updated:</p>
-
-<pre><code>./update
-</code></pre>
-
 <p>ALL DONE!</p>
+
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = "https://bitdust.io/software_releases.html";   
+        this.page.identifier = "./wiki/software_releases"
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = '//bitdust.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+</div>
 
                             </div>
 

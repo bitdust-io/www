@@ -108,7 +108,6 @@
                                 <li><a href="/wiki/concept.html">Concept</a></li>
                                 <li><a href="/wiki/principle.html">How Does It Work?</a></li>
                                 <li><a href="/wiki/install.html">Installation</a></li>
-                                <li><a href="/wiki/seed_node.html">Seed node</a></li>
                                 <li><a href="/wiki/commands.html">Commands</a></li>
                                 <li><a href="/wiki/settings.html">Settings</a></li>
                                 <li><a href="/wiki/glossary.html">Glossary</a></li>
@@ -124,8 +123,6 @@
                                 <li><a href="/wiki/rebuilding.html">Automatic Rebuilding</a></li>
                                 <li><a href="/wiki/dht.html">Distributed Hash-Table</a></li>
                                 <li><a href="/wiki/services.html">Network services</a></li>
-                                <li><a href="/wiki/transports.html">Transport protocols</a></li>
-                                <li><a href="/wiki/crypto_contracts.html">Crypto-contracts</a></li>
                             </ul>
                             <h6 class="heading">Development</h6>
                             <ul>
@@ -134,6 +131,7 @@
                                 <li><a href="/wiki/technologies.html">Technologies</a></li>
                                 <li><a href="/wiki/api.html">API Interface</a></li>
                                 <li><a href="/wiki/software_releases.html">Software releases</a></li>
+                                <li><a href="/wiki/seed_node.html">Seed node</a></li>
                                 <li><a href="/wiki/respect.html">Contributors and Supporters</a></li>
                             </ul>
                             <h6 class="heading">Repositories</h6>
@@ -174,6 +172,209 @@
 
                             <div class="docs-section doc-action-cards">
                                 <h1 id="bitdust-change-log">BitDust Change Log</h1>
+
+<p>2019-04-27 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>populating few more events from transport.gateway  (#320)</li>
+<li>more fixes in network services (#319)</li>
+</ul>
+
+<p>2019-04-20 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>minor changes in logging and events</li>
+<li>bug fix in my_keys (#317)</li>
+<li>make sure suppliers receive and register my customer public key every time (#316)</li>
+</ul>
+
+<p>2019-04-13 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>added new feature: backup/restore/sync my keys to suppliers encrypting with my "master" key (#313)</li>
+<li>reorganized service<em>private</em>messages()</li>
+<li>populate "my-keys-synchronized" event</li>
+<li>added service<em>keys</em>storage()</li>
+<li>added service<em>message</em>history()</li>
+<li>disabled few unused services, development to be contunue later (#312)</li>
+</ul>
+
+<p>2019-04-09 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>updated Copyright period to 2008-2019</li>
+<li>bug fix in /message/history/v1</li>
+<li>added test for search users</li>
+<li>made regression test setup more reliable</li>
+<li>do not load all local keys at startup</li>
+<li>reading remote matrix for shared files to be able to show availability  </li>
+<li>updated online_status() automat : reduce amount of "ping" packets sent to offline users</li>
+<li>added /config/tree/v1 endpoint</li>
+<li>improved config/*/v1 and service/list/v1 endpoints</li>
+<li>added ~/.bitdust/logs/packet.log to debug/monitor p2p traffic</li>
+<li>added ~/.bitdust/logs/event.log</li>
+</ul>
+
+<p>2019-03-28 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>improved config/list/v1 endpoint</li>
+<li>changed contact<em>status() state machine and added bug fix in family</em>member()</li>
+<li>added more info in file/list/v1 api,</li>
+<li>enabled CRITICALLY_OFFLINE supplier replacing feature (#291)</li>
+<li>bug fix in service_employer()  (#290)</li>
+<li>home folder on Android is /storage/emulated/0/ (#288)</li>
+<li>updated setup.py (#286)</li>
+<li>added more flexibility in main.bpmain (#285)</li>
+<li>bug fix in crypt.encrypted.Block unserialize, clean up in parallelp code (#283)</li>
+<li>added more logging for jsn serialization and signatures verification issues debugging (#282)</li>
+<li>rebuilt raid_worker() to use parallelp instead of multiprocessing (#281)</li>
+<li>fixed .travis.yml</li>
+<li>able to set python version for unit tests on travis</li>
+<li>rebuilt raid_worker() to use parallelp instead of multiprocessing</li>
+<li>copied and adopted parallelp 1.5.7 sources in the code base, thanks to Vitalii Vanovschi</li>
+<li>removed pybc blockchain files, we are moving towards Bismuth project</li>
+<li>fix bug in chat messages (#279)</li>
+<li>passing text arguments to child_process() (#277)</li>
+<li>fixes in raid and backup/restore pipe  (#274)</li>
+</ul>
+
+<p>2019-03-01 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>use asyncio for test suit initialization to run tests faster</li>
+<li>fix in stun_server() machine</li>
+<li>populate opened UDP ports in network/info/v1 API</li>
+<li>fallback flow in stun method : use ID servers to recognize my external IP</li>
+</ul>
+
+<p>2019-02-27 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>added fallback flow in stun method - use ID servers to recognize my external IP</li>
+<li>py3 fix in tar pipe</li>
+<li>bug fix in encryption code</li>
+<li>windows fixes</li>
+</ul>
+
+<p>2019-03-01 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>use asyncio for test suit initialization to run tests faster</li>
+<li>fix in stun_server() machine</li>
+<li>populate opened UDP ports in network/info/v1 API</li>
+<li>fallback flow in stun method : use ID servers to recognize my external IP</li>
+</ul>
+
+<p>2019-02-27 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>added fallback flow in stun method - use ID servers to recognize my external IP</li>
+<li>py3 fix in tar pipe</li>
+<li>bug fix in encryption code</li>
+<li>windows fixes</li>
+</ul>
+
+<p>2019-02-25 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>py3 and windows bug fixes</li>
+<li>bump twisted version to 18.7.0</li>
+<li>fallback scenario in chat history to be able to recreate local db in case of migrations</li>
+</ul>
+
+<p>2019-02-16 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>bug found and fixed in customer/data_sender.py</li>
+<li>get rid of data_sender.log</li>
+<li>all suppliers must be already hired before you start uploading</li>
+<li>few more py3 bug fixes</li>
+<li>more stability in service<em>shared</em>data() </li>
+</ul>
+
+<p>2019-02-14 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>BitDust is Python3 compatible now!</li>
+<li>reorganization in dht_service.py</li>
+<li>switched kademlia DHT keys from binary digest() to string hexdigest() format</li>
+<li>get rid of pickle in kademlia DHT</li>
+<li>switched kademlia DHT KBucket size from 8 to 4</li>
+<li>get rid of builtin json module in favor of lib.serialization and lib.jsn</li>
+<li>switched OptimizedTreeRoutingTable() to TreeRoutingTable()</li>
+<li>introduce "revision" field in DHT DB: check/update "revision" on closest nodes on every search</li>
+<li>do not publish my identity source in DHT, only my IDURL</li>
+<li>print all stored in DHT key:value pairs from all nodes after regression test finished</li>
+<li>redirecting stdout to .bitdust/logs/stdout.log file for "bitdust daemon" command</li>
+<li>added timeout=30 parameter to api.share_grant()</li>
+<li>changed dependecies of service<em>keys</em>registry() - moved up in the services tree</li>
+</ul>
+
+<p>2019-01-17 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>added more regression tests</li>
+<li>a lot of fixes/improvements in DHT code</li>
+<li>introduced DHT key-value store/request validation methods</li>
+<li>software must not use default suppliers number and default ecc_map in the real-time logic</li>
+<li>some updates in state machines around the code</li>
+<li>minor fixes api methods</li>
+<li>added copyrights for some files for Stanislav Evseev, Veselin Penev</li>
+<li>report number of warnings/errors/exceptions from containers in the end of regression test</li>
+<li>all state changed callbacks must also use "<em>args, *</em>kwargs" instead of "args"</li>
+<li>switched all state machines to <em>args, *</em>kwargs notation instead of single arg=None input</li>
+<li>a lot of work with family_member() machine</li>
+</ul>
+
+<p>2018-12-23 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>bug fix in dht_relations</li>
+</ul>
+
+<p>2018-12-22 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>better logging in DHT</li>
+<li>bug fix DHT configuration</li>
+<li>better logging of api calls</li>
+<li>tuning DHT service</li>
+<li>added p2p-alice.ai to the main network seeds</li>
+<li>more stable regression tests</li>
+</ul>
+
+<p>2018-12-21 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>able to restore identity again : added "stun my IP" step in id_restorer()</li>
+<li>added regression tests for private messages</li>
+<li>fix in "bitdust stop" command</li>
+<li>testing main network</li>
+</ul>
+
+<p>2018-12-16 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
+
+<ul>
+<li>created networks.json file to store info about "genesis" nodes</li>
+<li>moved p2p-id.ru and bitdust.ai to the main network</li>
+<li>bug fixes proxy_router()</li>
+<li>added retries=2 to propagate.PingContact()</li>
+<li>added check for service<em>proxy</em>transport() in network/connected/v1</li>
+<li>stabilyzing regression tests</li>
+<li>removed parallelp lib from the repo</li>
+<li>switched tests from run<em>ssh</em>curl<em>and</em>wait() to requests.get()/post()</li>
+<li>added ssh tunnels to regression tests</li>
+<li>use settings.getPrivateKeySize() in my<em>keys.generate</em>key()</li>
+<li>state machine core event() method will properly trigger state changed callbacks when closing automat instance</li>
+<li>added revision and publisher fields in dht record of customer family</li>
+<li>supplier to be notified about his position in the family by customer</li>
+<li>service<em>employer() will report supplier position to service</em>customer_family()</li>
+<li>rebuilding supplier service in order to reduce DHT queries and build customer family logic</li>
+<li>added make regression_test target</li>
+<li>building healt_check() method for every network service</li>
+<li>added tests for restore identity</li>
+</ul>
 
 <p>2018-11-10 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
 
@@ -565,6 +766,22 @@
 <p>2014-08-20 Veselin Penev <a href="mailto:penev.veselin@gmail.com">penev.veselin@gmail.com</a></p>
 
 <ul>
+<li>new tray icons for Microsoft Windows</li>
+</ul>
+
+<p>2014-10-10 Veselin Penev <a href="m&#x61;&#105;&#x6c;&#116;&#111;&#58;&#x76;&#101;&#115;&#x65;&#x6c;&#105;&#110;&#64;&#x62;&#105;&#x74;&#100;u&#x73;t&#x2e;&#105;&#111;">&#x76;&#101;&#115;&#x65;&#x6c;&#105;&#110;&#64;&#x62;&#105;&#x74;&#100;u&#x73;t&#x2e;&#105;&#111;</a></p>
+
+<ul>
+<li>switched on a new improved UDP transport - can use UDP to transfer packets now</li>
+<li>upgrade messaging service - safe p2p encrypted chat</li>
+<li>added command line support to send/list messages</li>
+</ul>
+
+<p>2014-08-20 Veselin Penev <a href="m&#97;&#x69;&#108;&#116;o&#58;&#x76;&#101;&#115;&#101;&#108;&#105;&#110;&#64;&#x62;&#105;&#116;&#100;&#x75;&#x73;&#x74;&#46;&#x69;&#x6f;">&#x76;&#101;&#115;&#101;&#108;&#105;&#110;&#64;&#x62;&#105;&#116;&#100;&#x75;&#x73;&#x74;&#46;&#x69;&#x6f;</a></p>
+
+<ul>
+<li>start tracking of change log history</li>
+<li>prepared a Demo version with GUI interface </li>
 <li>new tray icons for Microsoft Windows</li>
 </ul>
 

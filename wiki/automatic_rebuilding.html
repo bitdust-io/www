@@ -171,106 +171,49 @@
 
 
                             <div class="docs-section doc-action-cards">
-                                <h1 id="file-sharing">File sharing</h1>
-
-<p>We are not isolated as human beings and we recognize that users have the desire to share their data with trusted contacts. In this section we explain how data is shared safely and securely through the following items:</p>
-
-<ul>
-<li><a href="sharing.html#master-key">Master Key</a></li>
-<li><a href="sharing.html#shared-keys">Shared keys</a></li>
-<li><a href="sharing.html#grant-access">Grant access</a></li>
-<li><a href="sharing.html#audit-access">Audit access</a></li>
-<li><a href="sharing.html#receiving-shared-keys">Receiving shared keys</a></li>
-<li><a href="sharing.html#reading-shared-data">Reading shared data</a></li>
-</ul>
-
-<h2 id="master-key">Master Key</h2>
-
-<p>Since every piece of your personal data in the BitDust network is stored on the machines of other users, it is important to know that all data is always encrypted before it leaves your computer - the method of protection is described in detail in the article <a href="security.html">Data Security</a>. Your main private key, here and below, we will refer to it as a "Master Key" is used to encrypt and decrypt your personal data for storing on the suppliers machines.</p>
-
-<p>For your personal safety, you should make a backup copy of the Master Key and put it in a safe place immediately after installing BitDust on your device. In any other cases, the Master Key should never leave your device and under no circumstances should it be transferred to anyone else. Only the Master Key protects your personal data and provides access to the BitDust network.</p>
-
-<h2 id="shared-keys">Shared keys</h2>
-
-<p>In addition to the Master key, there are other private keys within BitDust that you can use to manage your data. The BitDust software implements an extra logic to use the same cryptographic methodds. However the software makes it possible to work with many different keys.</p>
-
-<p>Using additional private and public keys in BitDust is very similar to what happens in the real world, for instance you have multiple keys on your keychain to open and close different doors. For example if you have a good friend visiting your place and you would like to provide him shelter in one of your guestbedrooms after a night of heavy drinking:), you will probably give him a copy of the key you have on your keychain to be ably to unlock this room. But you will still have the original key for yourself. Thus, both you and him will have access the guest bedroom. However there might be rooms within your house that you want to keep locked and that it only be opened by you. </p>
-
-<p>Within BitDust you can at any time create a new additional private key for sharing purposes and use it to encrypt some data that will be uploaded to your suppliers's machines. The data is stored in a distributed way, in the same way when you encrypt data with your Master Key - this is described in detail in the article <a href="storage.html">Data Storage</a>. You will have the possibility to switch from your Master Key to an additional key when you want to share a file.</p>
-
-<p>Later on you can transfer this additional key to another user who you trust and this user will have the ability to download this particular piece of data and decrypt it on his own device. Thus, we can exchange personal data with each other.</p>
-
-<p>When you want to create additional keys you can perform the following actions:</p>
-
-<ul>
-<li>create a new key by giving it a name and store it locally</li>
-<li>create a new key with a randomly generated name</li>
-<li>delete an existing private key</li>
-<li>backup and store the keys on your suppliers - will be encrypted with your Master Key</li>
-<li>send the public part of a given key to another "un-trusted" user</li>
-<li>send the private part of a given key to another "trusted" user</li>
-<li>view a list of all keys: created by you or received from other users</li>
-<li>perform an "audit" process of a given public key and verify that another user also posses the exact same copy of that public key</li>
-<li>perform an "audit" of given private key and verify that another user also posses exactly same copy of that private key</li>
-<li>use a private key to encrypt data downloaded to the BitDust network</li>
-<li>use a private key to decrypt data downloaded from the network</li>
-</ul>
-
-<p>You will find your additional private keys in the <code>.bitdust/keys</code> folder,
-currently BitDust software is using the <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">RSA algorithm</a> which a widely used encryption method.
-Those methods were implemented using <a href="https://pypi.org/project/pycrypto/">PyCrypto</a> library.</p>
-
-<p>Note that most of the actions performed are automatically. We just want to describe the steps BitDust performs to provide you with more insight into the inner-workings of our software.</p>
-
-<h2 id="grant-access">Grant access</h2>
-
-<p>When transferring an additional key from one user to another, one of the text files from the <code>.bitdust/keys</code> folder is actually sent to the remote recipient's machine. The key is not transmitted in plaintext but it is encrypted using the public part of Master Key of the recipient before sending - only the "trusted" user will be able to decrypt this text file and get a copy of the transmitted additional key. The BitDust program on his machine will receive the key and save it in the new text file in the <code>.bitdust/keys</code> folder. When you share a additional key with another user you are basically providing that user access to all your data that is encrypted with that particular key. The recipient will automatically see which files you shared within the BitDust program (section "shared files").</p>
-
-<p>It is important to understand that this action is "irreversible"! You can not "take" the key back after you handed it to the recipient. In fact, after you have passed the key to another user - both of you are almost completely are "fully equal" owners of the data that was encrypted with that additional key.</p>
-
-<p>We say "almost equal" ownership when you share data, the data is still stored on your suppliers, but not on the suppliers of user your shared the data with. So you have always "more rights" inside your own distributed storage than anyone else. For example, at any time you can request to your suppliers to delete the files you shared with other users. But be aware that a user who you shared data with could always have downloaded the file before you request to delete that data from your suppliers. </p>
-
-<h2 id="audit-access">Audit access</h2>
-
-<p>The most important role of the supplier is to store and provide access to files. To achieve this, each supplier must have specific instructions and a well-defined order of actions that they must perform at the time of the request to the distributed "shared" data on his device from you or a "trusted" user. Since all data that the suppliers store is encrypted, even if suppliers would send your fragments of your data to third parties you can still remain calm - only those who posses the right key will be able to "read" your files.</p>
-
-<p>However, the BitDust software implements methods for filtering and validation to "access requests" for all data that is uploaded to the network. By default the supplier will "check" that the one who requests a particular piece of data has the correct additional key to decrypt the data. The supplier must "audit" the user's key, which refers to it the data in question. To do this, the supplier must keep the public part of the key, which was used to encrypt the data. This public key is usually received from the user, exactly at the moment when you grant access to the data to the "trusted" user.</p>
-
-<p>To keep it short, below is the general plan implemented in the BitDust software which executes on your device when you transfer one of your additional keys to another user:</p>
-
-<ol>
-<li>checking the connection status of the trusted user's computer</li>
-<li>audit of the master key of the trusted user</li>
-<li>sending the public part of the additional key to all your suppliers</li>
-<li>forwarding the private part of the additional key to a trusted user</li>
-<li>forwarding a list of file names that have already been encrypted with this additional key to a trusted user</li>
+                                <ol>
+<li><p>хранители следят друг за другом!
+a. каждую минуту один из хранителей пингует всех других хранителей в семье кастомера
+b. в следующую минуту другой хранитель пингует всех остальных хранителей и т.д.
+c. если кастомер в сети, хранители этого не делают - он сам всех пингует и принимает решения
+d. хранитель сперва пингует кастомера и если он не в сети то только тогда делает пинг всех хранителей
+e. если кастомер в сети, то хранитель в следующий раз запустит пинг только через n минут, n = число хранителей
+f. в итоге каждую минуту кастомер будет получать (если он в сети) по одному пингу от одного из хранителей по кругу</p></li>
+<li><p>все хранители знают друг друга!
+a. кастомер сообщает каждому хранителю всю семью хранителей каждый раз когда семья меняется
+b. только кастомер может изменить семью - нанять или уволить хранителя
+c. хранители также публикуют в DHT свою позицию в семье этого кастомера
+d. из DHT любой другой узел вне семьи сможет узнать полный список всех хранителей
+e. когда хранители пингуют друг друга они также сообщают известный им список хранителей - для проверки
+f. важно минимизировать количество регулярных обращений к DHT</p></li>
+<li><p>хранитель сам нанимает "запасного" когда обнаруживает что другой хранитель не в сети!
+a. обнаружив другого хранителя, который не отвечает, пингующий хранитель запоминает его
+b. он передает "мертвого" следующему живому хранителю, который будет проводить пинг в следующую минуту
+c. следующий пингующий тоже обнаруживает мертвого и запоминает и передает эту информацию следующему
+d. после нескольких итераций, когда несколько хранителей вместе обнаруживают мертвого, нанимается запасной</p></li>
+<li><p>запасной хранитель добавлен в семью этого клиента!
+a. запасной хранитель назначается на туже позицию, на которой был мертвый хранитель но не замещает его в семье
+b. запасной хранитель публикует в DHT информацию о себе
+c. запасной хранитель находит "ребилдера" для того что бы реконструировать потерянный кусок данных клиента
+d. запасной хранитель принимает пересобранные куски данных от ребилдера и хранит их как обычный хранитель
+e. несколько ребилдеров может быть запущенно если ожидаемый объем данных достаточно велик
+f. запасной также участвуют в "периодическом пинге" и следит за другими хранителями и запасными</p></li>
+<li><p>ребилдер получает задание от запасного!
+a. ребилдер сканирует DHT и выясняет всех хранителей и запасных в семье
+b. ребилдер пингует всех хранителей и запасных и начинает скачивать с них куски данных
+c. блок за блоком ребилдер собирает потерянный фрагменты и посылает их запасному
+d. если параллельно работают несколько ребилдеров то они берут разные блоки - запасной управляет этим</p></li>
+<li><p>клиент возвращается в сеть и решает ситуацию с запасными и мертвыми!
+a. клиент может запросить "историю пингов" от всех хранителей и запасных и составить рейтинг надежности 
+b. если мертвый хранитель так и не вернулся в сеть - запасной просто меняет его и перестает быть запасным
+c. если мертвый хранитель вернулся в сеть, то на основе рейтинга клиент может решить кто надежнее
+d. если мертвый вернулся в сеть очень быстро, то запасной может сам отказатся от своей роли и выйти из семьи
+e. клиент мож</p></li>
+<li><p>клиент так и не возвращается в сеть вообще!
+a. хранители и клиент заранее договариваются на максимальный срок "контракта" в момент первого контакта
+b. запасной знает срок контракта мертвого хранителя из DHT, он "унаследует" тот же срок "контракта"
+c. хранители и запасные после истечения срока их контрактов автоматически выходят из семьи и данные будут потеряны</p></li>
 </ol>
-
-<h2 id="receiving-shared-keys">Receiving shared keys</h2>
-
-<p>In the previous paragraphs, we described methods for transferring access rights of your data to another user who you trust. Next, you will find detailed information about what happens on the device of the trusted contact and how they can use the additional key they received from you, the user, to download the "shared" data.</p>
-
-<p>An assumption is made that the BitDust program is running on both devices and is connected to other nodes within the BitDust network at the time when an additional key was started. In case when the "donor" or "recipient" were not connected to the network and did not have the opportunity to directly exchange service packages via the BitDust "channels", the process will fail and no access will be granted at all. In short to share data both parties must be online to share data. We are currently looking into the ability to re-use existing keys for sharing purposes. This enables offline sharing when you already shared at least one key with each other.</p>
-
-<p>BitDust on the machine of the "trusted" user is constantly in a waiting state to receive incoming service data packets and is always ready to accept a new incoming access keys. After receiving and decrypting the file with their own Master Key, it will be stored in the <code>.bitdust/keys</code> folder. You can always find out the full list of all access keys that have been passed to you from other users - it's important to note that each key has a unique global identifier that looks like this:</p>
-
-<pre><code>    share_0780f0d64b017303a0d81865eee009f1$veselin_penev@some-id-hostname.net
-</code></pre>
-
-<p>The initial part of the identifier before the character <code>$</code> is called "key alias" and serves to identify a particular key among a set of additional keys created by this user. The second part after the <code>$</code> character is the unique global identifier of the user who first generated the key. For more details about the identification of users in the BitDust network, you can read in the article <a href="identities.html">User Identification</a>.</p>
-
-<p>This method of identifying access keys always uniquely defines who is the creator of the data and on whose suppliers the encrypted fragments of files in the BitDust network are actually stored. In other words, having received a new access key from someone, by default you will always know where the "shared" files is located.</p>
-
-<h2 id="reading-shared-data">Reading shared data</h2>
-
-<p>So to access the "foreign" files, you need to use the key identifier to determine the "location" of the data. We use the word "location" in a figurative sense, since all data is stored completely distributed on the suppliers' machines. For downloading fragments of files and decrypting them, it is necessary to determine the current active suppliers, connect to them and request all the fragments of data related to that given "common" file.</p>
-
-<p>In BitDust, the list of your suppliers is stored and maintained not only on your own device, but also in a distributed hash table - your suppliers automatically support and periodically update these "globally distributed" records. Thanks to this, any user always has the ability to "scan" the list of your suppliers and find out where they need to go to download those files to which you "granted access." The process of "scanning" that list takes some time, depending on the number of suppliers you have. In more detail, you can see how BitDust uses these service records in the article <a href="dht.html">Distributed Hash-table</a>.</p>
-
-<p>After connecting with the "foreign" suppliers, you can request the necessary pieces of data related to a particular "shared" file. If the access key you received from the "donor" is valid, "external" suppliers will accept your request and the BitDust software on your device will receive the needed fragments, decrypt, combine into one chunk and create the exact same copy of the "shared" file of which "donor" granted you access.</p>
-
-<p><div class=fbcomments markdown="1">
-</div</p>
 
                             </div>
 

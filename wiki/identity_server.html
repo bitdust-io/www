@@ -108,7 +108,6 @@
                                 <li><a href="/wiki/concept.html">Concept</a></li>
                                 <li><a href="/wiki/principle.html">How Does It Work?</a></li>
                                 <li><a href="/wiki/install.html">Installation</a></li>
-                                <li><a href="/wiki/seed_node.html">Seed node</a></li>
                                 <li><a href="/wiki/commands.html">Commands</a></li>
                                 <li><a href="/wiki/settings.html">Settings</a></li>
                                 <li><a href="/wiki/glossary.html">Glossary</a></li>
@@ -124,8 +123,6 @@
                                 <li><a href="/wiki/rebuilding.html">Automatic Rebuilding</a></li>
                                 <li><a href="/wiki/dht.html">Distributed Hash-Table</a></li>
                                 <li><a href="/wiki/services.html">Network services</a></li>
-                                <li><a href="/wiki/transports.html">Transport protocols</a></li>
-                                <li><a href="/wiki/crypto_contracts.html">Crypto-contracts</a></li>
                             </ul>
                             <h6 class="heading">Development</h6>
                             <ul>
@@ -134,6 +131,7 @@
                                 <li><a href="/wiki/technologies.html">Technologies</a></li>
                                 <li><a href="/wiki/api.html">API Interface</a></li>
                                 <li><a href="/wiki/software_releases.html">Software releases</a></li>
+                                <li><a href="/wiki/seed_node.html">Seed node</a></li>
                                 <li><a href="/wiki/respect.html">Contributors and Supporters</a></li>
                             </ul>
                             <h6 class="heading">Repositories</h6>
@@ -211,7 +209,12 @@ This process will be automated and network identification will become much more 
 <pre><code>    ServerName my-own-identity-server.com
 </code></pre>
 
-<p>Create a new my-own-identity-server_com.conf file in /etc/apache2/conf-available/ :</p>
+<p>Create a new <code>.conf</code> file for Apache2:</p>
+
+<pre><code>    sudo nano /etc/apache2/conf-available/my-own-identity-server_com.conf
+</code></pre>
+
+<p>Use that template to create Apache2 config, basically you can just copy &amp; paste and only change domain name here:</p>
 
 <pre><code>    &lt;VirtualHost *:80&gt;
       ServerName my-own-identity-server.com
@@ -292,10 +295,13 @@ This process will be automated and network identification will become much more 
 <pre><code>bitdust set services/identity-propagate/known-servers first-server.com:80:6661,second-host.net:8080:6661
 </code></pre>
 
-<p>Now if you will create a new identity with <code>bitdust id create my_dedicate_identity</code> command it will be "propagated" to <code>first-server.com</code> and <code>second-host.net</code> and your global IDURL can be like that:</p>
+<p>Now if you create a new identity with such commands:</p>
 
-<pre><code>http://first-server.com/my_dedicate_identity.xml
+<pre><code>bitdust id erase
+bitdust id create my_dedicate_identity
 </code></pre>
+
+<p>it will be automatically "propagated" to <code>first-server.com</code> and <code>second-host.net</code> and your global IDURL should look like that: <code>"http://first-server.com/my_dedicate_identity.xml"</code></p>
 
 <h2 id="support-bitdust-network">Support BitDust network</h2>
 

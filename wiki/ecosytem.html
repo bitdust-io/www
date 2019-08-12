@@ -171,106 +171,99 @@
 
 
                             <div class="docs-section doc-action-cards">
-                                <h1 id="file-sharing">File sharing</h1>
+                                <h1 id="ecosystem">Ecosystem</h1>
 
-<p>We are not isolated as human beings and we recognize that users have the desire to share their data with trusted contacts. In this section we explain how data is shared safely and securely through the following items:</p>
+<p>The BitDust network is a complex ecosystem. To make the BitDust network functioning there is a complex ecosystem.
+This ecosystem consist out of different roles that either use or support the BitDust network. In this section 
+we want to provide a short overview of the different roles that make up the BitDust ecosystem. You can click on the 
+different roles and see more in-depth information and more importantly on how to become that particular role. </p>
 
-<ul>
-<li><a href="sharing.html#master-key">Master Key</a></li>
-<li><a href="sharing.html#shared-keys">Shared keys</a></li>
-<li><a href="sharing.html#grant-access">Grant access</a></li>
-<li><a href="sharing.html#audit-access">Audit access</a></li>
-<li><a href="sharing.html#receiving-shared-keys">Receiving shared keys</a></li>
-<li><a href="sharing.html#reading-shared-data">Reading shared data</a></li>
-</ul>
+<p>The BitDust ecosystem consist out of either customers that use the BitDust network for encrypted storage and chat
+or out of different supporting roles to make it possible for customers to use the BitDust network.
+Currently we have 4 supporting roles that are active and 2 roles that are still being developed. Once all the 6 
+supporting roles are live the full power of the BitDust network is unleashed. </p>
 
-<h2 id="master-key">Master Key</h2>
+<h2 id="becoming-a-customer-of-the-bitdust-network">Becoming a customer of the BitDust network</h2>
 
-<p>Since every piece of your personal data in the BitDust network is stored on the machines of other users, it is important to know that all data is always encrypted before it leaves your computer - the method of protection is described in detail in the article <a href="security.html">Data Security</a>. Your main private key, here and below, we will refer to it as a "Master Key" is used to encrypt and decrypt your personal data for storing on the suppliers machines.</p>
-
-<p>For your personal safety, you should make a backup copy of the Master Key and put it in a safe place immediately after installing BitDust on your device. In any other cases, the Master Key should never leave your device and under no circumstances should it be transferred to anyone else. Only the Master Key protects your personal data and provides access to the BitDust network.</p>
-
-<h2 id="shared-keys">Shared keys</h2>
-
-<p>In addition to the Master key, there are other private keys within BitDust that you can use to manage your data. The BitDust software implements an extra logic to use the same cryptographic methodds. However the software makes it possible to work with many different keys.</p>
-
-<p>Using additional private and public keys in BitDust is very similar to what happens in the real world, for instance you have multiple keys on your keychain to open and close different doors. For example if you have a good friend visiting your place and you would like to provide him shelter in one of your guestbedrooms after a night of heavy drinking:), you will probably give him a copy of the key you have on your keychain to be ably to unlock this room. But you will still have the original key for yourself. Thus, both you and him will have access the guest bedroom. However there might be rooms within your house that you want to keep locked and that it only be opened by you. </p>
-
-<p>Within BitDust you can at any time create a new additional private key for sharing purposes and use it to encrypt some data that will be uploaded to your suppliers's machines. The data is stored in a distributed way, in the same way when you encrypt data with your Master Key - this is described in detail in the article <a href="storage.html">Data Storage</a>. You will have the possibility to switch from your Master Key to an additional key when you want to share a file.</p>
-
-<p>Later on you can transfer this additional key to another user who you trust and this user will have the ability to download this particular piece of data and decrypt it on his own device. Thus, we can exchange personal data with each other.</p>
-
-<p>When you want to create additional keys you can perform the following actions:</p>
+<p>A customer/user of the BitDust network will have the possibility to install BitDust on their laptop/PC. Once installed
+the user can create a identity anonymously and start enjoying the BitDust product. For now once a user has installed
+BitDust they can use start using BitDust to be in full control of their data. Every piece of data that runs on the '
+network is encrypted with your private key. Nobody else has access unless you provide access. For now we offer the 
+following features:</p>
 
 <ul>
-<li>create a new key by giving it a name and store it locally</li>
-<li>create a new key with a randomly generated name</li>
-<li>delete an existing private key</li>
-<li>backup and store the keys on your suppliers - will be encrypted with your Master Key</li>
-<li>send the public part of a given key to another "un-trusted" user</li>
-<li>send the private part of a given key to another "trusted" user</li>
-<li>view a list of all keys: created by you or received from other users</li>
-<li>perform an "audit" process of a given public key and verify that another user also posses the exact same copy of that public key</li>
-<li>perform an "audit" of given private key and verify that another user also posses exactly same copy of that private key</li>
-<li>use a private key to encrypt data downloaded to the BitDust network</li>
-<li>use a private key to decrypt data downloaded from the network</li>
+<li>Anonymously creating a BitDust account</li>
+<li>Upload and download encrypted data</li>
+<li>Share data with trusted contacts</li>
+<li>Add friends/contact to share files with and chat</li>
+<li>Fully encrypted chat between friends/contacts</li>
 </ul>
 
-<p>You will find your additional private keys in the <code>.bitdust/keys</code> folder,
-currently BitDust software is using the <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">RSA algorithm</a> which a widely used encryption method.
-Those methods were implemented using <a href="https://pypi.org/project/pycrypto/">PyCrypto</a> library.</p>
+<p>All of the above features can be accessed via a simple program that you can install on your laptop/PC. We have versions
+for Mac, Windows, Linux and Rasberry Pi.</p>
 
-<p>Note that most of the actions performed are automatically. We just want to describe the steps BitDust performs to provide you with more insight into the inner-workings of our software.</p>
+<p>Curious on how to become a user within the BitDust network then read more about it here (link to user detail page)</p>
 
-<h2 id="grant-access">Grant access</h2>
+<h2 id="becoming-a-supporter-in-the-bitdust-network">Becoming a supporter in the BitDust network</h2>
 
-<p>When transferring an additional key from one user to another, one of the text files from the <code>.bitdust/keys</code> folder is actually sent to the remote recipient's machine. The key is not transmitted in plaintext but it is encrypted using the public part of Master Key of the recipient before sending - only the "trusted" user will be able to decrypt this text file and get a copy of the transmitted additional key. The BitDust program on his machine will receive the key and save it in the new text file in the <code>.bitdust/keys</code> folder. When you share a additional key with another user you are basically providing that user access to all your data that is encrypted with that particular key. The recipient will automatically see which files you shared within the BitDust program (section "shared files").</p>
+<p>To make the BitDust network function there are multiple roles needed to support the network. For now all of the roles
+can only be created by using command line. This basically means that you don't have an easy to use interface to set-up
+your supporting role, like you have when you use BitDust as a customer/user. We will be making this available in the
+future so everybody can join. For now we focus on making it possible to set-up the entire BitDust ecosystem and afterwards
+focus on usability so not only developers can fulfill a supporting role, but also grandma with her laptop:).</p>
 
-<p>It is important to understand that this action is "irreversible"! You can not "take" the key back after you handed it to the recipient. In fact, after you have passed the key to another user - both of you are almost completely are "fully equal" owners of the data that was encrypted with that additional key.</p>
+<p>We currently have the following supporting roles which are live and you can set-up by using command line. They are descibed
+in short below. Click on the role to get more detailled information and how to set this role up on your local machine.</p>
 
-<p>We say "almost equal" ownership when you share data, the data is still stored on your suppliers, but not on the suppliers of user your shared the data with. So you have always "more rights" inside your own distributed storage than anyone else. For example, at any time you can request to your suppliers to delete the files you shared with other users. But be aware that a user who you shared data with could always have downloaded the file before you request to delete that data from your suppliers. </p>
+<h2 id="supporting-roles-that-you-can-become-right-now">Supporting roles that you can become right now</h2>
 
-<h2 id="audit-access">Audit access</h2>
+<p>Supplier:
+As a supplier you support the BitDust ecosytem by providing storage to customers. You basically rent out your harddisk space
+to customers and get BitBust tokens back as compensation in the future. As a supplier you store encrypted data of customers.
+Being a good supplier means also that you keep the customers data stored on your local machine and be connected to the 
+internet always. Interested in becoming a supplier then read more about it here (insert link suppliers).</p>
 
-<p>The most important role of the supplier is to store and provide access to files. To achieve this, each supplier must have specific instructions and a well-defined order of actions that they must perform at the time of the request to the distributed "shared" data on his device from you or a "trusted" user. Since all data that the suppliers store is encrypted, even if suppliers would send your fragments of your data to third parties you can still remain calm - only those who posses the right key will be able to "read" your files.</p>
+<p>ID Server:
+As a customer you need to create an identity to use the BitDust network. This identity is captured in an identity file and
+is distributed across the network. Making sure that as a customer you can connect with other customers or other supporting 
+roles within the BitDust network. To make this possible you as an ID server hold copies of identity files and make it 
+possible for customers to connect and communicate across the BitDust network. Interested in becoming an ID server then read 
+more about it here (insert link ID server).</p>
 
-<p>However, the BitDust software implements methods for filtering and validation to "access requests" for all data that is uploaded to the network. By default the supplier will "check" that the one who requests a particular piece of data has the correct additional key to decrypt the data. The supplier must "audit" the user's key, which refers to it the data in question. To do this, the supplier must keep the public part of the key, which was used to encrypt the data. This public key is usually received from the user, exactly at the moment when you grant access to the data to the "trusted" user.</p>
+<p>Distributed Hash Table Seed:
+As a Distributed Hash Table Seed you maintain service information within the Distributed Hash Table. The Distributed Hash table 
+stores service information about everybody that is connected to the network. For instance we store your nickname in the 
+Ditributed Hash table or the suppliers a specific customer has. Interested in becoming a Distributed Hash Table Seed
+then read  more about it here (insert link DHTS).</p>
 
-<p>To keep it short, below is the general plan implemented in the BitDust software which executes on your device when you transfer one of your additional keys to another user:</p>
+<p>Router:
+As a router you help other nodes to reach each other within the BitDust network. You help other nodes to send and 
+receive encrypted packets. Interested in becoming a Router then read  more about it here (insert link Router).</p>
 
-<ol>
-<li>checking the connection status of the trusted user's computer</li>
-<li>audit of the master key of the trusted user</li>
-<li>sending the public part of the additional key to all your suppliers</li>
-<li>forwarding the private part of the additional key to a trusted user</li>
-<li>forwarding a list of file names that have already been encrypted with this additional key to a trusted user</li>
-</ol>
+<h2 id="supporting-roles-that-you-can-become-in-the-future">Supporting roles that you can become in the future</h2>
 
-<h2 id="receiving-shared-keys">Receiving shared keys</h2>
+<p>There are 2 roles that are in development that will support the BitDust ecosystem. When these 2 roles are finished the
+BitDust network is fully operational. </p>
 
-<p>In the previous paragraphs, we described methods for transferring access rights of your data to another user who you trust. Next, you will find detailed information about what happens on the device of the trusted contact and how they can use the additional key they received from you, the user, to download the "shared" data.</p>
+<p>ReBuilder:
+Suppliers can go offline due to circumstances. To ensure that your data has a high availability it is the RebBuilders job to 
+rebuild the data that was lost at one supplier and move it to another supplier. Read more in detail about our approach here.
+(insert link)</p>
 
-<p>An assumption is made that the BitDust program is running on both devices and is connected to other nodes within the BitDust network at the time when an additional key was started. In case when the "donor" or "recipient" were not connected to the network and did not have the opportunity to directly exchange service packages via the BitDust "channels", the process will fail and no access will be granted at all. In short to share data both parties must be online to share data. We are currently looking into the ability to re-use existing keys for sharing purposes. This enables offline sharing when you already shared at least one key with each other.</p>
+<p>Miner:
+There are a lot of complex relationships within the BitDust ecosystem and it is important to be transparant about it. We use
+blockchain technology to accomplish this. A miner validates transactions within the BitDust Blockchain. Transactions are the 
+sending and receiving of BitDust tokens from one users to another. The BitDust token is used to reward supporting roles within
+the network. For instance a customer needs BitDust tokens to store data at suppliers. Read more in detail about our
+approach here (insert link).</p>
 
-<p>BitDust on the machine of the "trusted" user is constantly in a waiting state to receive incoming service data packets and is always ready to accept a new incoming access keys. After receiving and decrypting the file with their own Master Key, it will be stored in the <code>.bitdust/keys</code> folder. You can always find out the full list of all access keys that have been passed to you from other users - it's important to note that each key has a unique global identifier that looks like this:</p>
-
-<pre><code>    share_0780f0d64b017303a0d81865eee009f1$veselin_penev@some-id-hostname.net
-</code></pre>
-
-<p>The initial part of the identifier before the character <code>$</code> is called "key alias" and serves to identify a particular key among a set of additional keys created by this user. The second part after the <code>$</code> character is the unique global identifier of the user who first generated the key. For more details about the identification of users in the BitDust network, you can read in the article <a href="identities.html">User Identification</a>.</p>
-
-<p>This method of identifying access keys always uniquely defines who is the creator of the data and on whose suppliers the encrypted fragments of files in the BitDust network are actually stored. In other words, having received a new access key from someone, by default you will always know where the "shared" files is located.</p>
-
-<h2 id="reading-shared-data">Reading shared data</h2>
-
-<p>So to access the "foreign" files, you need to use the key identifier to determine the "location" of the data. We use the word "location" in a figurative sense, since all data is stored completely distributed on the suppliers' machines. For downloading fragments of files and decrypting them, it is necessary to determine the current active suppliers, connect to them and request all the fragments of data related to that given "common" file.</p>
-
-<p>In BitDust, the list of your suppliers is stored and maintained not only on your own device, but also in a distributed hash table - your suppliers automatically support and periodically update these "globally distributed" records. Thanks to this, any user always has the ability to "scan" the list of your suppliers and find out where they need to go to download those files to which you "granted access." The process of "scanning" that list takes some time, depending on the number of suppliers you have. In more detail, you can see how BitDust uses these service records in the article <a href="dht.html">Distributed Hash-table</a>.</p>
-
-<p>After connecting with the "foreign" suppliers, you can request the necessary pieces of data related to a particular "shared" file. If the access key you received from the "donor" is valid, "external" suppliers will accept your request and the BitDust software on your device will receive the needed fragments, decrypt, combine into one chunk and create the exact same copy of the "shared" file of which "donor" granted you access.</p>
-
-<p><div class=fbcomments markdown="1">
-</div</p>
+<p>In the future we may add roles in order to create a more fair and sustainable ecosystem. For now these are the roles which we will 
+be implementing. All of these roles can only currently be set up if you have the proper hardware and are familiar with setting up
+via command line. In the future we will be developing an easy to use application for all supporting roles. This way even if you
+are not tech savy you will still be able to support the BitDust network with your laptop/pc. Every role has a more in-depth section 
+which provides you with a how-to in order to set that role up on your local machine. If you like what you are reading and want
+to contribute in order ways then please email us at info@bitdust.io. In addition we are always happy to help out on Telegram 
+(https://t.me/bitdust) for you to set things up.  </p>
 
                             </div>
 
