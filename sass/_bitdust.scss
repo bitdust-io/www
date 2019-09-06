@@ -1,18 +1,22 @@
 .wiki {
 
-  h1 {
-    font-size: 2rem;
-    margin: 20px 0;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-    margin: 40px 0px 15px 0px;
-  }
-
-  pre {
-    code {
-      font-size: .8rem;
+    h1 {
+        font-size: 2rem;
+        margin: 20px 0;
     }
-  }
+
+    h2 {
+        font-size: 1.4rem;
+        margin: 40px 0px 15px 0px;
+    }
+
+    pre {
+        code {
+            font-size: .8rem;
+        }
+    }
+}
+
+.how-it-works {
+    font-size: 2rem;
 }
