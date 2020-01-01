@@ -17,6 +17,7 @@ const bitdust_translations = {
         "section_Product_Mac": "Mac",
         "section_Product_Linux": "Linux",
         "section_Product_Android": "Android",
+        "section_Product_Sources": "Sources",
         "section_Problem_Title": "The problem",
         "section_Problem_Description": "Nowadays we create a lot of personal data like: pictures, text files and movies. However we\n all store them at centralized entities. We put trust in centralized authorities to keep our\n most intimate data safe and secure. Nevertheless once uploaded we don’t have any real\n control over it.",
         "section_Problem_PersonalData": "Personal Data",
