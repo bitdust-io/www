@@ -1,5 +1,6 @@
 User-agent: *    
 Disallow: /?                
 Disallow: /?s=
+
 Host: https://bitdust.io
 Sitemap: https://bitdust.io/sitemap.xml
