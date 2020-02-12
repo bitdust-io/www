@@ -4,300 +4,499 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
 
 <url>
   <loc>https://bitdust.io/</loc>
+  <lastmod>2020-02-11T23:05:05+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/intro.html</loc>
+  <loc>https://bitdust.io/wiki/</loc>
+  <lastmod>2020-02-12T09:05:06+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/concept.html</loc>
+  <loc>https://bitdust.io/wiki/security.html</loc>
+  <lastmod>2020-02-12T09:05:08+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/definitions.html</loc>
+  <loc>https://bitdust.io/wiki/sharing.html</loc>
+  <lastmod>2020-02-12T09:05:08+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/philosophy.html</loc>
+  <loc>https://bitdust.io/wiki/rebuilding.html</loc>
+  <lastmod>2020-02-12T09:05:07+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/principle.html</loc>
+  <loc>https://bitdust.io/wiki/intro.html</loc>
+  <lastmod>2020-02-12T09:05:07+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/install.html</loc>
+  <loc>https://bitdust.io/wiki/concept.html</loc>
+  <lastmod>2020-02-12T09:05:06+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/commands.html</loc>
+  <loc>https://bitdust.io/wiki/principle.html</loc>
+  <lastmod>2020-02-12T09:05:07+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/settings.html</loc>
+  <loc>https://bitdust.io/wiki/install.html</loc>
+  <lastmod>2020-02-12T09:05:07+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/glossary.html</loc>
+  <loc>https://bitdust.io/wiki/commands.html</loc>
+  <lastmod>2020-02-12T09:05:06+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/identities.html</loc>
+  <loc>https://bitdust.io/wiki/settings.html</loc>
+  <lastmod>2020-02-12T09:05:08+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/storage.html</loc>
+  <loc>https://bitdust.io/wiki/glossary.html</loc>
+  <lastmod>2020-02-12T09:05:06+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/security.html</loc>
+  <loc>https://bitdust.io/wiki/identities.html</loc>
+  <lastmod>2020-02-12T09:05:06+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/rebuilding.html</loc>
+  <loc>https://bitdust.io/wiki/storage.html</loc>
+  <lastmod>2020-02-12T09:05:08+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/dht.html</loc>
+  <loc>https://bitdust.io/wiki/dht.html</loc>
+  <lastmod>2020-02-12T09:05:06+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/services.html</loc>
+  <loc>https://bitdust.io/wiki/services.html</loc>
+  <lastmod>2020-02-12T09:05:08+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/transports.html</loc>
+  <loc>https://bitdust.io/wiki/roadmap.html</loc>
+  <lastmod>2020-02-12T09:05:07+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/crypto_contracts.html</loc>
+  <loc>https://bitdust.io/wiki/automats.html</loc>
+  <lastmod>2020-02-12T09:05:05+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/roadmap.html</loc>
+  <loc>https://bitdust.io/wiki/technologies.html</loc>
+  <lastmod>2020-02-12T09:05:08+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automats.html</loc>
+  <loc>https://bitdust.io/wiki/api.html</loc>
+  <lastmod>2020-02-12T09:05:05+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/technologies.html</loc>
+  <loc>https://bitdust.io/wiki/software_releases.html</loc>
+  <lastmod>2020-02-12T09:05:08+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/api.html</loc>
+  <loc>https://bitdust.io/wiki/seed_node.html</loc>
+  <lastmod>2020-02-12T09:05:08+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/bugs.html</loc>
+  <loc>https://bitdust.io/wiki/respect.html</loc>
+  <lastmod>2020-02-12T09:05:07+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/changelog.html</loc>
+  <loc>https://bitdust.io/wiki/identity_server.html</loc>
+  <lastmod>2020-02-12T09:05:06+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/screenshots.html</loc>
+  <loc>https://bitdust.io/wiki/services/bitdust_services_tree.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/donate.html</loc>
+  <loc>https://bitdust.io/wiki/p2p/contact_status.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/download.html</loc>
+  <loc>https://bitdust.io/wiki/automat_backup.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/p2p/contact_status.pdf</loc>
+  <loc>https://bitdust.io/wiki/automat_backup_db_keeper.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_backup.html</loc>
+  <loc>https://bitdust.io/wiki/automat_backup_monitor.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_backup_db_keeper.html</loc>
+  <loc>https://bitdust.io/wiki/automat_backup_rebuilder.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_backup_monitor.html</loc>
+  <loc>https://bitdust.io/wiki/automat_contact_status.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_backup_rebuilder.html</loc>
+  <loc>https://bitdust.io/wiki/automat_customers_rejector.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_contact_status.html</loc>
+  <loc>https://bitdust.io/wiki/automat_data_sender.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_customers_rejector.html</loc>
+  <loc>https://bitdust.io/wiki/automat_fire_hire.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_data_sender.html</loc>
+  <loc>https://bitdust.io/wiki/automat_id_registrator.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_fire_hire.html</loc>
+  <loc>https://bitdust.io/wiki/automat_id_restorer.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_id_registrator.html</loc>
+  <loc>https://bitdust.io/wiki/automat_id_server.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_id_restorer.html</loc>
+  <loc>https://bitdust.io/wiki/automat_initializer.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_id_server.html</loc>
+  <loc>https://bitdust.io/wiki/automat_install_wizard.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_initializer.html</loc>
+  <loc>https://bitdust.io/wiki/automat_installer.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_install_wizard.html</loc>
+  <loc>https://bitdust.io/wiki/automat_list_files_orator.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_installer.html</loc>
+  <loc>https://bitdust.io/wiki/automat_local_service.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_list_files_orator.html</loc>
+  <loc>https://bitdust.io/wiki/automat_network_connector.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_local_service.html</loc>
+  <loc>https://bitdust.io/wiki/automat_network_transport.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_network_connector.html</loc>
+  <loc>https://bitdust.io/wiki/automat_nickname_holder.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_network_transport.html</loc>
+  <loc>https://bitdust.io/wiki/automat_nickname_observer.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_nickname_holder.html</loc>
+  <loc>https://bitdust.io/wiki/automat_p2p_connector.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_nickname_observer.html</loc>
+  <loc>https://bitdust.io/wiki/automat_packet_in.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_p2p_connector.html</loc>
+  <loc>https://bitdust.io/wiki/automat_packet_out.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_packet_in.html</loc>
+  <loc>https://bitdust.io/wiki/automat_raid_worker.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_packet_out.html</loc>
+  <loc>https://bitdust.io/wiki/automat_restore.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_raid_worker.html</loc>
+  <loc>https://bitdust.io/wiki/automat_shutdowner.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_restore.html</loc>
+  <loc>https://bitdust.io/wiki/automat_stun_client.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_shutdowner.html</loc>
+  <loc>https://bitdust.io/wiki/automat_stun_server.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_stun_client.html</loc>
+  <loc>https://bitdust.io/wiki/automat_supplier_connector.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_stun_server.html</loc>
+  <loc>https://bitdust.io/wiki/automat_supplier_finder.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_supplier_connector.html</loc>
+  <loc>https://bitdust.io/wiki/automat_tcp_connection.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_supplier_finder.html</loc>
+  <loc>https://bitdust.io/wiki/automat_udp_connector.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_tcp_connection.html</loc>
+  <loc>https://bitdust.io/wiki/automat_udp_node.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_udp_connector.html</loc>
+  <loc>https://bitdust.io/wiki/automat_udp_session.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_udp_node.html</loc>
+  <loc>https://bitdust.io/wiki/automat_udp_stream.html</loc>
+  <lastmod>2019-03-24T10:19:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_udp_session.html</loc>
+  <loc>https://bitdust.io/wiki/definitions.html</loc>
+  <lastmod>2020-02-12T09:05:06+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/automat_udp_stream.html</loc>
+  <loc>https://bitdust.io/wiki/philosophy.html</loc>
+  <lastmod>2020-02-12T09:05:07+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/services/bitdust_services_tree.pdf</loc>
+  <loc>https://bitdust.io/wiki/crypto_contracts.html</loc>
+  <lastmod>2020-02-12T09:05:06+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/storage/backup.pdf</loc>
+  <loc>https://bitdust.io/wiki/storage/backup.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/storage/backup_db_keeper.pdf</loc>
+  <loc>https://bitdust.io/wiki/storage/backup_db_keeper.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/storage/backup_monitor.pdf</loc>
+  <loc>https://bitdust.io/wiki/storage/backup_monitor.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/storage/backup_rebuilder.pdf</loc>
+  <loc>https://bitdust.io/wiki/storage/backup_rebuilder.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/supplier/customers_rejector.pdf</loc>
+  <loc>https://bitdust.io/wiki/supplier/customers_rejector.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/customer/data_sender.pdf</loc>
+  <loc>https://bitdust.io/wiki/customer/data_sender.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/customer/fire_hire.pdf</loc>
+  <loc>https://bitdust.io/wiki/customer/fire_hire.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/userid/id_registrator.pdf</loc>
+  <loc>https://bitdust.io/wiki/userid/id_registrator.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/userid/id_restorer.pdf</loc>
+  <loc>https://bitdust.io/wiki/userid/id_restorer.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/userid/id_server.pdf</loc>
+  <loc>https://bitdust.io/wiki/userid/id_server.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/main/initializer.pdf</loc>
+  <loc>https://bitdust.io/wiki/main/initializer.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/main/install_wizard.pdf</loc>
+  <loc>https://bitdust.io/wiki/main/install_wizard.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/main/installer.pdf</loc>
+  <loc>https://bitdust.io/wiki/main/installer.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/customer/list_files_orator.pdf</loc>
+  <loc>https://bitdust.io/wiki/customer/list_files_orator.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/services/local_service.pdf</loc>
+  <loc>https://bitdust.io/wiki/services/local_service.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/p2p/network_connector.pdf</loc>
+  <loc>https://bitdust.io/wiki/p2p/network_connector.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/transport/network_transport.pdf</loc>
+  <loc>https://bitdust.io/wiki/transport/network_transport.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/chat/nickname_holder.pdf</loc>
+  <loc>https://bitdust.io/wiki/chat/nickname_holder.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/chat/nickname_observer.pdf</loc>
+  <loc>https://bitdust.io/wiki/chat/nickname_observer.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/p2p/p2p_connector.pdf</loc>
+  <loc>https://bitdust.io/wiki/p2p/p2p_connector.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/transport/packet_in.pdf</loc>
+  <loc>https://bitdust.io/wiki/transport/packet_in.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/transport/packet_out.pdf</loc>
+  <loc>https://bitdust.io/wiki/transport/packet_out.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/raid/raid_worker.pdf</loc>
+  <loc>https://bitdust.io/wiki/raid/raid_worker.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/storage/restore.pdf</loc>
+  <loc>https://bitdust.io/wiki/storage/restore.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/main/shutdowner.pdf</loc>
+  <loc>https://bitdust.io/wiki/main/shutdowner.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/stun/stun_client.pdf</loc>
+  <loc>https://bitdust.io/wiki/stun/stun_client.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/stun/stun_server.pdf</loc>
+  <loc>https://bitdust.io/wiki/stun/stun_server.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/customer/supplier_connector.pdf</loc>
+  <loc>https://bitdust.io/wiki/customer/supplier_connector.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/customer/supplier_finder.pdf</loc>
+  <loc>https://bitdust.io/wiki/customer/supplier_finder.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/transport/tcp_connection.pdf</loc>
+  <loc>https://bitdust.io/wiki/transport/tcp_connection.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/transport/udp_connector.pdf</loc>
+  <loc>https://bitdust.io/wiki/transport/udp_connector.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/transport/udp_node.pdf</loc>
+  <loc>https://bitdust.io/wiki/transport/udp_node.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/transport/udp_session.pdf</loc>
+  <loc>https://bitdust.io/wiki/transport/udp_session.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://bitdust.io/transport/udp_stream.pdf</loc>
+  <loc>https://bitdust.io/wiki/transport/udp_stream.pdf</loc>
+  <lastmod>2020-02-12T09:05:09+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
+
 
 </urlset>
