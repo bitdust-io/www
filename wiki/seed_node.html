@@ -202,6 +202,12 @@
     python bitdust.py install
 </code></pre>
 
+<p>Make sure you already have <code>bitdust</code> command existing so you can access BitDust from your command line console shell.
+You only need to do this one time and create an "alias" in your global system commands list. Then you can just type: <code>bitsut &lt;some command&gt;</code> to be able to talk to BitDust quickly. To create system-wide shell command you can manually copy already existing script <code>&lt;your home location&gt;/.bitdust/bitdust</code> to your PATH and it will work right away. Another very simple way is to just create a symlink:</p>
+
+<pre><code>    sudo ln -s -f /home/&lt;user&gt;/.bitdust/bitdust /usr/local/bin/bitdust  # location depend on your system
+</code></pre>
+
 <p>Few services needs to be enabled, by default they are turned off because normal users will most probably act as a customer/consumer at the beginning.</p>
 
 <p>Switch ON identity server on your node so you will help other people to identify in the network - other users will store their identities on your host:</p>
@@ -253,9 +259,15 @@
 <pre><code>    bitdust restart
 </code></pre>
 
-<p>If you plan to maintain your new BitDust node for a while and support the network it makes sense to include your node into a list of "well known" nodes, which are hard-coded in <a href="https://github.com/bitdust-io/public/blob/master/networks.json">networks.json</a> file.</p>
+<p>To make life easier you can also configure BitDust to start automatically when your machine reboots. For example on Debian system you can use <code>crontab</code> tool for that:</p>
 
-<p>You can Fork <a href="https://github.com/bitdust-io/public">Public Git Repository</a>, modify <code>networks.json</code> file in your forked repository and start a <a href="https://github.com/bitdust-io/public/pulls">Pull Request</a> with your changes - this way we can collaborate all together and maintain a list of the most reliable BitDust seed nodes.</p>
+<pre><code>    crontab -e
+    @reboot /usr/local/bin/bitdust daemon
+</code></pre>
+
+<p>If you plan to maintain your new BitDust node for a while and support the network it makes sense to include your node into a list of "well known" nodes, which are hard-coded in <a href="https://github.com/bitdust-io/public/blob/master/default_network.json">default_network.json</a> file.</p>
+
+<p>You can Fork <a href="https://github.com/bitdust-io/public">Public Git Repository</a>, modify <code>default_network.json</code> file in your forked repository and start a <a href="https://github.com/bitdust-io/public/pulls">Pull Request</a> with your changes - this way we can collaborate all together and maintain a list of the most reliable BitDust seed nodes.</p>
 
 <p>Contact the BitDust contributors to notify about this new Seed node was started by you and one of the developers will approve your Pull Request.</p>
 

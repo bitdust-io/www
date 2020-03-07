@@ -171,173 +171,34 @@
 
 
                             <div class="docs-section doc-action-cards">
-                                <h1 id="how-to-start-a-new-identity-server-in-bitdust-network">How to start a new Identity Server in BitDust network</h1>
+                                <p>Finally you can take a full control of your personal data on the Internet and make sure you are not compromised and data is not sold out to the marketing companies.</p>
 
-<h2 id="intro">Intro</h2>
+<p>BitDust is a distributed on-line storage network where only data owner has full access to the private data and power to share it to someone else.</p>
 
-<p>You need to create new identity for your own to be able to communicate with other nodes and access BitDust community.
-Identity files are distributed across identity servers in the network, other nodes holding and exposing copies of your identity.</p>
+<p>All files uploaded via BitDust are stored in a small redundant pieces on other users machines around the world. To be able to download your data back you must posses the private key that was used to encrypt the data during uploading.</p>
 
-<p>The third node can access that ID server and download your identity to be able to talk to you.
-So any node in the network can start own ID server and help to maintain network and make it more reliable.</p>
+<p>Another user holding pieces of your data can not identify or read it without your private key - which gives you complete anonymity and privacy of data storage. By design in BitDust no one is able to intercept your messages or files - even the developers of BitDust do not have access to your data.</p>
 
-<p>Your global IDURL is formed based on your nickname and DNS name (or IP address) of the first ID server.</p>
+<p>BitDust team stands for private, safe and trully confidential on-line communications for everyone. We chose our mission in XI century - to build a software product that will enable people around the world to have full control of own digital life.</p>
 
-<p>When one of your Identity servers is down, BitDust software will automatically find a fresh Identity server for you and "propagate" your identity there and also remove dead Identity server from the list of your sources. That process is called "identity rotate" and it is fully automated and decentralized.</p>
+<p>How you can use BitDust?</p>
 
-<p>Because of that BitDust network authentication is actually pretty reliable and fully independent for any single party.</p>
+<p>You can install BitDust software on your personal computer or mobile device.</p>
 
-<h2 id="install-and-configure-apache2">Install and configure apache2</h2>
+<p>To register in the system you do not need to specify a mobile phone number or email address - everything is completely anonymous.</p>
 
-<p>Lets setup a hostname on your machine if you did not do it before:</p>
+<p>With BitDust app you can chat with your friends or business partners confidentially.</p>
 
-<pre><code>    sudo hostname -b my-own-identity-server.com
-</code></pre>
+<p>You can send photos, documents, and other files to eacho other.</p>
 
-<p>And you will need to install Apache server if you do not have it yet on your machine:</p>
+<p>BitDust enthusiasts are working every day to improve the sotware - because we love BitDust.</p>
 
-<pre><code>    sudo apt-get install apache2
-</code></pre>
+<p>You share same ideas?
+You have experience in Python software development?
+Are you a super-creative UX designer?
+Do you belive it make sense to invest your energy, time or money in such a project? </p>
 
-<p>Edit Apache2 main config file:</p>
-
-<pre><code>    sudo nano /etc/apache2/apache2.conf
-</code></pre>
-
-<p>You need to add a line to set your domain name:</p>
-
-<pre><code>    ServerName my-own-identity-server.com
-</code></pre>
-
-<p>Create a new <code>.conf</code> file for Apache2:</p>
-
-<pre><code>    sudo nano /etc/apache2/conf-available/my-own-identity-server_com.conf
-</code></pre>
-
-<p>Use that template to create Apache2 config, basically you can just copy &amp; paste and only change domain name here:</p>
-
-<pre><code>    &lt;VirtualHost *:80&gt;
-      ServerName my-own-identity-server.com
-      ServerAlias www.my-own-identity-server.com
-      ProxyPreserveHost on
-      ProxyRequests Off
-      RewriteEngine on
-      ProxyPass / http://localhost:8084/
-      ProxyPassReverse / http://localhost:8084/
-      Redirect / http://localhost:8084/
-      RewriteRule ^/(.*) http://localhost:8084/$1 [P,L]
-    &lt;/VirtualHost&gt;
-</code></pre>
-
-<p>Enable this configuration in apache2, run command:</p>
-
-<pre><code>    sudo a2enconf my-own-identity-server_com
-</code></pre>
-
-<p>Configure proxy_http and rewrite modes in apache2, run commands:</p>
-
-<pre><code>    sudo a2enmod proxy_http 
-    sudo a2enmod rewrite
-</code></pre>
-
-<p>Now restart apache2 server:</p>
-
-<pre><code>    sudo service apache2 restart
-</code></pre>
-
-<h2 id="configure-bitdust-software">Configure BitDust software</h2>
-
-<p>First you need to <a href="install.html">install BitDust</a> on your machine. </p>
-
-<p>Now configure BitDust on your node to set domain name for this new identity server, run commands:</p>
-
-<pre><code>    bitdust set services/identity-server/host my-own-identity-server.com
-    bitdust set services/identity-server/enabled true
-</code></pre>
-
-<p>You can manually set a port number for incoming connections using such command:</p>
-
-<pre><code>    bitdust set services/identity-server/web-port 8084
-</code></pre>
-
-<h2 id="run-standalone-identity-server">Run standalone Identity Server</h2>
-
-<p>Run this command to start Identity server process in current terminal:</p>
-
-<pre><code>    bitdust identity server start
-</code></pre>
-
-<p>Now open your favority WEB browser and navigate to <a href="http://127.0.0.1:8084">http://127.0.0.1:8084</a> or <a href="my-own-identity-server.com">my-own-identity-server.com</a>. You should see an empty page with title "Identities on my-own-identity-server.com".</p>
-
-<p>Congratulations! You are running your own identity server now and able to register your own identity there or help other people by hosting their identity files on your machine.</p>
-
-<h2 id="run-identity-server-as-daemon-process">Run Identity Server as daemon process</h2>
-
-<p>Be sure network service identity_server is enabled in settings (check configuration above) and start BitDust software in "daemon" mode:</p>
-
-<pre><code>    bitdust daemon
-</code></pre>
-
-<p>Be sure ID server is up and running:</p>
-
-<pre><code>    bitdust states | grep id_server
-    36: id_server(LISTEN)
-</code></pre>
-
-<p>Open your browser and go to <a href="http://127.0.0.1:8084">http://127.0.0.1:8084</a> or <a href="my-own-identity-server.com">my-own-identity-server.com</a> to check server status.</p>
-
-<p>To make life easier you can also configure BitDust to start automatically when your machine reboots. For example on Debian system you can use <code>crontab</code> tool for that:</p>
-
-<pre><code>    crontab -e
-    @reboot /usr/local/bin/bitdust daemon
-</code></pre>
-
-<h2 id="create-dedicated-identity">Create dedicated identity</h2>
-
-<p>Normally, when you creating a new identity, software will do all stuff for you automatically and just select few random ID servers, ping them and "propagate" your new identity to those nodes.</p>
-
-<p>But you can decide which ID servers you prefer, in case if you would like to control where your identity will be distributed exactly, and modify your "known" ID servers:</p>
-
-<pre><code>bitdust set services/identity-propagate/known-servers first-server.com:80:6661,second-host.net:8080:6661
-</code></pre>
-
-<p>Now if you create a new identity with such commands:</p>
-
-<pre><code>bitdust id erase
-bitdust id create my_dedicate_identity
-</code></pre>
-
-<p>it will be automatically "propagated" to <code>first-server.com</code> and <code>second-host.net</code> and your global IDURL should look like that: <code>"http://first-server.com/my_dedicate_identity.xml"</code></p>
-
-<h2 id="support-bitdust-network">Support BitDust network</h2>
-
-<p>Contact with BitDust team to notify about this new ID server was started on your machine and we will add your domain name in the file <strong>known_servers.py</strong> storing list of all known BitDust identity servers: </p>
-
-<ul>
-<li><a href="https://github.com/bitdust-io/devel/blob/master/userid/known_servers.py">mirror on GitHub</a></li>
-<li><a href="https://dev.bitdust.io/code/devel/blob/master/userid/known_servers.py">mirror on dev.bitdust.io</a></li>
-</ul>
-
-<p>You can Fork BitDust <a href="https://dev.bitdust.io/code/devel">development repository</a> and open a Pull Request to modify the list of known servers in place.</p>
-
-
-<div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
-        this.page.url = "https://bitdust.io/identity_server.html";   
-        this.page.identifier = "./wiki/identity_server"
-    };
-    (function() { 
-        var d = document, s = d.createElement('script');
-        s.src = '//bitdust.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-
-</div>
+<p>We are glad to accept all enthusiasts to our small community and walk together to make this World a better place.</p>
 
                             </div>
 
