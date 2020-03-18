@@ -126,6 +126,7 @@
                             </ul>
                             <h6 class="heading">Development</h6>
                             <ul>
+                                <li><a href="/wiki/contribution.html">Contribution</a></li>
                                 <li><a href="/wiki/roadmap.html">Roadmap</a></li>
                                 <li><a href="/wiki/automats.html">Finite State Machines</a></li>
                                 <li><a href="/wiki/technologies.html">Technologies</a></li>
@@ -183,9 +184,9 @@ So any node in the network can start own ID server and help to maintain network 
 
 <p>Your global IDURL is formed based on your nickname and DNS name (or IP address) of the first ID server.</p>
 
-<p>If one of your ID servers is down, you can find a fresh one and "propagate" your identity there
-and then remove dead ID server from the list of your sources: "identity migration" (not implemented yet).
-This process will be automated and network identification will become much more reliable.</p>
+<p>When one of your Identity servers is down, BitDust software will automatically find a fresh Identity server for you and "propagate" your identity there and also remove dead Identity server from the list of your sources. That process is called "identity rotate" and it is fully automated and decentralized.</p>
+
+<p>Because of that BitDust network authentication is actually pretty reliable and fully independent for any single party.</p>
 
 <h2 id="install-and-configure-apache2">Install and configure apache2</h2>
 
@@ -247,7 +248,7 @@ This process will be automated and network identification will become much more 
 
 <h2 id="configure-bitdust-software">Configure BitDust software</h2>
 
-<p>First you need to install <a href="https://bitdust.io/install.html">BitDust software</a> on your machine. </p>
+<p>First you need to <a href="install.html">install BitDust</a> on your machine. </p>
 
 <p>Now configure BitDust on your node to set domain name for this new identity server, run commands:</p>
 
@@ -285,6 +286,12 @@ This process will be automated and network identification will become much more 
 </code></pre>
 
 <p>Open your browser and go to <a href="http://127.0.0.1:8084">http://127.0.0.1:8084</a> or <a href="my-own-identity-server.com">my-own-identity-server.com</a> to check server status.</p>
+
+<p>To make life easier you can also configure BitDust to start automatically when your machine reboots. For example on Debian system you can use <code>crontab</code> tool for that:</p>
+
+<pre><code>    crontab -e
+    @reboot /usr/local/bin/bitdust daemon
+</code></pre>
 
 <h2 id="create-dedicated-identity">Create dedicated identity</h2>
 

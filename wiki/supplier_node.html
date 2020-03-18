@@ -172,82 +172,68 @@
 
 
                             <div class="docs-section doc-action-cards">
-                                <h1 id="what-bitdust-is?">What BitDust is?</h1>
+                                <h1 id="running-bitdust-supplier-node">Running BitDust supplier node</h1>
 
-<h2 id="+">+</h2>
+<p>Supplier is a guy who donates part of storage from own PC and share resources to other users in the network.</p>
 
-<p>BitDust project is aimed to protect your own privacy.</p>
+<p>At the moment there is no way to reward suppliers for the contribution they are doing to the network, but this is planned to come later.</p>
 
-<h2 id="+">+</h2>
+<p>Read more about <a href="install.html">BitDust installation</a> or just follow those few steps bellow to install software on your machine.</p>
 
-<p>BitDust is a distributed on-line storage network where only data owner has full access to private data and power to share it to someone else.</p>
+<p>First clone BitDust sources locally:</p>
 
-<h2 id="+">+</h2>
+<pre><code>    git clone https://github.com/bitdust-io/public.git bitdust
+</code></pre>
 
-<p>BitDust is a project of worldwide distributed computer network for secure and independent data storage, information transfers and private communications which operates over existing Internet connections.</p>
+<p>Create BitDust virtual Python environment:</p>
 
-<h2 id="+">+</h2>
+<pre><code>    cd bitdust
+    python bitdust.py install
+</code></pre>
 
-<p>BitDust is a holistic ecosystem, the basic idea of which is complete decentralization of all information flows in society.
-(in order to build anonymous, freedom and independent applications.)</p>
+<p>Last step to make BitDust software ready to be used is to make a short alias in your OS, then you can just type <code>bitdust &lt;some command&gt;</code> in command line to get fast access to the program:</p>
 
-<h2 id="+">+</h2>
+<pre><code>    sudo ln -s -f /home/&lt;user&gt;/.bitdust/bitdust /usr/local/bin/bitdust  # location depend on your system
+</code></pre>
 
-<p>BitDust is a computer software which gives you full control over your personal data and private communications.</p>
+<p>Now you need to configure few software settings to actually donate storage space to the network.</p>
 
-<h2 id="+">+</h2>
+<p>Disable services you do not need if you run supplier role. Switch off "customer service" so your machine will not consume any storage, but only donate:</p>
 
-<p>BitDust is new software framework to build distributed and secure peer-to-peer applications.</p>
+<pre><code>    bitdust set services/customer/enabled false
+</code></pre>
 
-<h2 id="+">+</h2>
+<p>Declare how much space you are willing to donate to the BitDust network:</p>
 
-<p>BitDust APP provides independent on-line storage and secure private messaging</p>
+<pre><code>    bitdust set services/supplier/donated-space 20GB
+</code></pre>
 
-<h2 id="+">+</h2>
+<p>If you did not yet created an identity for your device in the BitDust network you can do it with such command:</p>
 
-<p>BitDust is attempt to rectify the current situation in the world - this is what was supposed to become "Distributed Internet" in the past.</p>
+<pre><code>    bitdust id create &lt;some nick name&gt;
+</code></pre>
 
-<h2 id="+">+</h2>
+<p>When you did it for the first time I recommend you to create another copy of your Private Key in a safe place to be able to recover your identity in BitDust in the future. You can make a backup copy with such command:</p>
 
-<p>BitDust network is a voluntary association of people sharing resources of their personal computers.
-( in order to build independent, private, autonomous and safe on-line services available for everyone.)</p>
+<pre><code>    bitdust key copy &lt;nickname&gt;.bitdust.key
+</code></pre>
 
-<h2 id="+">+</h2>
+<p>Finaly start BitDust software in daemon mode so it will keep running in background and you can keep using your PC:</p>
 
-<p>BitDust is an alternative way to operate and communicate in the network.</p>
+<pre><code>    bitdust daemon
+</code></pre>
 
-<h2 id="+">+</h2>
+<p>You can always check current situation regarding your "donated storage" with such command:</p>
 
-<p>BitDust is an attempt to establish more control over our own digital life.</p>
-
-<h2 id="+">+</h2>
-
-<p>BitDust is a holistic eco-system that protects your privacy in the network
-by establishing p2p communications of users and maximize distribution of
-information flows in the network.</p>
-
-<h2 id="+">+</h2>
-
-<p>BitDust aims to protect the privacy of users and provides an alternative way of working and communicating in the network.</p>
-
-<h2 id="+">+</h2>
-
-<p>BitDust is another way for collective security.</p>
-
-<h2 id="+">+</h2>
-
-<p>BitDust is just an idea.</p>
-
-<h2 id="+">+</h2>
-
-<p>BitDust is just another revolution.</p>
+<pre><code>    bitdust storage
+</code></pre>
 
 
 <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
-        this.page.url = "https://bitdust.io/definitions.html";   
-        this.page.identifier = "./wiki/definitions"
+        this.page.url = "https://bitdust.io/supplier_node.html";   
+        this.page.identifier = "./wiki/supplier_node"
     };
     (function() { 
         var d = document, s = d.createElement('script');
