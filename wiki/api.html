@@ -178,77 +178,177 @@
 
 <p>Stop the main process immediately.</p>
 
-<pre><code>{'status': 'OK', 'result': 'stopped'}
+<h6 id="http">HTTP</h6>
+
+<pre><code>curl -X GET 'localhost:8180/process/stop/v1'
 </code></pre>
 
-<h2 id="process_restart(showgui=false)">process_restart(showgui=False)</h2>
+<h6 id="websocket">WebSocket</h6>
 
-<p>Restart the main process, if flag show=True the GUI will be opened after
-restart.</p>
-
-<pre><code>{'status': 'OK', 'result': 'restarted'}
+<pre><code>websocket.send('{"command": "api_call", "method": "process_stop", "kwargs": {} }');
 </code></pre>
 
-<h2 id="process_show()">process_show()</h2>
+<h2 id="process_restart()">process_restart()</h2>
 
-<p>Deprecated.
-Opens a default web browser to show the BitDust GUI.</p>
+<p>Restart the main process.</p>
 
-<pre><code>{'status': 'OK',   'result': '"show" event has been sent to the main process'}
+<h6 id="http">HTTP</h6>
+
+<pre><code>curl -X GET 'localhost:8180/process/restart/v1'
+</code></pre>
+
+<h6 id="websocket">WebSocket</h6>
+
+<pre><code>websocket.send('{"command": "api_call", "method": "process_restart", "kwargs": {} }');
 </code></pre>
 
 <h2 id="process_health()">process_health()</h2>
 
-<p>Returns true if system is running </p>
+<p>Returns true if engine process is running. This method suppose to be used for health checks.</p>
 
-<pre><code>{'status': 'OK' }
+<h6 id="http">HTTP</h6>
+
+<pre><code>curl -X GET 'localhost:8180/process/health/v1'
+</code></pre>
+
+<h6 id="websocket">WebSocket</h6>
+
+<pre><code>websocket.send('{"command": "api_call", "method": "process_health", "kwargs": {} }');
 </code></pre>
 
 <h2 id="process_debug()">process_debug()</h2>
 
-<p>Execute a breakpoint inside main thread and start Python shell using standard <code>pdb.set_trace()</code> debugger.</p>
+<p>Execute a breakpoint inside main thread and start Python shell using standard <code>pdb.set_trace()</code> debugger.
+This is only useful if you already executed the BitDust engine manually via shell console and would like
+to interrupt it and investigate something. This call will block the main process and it will stop responding
+to any API calls.</p>
+
+<h6 id="http">HTTP</h6>
+
+<pre><code>curl -X GET 'localhost:8180/process/debug/v1'
+</code></pre>
+
+<h6 id="websocket">WebSocket</h6>
+
+<pre><code>websocket.send('{"command": "api_call", "method": "process_debug", "kwargs": {} }');
+</code></pre>
 
 <h2 id="config_get(key)">config_get(key)</h2>
 
-<p>Returns current value for specific option from program settings.</p>
+<p>Returns current key/value from the program settings.</p>
 
-<pre><code>{'status': 'OK',   'result': [{'type': 'positive integer', 'value': '8', 'key': 'logs/debug-level'}]}
+<h6 id="http">HTTP</h6>
+
+<pre><code>curl -X GET 'localhost:8180/config/get/v1?key=logs/debug-level'
+</code></pre>
+
+<h6 id="websocket">WebSocket</h6>
+
+<pre><code>websocket.send('{"command": "api_call", "method": "config_get", "kwargs": {"key": "logs/debug-level"} }');
 </code></pre>
 
 <h2 id="config_set(key,-value)">config_set(key, value)</h2>
 
-<p>Set a value for given option.</p>
+<p>Set a value for given key option.</p>
 
-<pre><code>{'status': 'OK', 'result': [{'type': 'positive integer', 'old_value': '8', 'value': '10', 'key': 'logs/debug-level'}]}
+<h6 id="http">HTTP</h6>
+
+<pre><code>curl -X POST 'localhost:8180/config/set/v1' -d '{"key": "logs/debug-level", "value": 12}'
+</code></pre>
+
+<h6 id="websocket">WebSocket</h6>
+
+<pre><code>websocket.send('{"command": "api_call", "method": "config_set", "kwargs": {"key": "logs/debug-level", "value": 12} }');
 </code></pre>
 
 <h2 id="config_list(sort=false)">config_list(sort=False)</h2>
 
-<p>Provide detailed info about all options and values from settings.</p>
+<p>Provide detailed info about all program settings.</p>
 
-<pre><code>{'status': 'OK',
- 'result': [{
-    'type': 'boolean',
-    'value': 'true',
-    'key': 'services/backups/enabled'
- }, {
-    'type': 'boolean',
-    'value': 'false',
-    'key': 'services/backups/keep-local-copies-enabled'
- }, {
-    'type': 'diskspace',
-    'value': '128 MB',
-    'key': 'services/backups/max-block-size'
-}]}
+<h6 id="http">HTTP</h6>
+
+<pre><code>curl -X GET 'localhost:8180/config/list/v1'
+</code></pre>
+
+<h6 id="websocket">WebSocket</h6>
+
+<pre><code>websocket.send('{"command": "api_call", "method": "config_list", "kwargs": {} }');
+</code></pre>
+
+<h2 id="config_tree()">config_tree()</h2>
+
+<p>Returns all options as a tree structure, can be more suitable for UI operations.</p>
+
+<h6 id="http">HTTP</h6>
+
+<pre><code>curl -X GET 'localhost:8180/config/tree/v1'
+</code></pre>
+
+<h6 id="websocket">WebSocket</h6>
+
+<pre><code>websocket.send('{"command": "api_call", "method": "config_tree", "kwargs": {} }');
 </code></pre>
 
 <h2 id="identity_get(include_xml_source=false)">identity_get(include_xml_source=False)</h2>
 
+<p>Returns your identity info.</p>
+
+<h6 id="http">HTTP</h6>
+
+<pre><code>curl -X GET 'localhost:8180/identity/get/v1'
+</code></pre>
+
+<h6 id="websocket">WebSocket</h6>
+
+<pre><code>websocket.send('{"command": "api_call", "method": "identity_get", "kwargs": {} }');
+</code></pre>
+
 <h2 id="identity_create(username,-preferred_servers=)">identity_create(username, preferred_servers=[])</h2>
+
+<p>Generates new private key and creates new identity for you to be able to communicate with other nodes in the network.
+Parameter <code>username</code> defines filename of the identity.</p>
+
+<h6 id="http">HTTP</h6>
+
+<pre><code>curl -X POST 'localhost:8180/identity/create/v1' -d '{"username": "alice"}'
+</code></pre>
+
+<h6 id="websocket">WebSocket</h6>
+
+<pre><code>websocket.send('{"command": "api_call", "method": "identity_create", "kwargs": {"username": "alice"} }');
+</code></pre>
 
 <h2 id="identity_backup(destination_filepath)">identity_backup(destination_filepath)</h2>
 
+<p>Creates local file at <code>destination_filepath</code> with a backup copy of your private key and recent IDURL.
+You can use that file to restore identity in case of lost data using <code>identity_recover()</code> API method.</p>
+
+<h6 id="http">HTTP</h6>
+
+<pre><code>curl -X POST 'localhost:8180/identity/backup/v1' -d '{"destination_filepath": "/tmp/"}'
+</code></pre>
+
+<h6 id="websocket">WebSocket</h6>
+
+<pre><code>websocket.send('{"command": "api_call", "method": "identity_backup", "kwargs": {"destination_filepath": "/tmp/alice_backup.key"} }');
+</code></pre>
+
 <h2 id="identity_recover(private_key_source,-known_idurl=none)">identity_recover(private_key_source, known_idurl=None)</h2>
+
+<p>Restores your identity from backup copy.
+Input parameter <code>private_key_source</code> must contain your latest IDURL and the private key.</p>
+
+<h6 id="http">HTTP</h6>
+
+<pre><code>curl -X POST 'localhost:8180/identity/recover/v1' -d '{"private_key_source": "http://some-host.com/alice.xml\n-----BEGIN RSA PRIVATE KEY-----\nMIIEogIBAAKC..."}'
+</code></pre>
+
+<h6 id="websocket">WebSocket</h6>
+
+<pre><code>websocket.send('{"command": "api_call", "method": "identity_recover", "kwargs": {"private_key_source": "http://some-host.com/alice.xml\n-----BEGIN RSA PRIVATE KEY-----\nMIIEogIBAAKC..."} }');
+</code></pre>
+
+<h2 id="identity_rotate()">identity_rotate()</h2>
 
 <h2 id="identity_list()">identity_list()</h2>
 
@@ -289,6 +389,7 @@ Use <code>include_private=True</code> to get Private Keys as openssh formated st
      'private': '-----BEGIN RSA PRIVATE KEY-----\nMIIJKAIBAAKCAgEAj8uw...'
  }, {
      'alias': 'another_key01',
+     'label': 'ABC',
      'key_id': 'another_key01$veselin@p2p-id.ru',
      'creator': 'http://p2p-id.ru/veselin.xml',
      'fingerprint': '43:c8:3b:b6:da:3e:8a:3c:48:6f:92:bb:74:b4:05:6b',
@@ -300,7 +401,7 @@ Use <code>include_private=True</code> to get Private Keys as openssh formated st
 }]}
 </code></pre>
 
-<h2 id="key_create(key_alias,-key_size=none,-include_private=false)">key_create(key_alias, key_size=None, include_private=False)</h2>
+<h2 id="key_create(key_alias,-key_size=none,-label='',-include_private=false)">key_create(key_alias, key_size=None, label='', include_private=False)</h2>
 
 <p>Generate new Private Key and add it to the list of known keys with given <code>key_id</code>.</p>
 
@@ -319,12 +420,16 @@ Use <code>include_private=True</code> to get Private Keys as openssh formated st
 }]}
 </code></pre>
 
+<h2 id="key_label(key_id,-label)">key_label(key_id, label)</h2>
+
+<p>Set new label for given key.</p>
+
 <h2 id="key_erase(key_id)">key_erase(key_id)</h2>
 
 <p>Removes Private Key from the list of known keys and erase local file.</p>
 
 <pre><code>{'status': 'OK',
- 'message': 'private key "ccc2" was erased successfully',
+ 'message': 'private key "abcd$veselin@p2p-id.ru" was erased successfully',
 }
 </code></pre>
 
@@ -388,9 +493,11 @@ but just in case.</p>
 <pre><code>{'status': 'OK', 'result': 'the main files sync loop has been restarted'}
 </code></pre>
 
+<h2 id="file_exists(remote_path)">file_exists(remote_path)</h2>
+
 <h2 id="file_info(remote_path,-include_uploads=true,-include_downloads=true)">file_info(remote_path, include_uploads=True, include_downloads=True)</h2>
 
-<h2 id="file_create(remote_path,-as_folder=false)">file_create(remote_path, as_folder=False)</h2>
+<h2 id="file_create(remote_path,-as_folder=false,-exist_ok=false,-force_path_id=none)">file_create(remote_path, as_folder=False, exist_ok=False, force_path_id=None)</h2>
 
 <h2 id="file_delete(remote_path)">file_delete(remote_path)</h2>
 
@@ -481,7 +588,9 @@ By default this method uses specified value from local settings or user home fol
 
 <h2 id="share_list(only_active=false,-include_mine=true,-include_granted=true)">share_list(only_active=False, include_mine=True, include_granted=True)</h2>
 
-<h2 id="share_create(owner_id=none,-key_size=2048)">share_create(owner_id=None, key_size=2048)</h2>
+<h2 id="share_create(owner_id=none,-key_size=2048,-label='')">share_create(owner_id=None, key_size=2048, label='')</h2>
+
+<h2 id="share_delete(key_id)">share_delete(key_id)</h2>
 
 <h2 id="share_grant(trusted_remote_user,-key_id,-timeout=30)">share_grant(trusted_remote_user, key_id, timeout=30)</h2>
 
@@ -490,6 +599,18 @@ By default this method uses specified value from local settings or user home fol
 <h2 id="share_close(key_id)">share_close(key_id)</h2>
 
 <h2 id="share_history()">share_history()</h2>
+
+<h2 id="group_list()">group_list()</h2>
+
+<h2 id="group_info(group_key_id)">group_info(group_key_id)</h2>
+
+<h2 id="group_create(creator_id=none,-key_size=2048,-label='')">group_create(creator_id=None, key_size=2048, label='')</h2>
+
+<h2 id="group_join(group_key_id)">group_join(group_key_id)</h2>
+
+<h2 id="group_leave(group_key_id,-erase_key=false)">group_leave(group_key_id, erase_key=False)</h2>
+
+<h2 id="group_share(trusted_remote_user,-group_key_id,-timeout=30)">group_share(trusted_remote_user, group_key_id, timeout=30)</h2>
 
 <h2 id="friend_list()">friend_list()</h2>
 
@@ -667,7 +788,7 @@ Every node will reply with Ack packet on any valid incoming Identiy packet.</p>
 }]}
 </code></pre>
 
-<h2 id="services_list()">services_list()</h2>
+<h2 id="services_list(show_configs=false)">services_list(show_configs=False)</h2>
 
 <p>Returns detailed info about all currently running network services.</p>
 
@@ -787,7 +908,11 @@ can be used to select which protocols to list:</p>
 
 <h2 id="queue_list()">queue_list()</h2>
 
-<h2 id="user_ping(idurl_or_global_id,-timeout=10,-retries=2)">user_ping(idurl_or_global_id, timeout=10, retries=2)</h2>
+<h2 id="queue_consumer_list()">queue_consumer_list()</h2>
+
+<h2 id="queue_producer_list()">queue_producer_list()</h2>
+
+<h2 id="user_ping(idurl_or_global_id,-timeout=15,-retries=2)">user_ping(idurl_or_global_id, timeout=15, retries=2)</h2>
 
 <p>Sends Identity packet to remote peer and wait for Ack packet to check connection status.
 The "ping" command performs following actions:
@@ -821,22 +946,31 @@ in DHT network.</p>
 <p>Starts nickname_holder() machine to register and keep your nickname in DHT
 network.</p>
 
-<h2 id="message_history(user)">message_history(user)</h2>
+<h2 id="message_history(recipient_id=none,-sender_id=none,-message_type=none,-offset=0,-limit=100)">message_history(recipient_id=None, sender_id=None, message_type=None, offset=0, limit=100)</h2>
 
-<h2 id="message_send(recipient,-json_data,-timeout=5)">message_send(recipient, json_data, timeout=5)</h2>
+<p>Returns chat history with that user.</p>
+
+<h2 id="message_send(recipient,-json_data,-ping_timeout=30,-message_ack_timeout=15)">message_send(recipient, json_data, ping_timeout=30, message_ack_timeout=15)</h2>
 
 <p>Sends a text message to remote peer, <code>recipient</code> is a string with nickname or global_id.</p>
 
 <pre><code>{'status': 'OK', 'result': ['signed.Packet[Message(146681300413)]']}
 </code></pre>
 
-<h2 id="message_receive(consumer_id)">message_receive(consumer_id)</h2>
+<h2 id="message_send_group(group_key_id,-json_payload)">message_send_group(group_key_id, json_payload)</h2>
+
+<p>Sends a text message to a group of users.</p>
+
+<pre><code>{'status': 'OK'}
+</code></pre>
+
+<h2 id="message_receive(consumer_callback_id,-direction='incoming',-message_types='private_message,group_message',-polling_timeout=60)">message_receive(consumer_callback_id, direction='incoming', message_types='private_message,group_message', polling_timeout=60)</h2>
 
 <p>This method can be used to listen and process incoming chat messages by specific consumer.
-If there are no messages received yet, this method will be waiting for any incomings.
-If some messages was already received, but not "consumed" yet method will return them imediately.
+If there are no messages received yet, this method will be waiting for any incoming messages.
+If some messages was already received, but not "consumed" yet method will return them immediately.
 After you got response and processed the messages you should call this method again to listen
-for more incomings again. This is simillar to message queue polling interface.
+for more incoming again. This is similar to message queue polling interface.
 If you do not "consume" messages, after 100 un-collected messages "consumer" will be dropped.
 Both, incoming and outgoing, messages will be populated here.</p>
 
@@ -844,7 +978,7 @@ Both, incoming and outgoing, messages will be populated here.</p>
  'result': [{
     'type': 'private_message',
     'dir': 'incoming',
-    'message_id': '123456788',
+    'message_id': '123456789',
     'sender': 'messages$alice@first-host.com',
     'recipient': 'messages$bob@second-host.net',
     'data': {
@@ -853,8 +987,6 @@ Both, incoming and outgoing, messages will be populated here.</p>
     'time': 123456789
 }]}
 </code></pre>
-
-<h2 id="messages_get_all(index_name,-limit,-offset,-with_doc,-with_storage)">messages_get_all(index_name, limit, offset, with_doc, with_storage)</h2>
 
 <h2 id="broadcast_send_message(payload)">broadcast_send_message(payload)</h2>
 
@@ -867,7 +999,7 @@ several kilobytes per message.</p>
 
 <h2 id="event_send(event_id,-json_data=none)">event_send(event_id, json_data=None)</h2>
 
-<h2 id="events_listen(consumer_id)">events_listen(consumer_id)</h2>
+<h2 id="event_listen(consumer_id)">event_listen(consumer_id)</h2>
 
 <h2 id="network_stun(udp_port=none,-dht_port=none)">network_stun(udp_port=None, dht_port=None)</h2>
 
@@ -885,32 +1017,17 @@ network connection.</p>
 If all is good this method will block for <code>wait_timeout</code> seconds.
 In case of some network issues method will return result asap.</p>
 
-<h2 id="dht_node_find(node_id_64=none)">dht_node_find(node_id_64=None)</h2>
+<h2 id="network_configuration()">network_configuration()</h2>
 
-<h2 id="dht_value_get(key,-record_type='skip_validation')">dht_value_get(key, record_type='skip_validation')</h2>
+<h2 id="dht_node_find(node_id_64=none,-layer_id=0)">dht_node_find(node_id_64=None, layer_id=0)</h2>
 
-<h2 id="dht_value_set(key,-value,-expire=none,-record_type='skip_validation')">dht_value_set(key, value, expire=None, record_type='skip_validation')</h2>
+<h2 id="dht_user_random(layer_id=0,-count=1)">dht_user_random(layer_id=0, count=1)</h2>
+
+<h2 id="dht_value_get(key,-record_type='skip_validation',-layer_id=0,-use_cache_ttl=none)">dht_value_get(key, record_type='skip_validation', layer_id=0, use_cache_ttl=None)</h2>
+
+<h2 id="dht_value_set(key,-value,-expire=none,-record_type='skip_validation',-layer_id=0)">dht_value_set(key, value, expire=None, record_type='skip_validation', layer_id=0)</h2>
 
 <h2 id="dht_local_db_dump()">dht_local_db_dump()</h2>
-
-
-<div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
-        this.page.url = "https://bitdust.io/api.html";   
-        this.page.identifier = "./wiki/api"
-    };
-    (function() { 
-        var d = document, s = d.createElement('script');
-        s.src = '//bitdust.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-
-</div>
 
                             </div>
 
