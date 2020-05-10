@@ -2,11 +2,11 @@ import os
 import sys
 import re
 # gitlab_base = 'http://gitlab.bitdust.io/devel/bitdust/blob/master/'
+
 md_base = ''
 site_url = "https://bitdust.io"
 wikipath = '/wiki/'
-template = open('template.htm').read()
-keywords = open('keywords.txt').read().replace('\n', ', ')
+
 src = sys.argv[1]
 dest = sys.argv[2]
 basepath = '/'
@@ -15,6 +15,16 @@ if len(sys.argv) > 3:
 if not os.path.isdir(os.path.dirname(dest)):
     print "create", os.path.dirname(dest)
     os.makedirs(os.path.dirname(dest))
+
+menu_html = open('template_menu.htm').read()
+menu_html = menu_html % {'wikipath': wikipath, }
+
+template = open('template.htm').read()
+if src.count('api.html'):
+    template = open('template_api.htm').read()
+
+keywords = open('keywords.txt').read().replace('\n', ', ')
+
 sbody = open(src).read()
 sbody = re.sub('a href="(.+?)\.md"', 'a href="%s\g<1>.html"' % md_base, sbody)
 sbody = re.sub('a href="(.+?)\.md\#(.+?)"', 'a href="%s\g<1>.html#\g<2>"' % md_base, sbody)
@@ -37,7 +47,14 @@ sbody = re.sub('\<li\>\<a href="(.+?)"\>(.+?)\</a\>\</li\>', lambda m: '<li><a h
     # '<div class=fbcomments markdown="1">', 
     # '<div class="fb-comments" data-href="%s/%s" data-width="500" data-numposts="5">' % (
         # site_url, os.path.basename(dest)))
-        
+
+api_methods_links = ''
+if src.count('api.html'):
+    sbody = re.sub('\<h6 id=\"(.+?)\"\>', '<h6 class="api_method_header" id="\g<1>">', sbody)
+    sbody = re.sub('\<h4 id=\"(.+?)\(.*?\)\"\>', '<h4 class="api_method" id="\g<1>">', sbody)
+    all_api_methods = re.findall('<h4 class="api_method" id="(.*?)">', sbody)
+    api_methods_links = '\n'.join(map(lambda m: '<a href="#%s">%s</a><br>' % (m, m, ), all_api_methods))
+
 disqus = """
 <div id="disqus_thread"></div>
 <script>
@@ -74,6 +91,7 @@ newbody = template % {
     'wikipath': wikipath,
     'site_url': site_url,
     'filepath': os.path.basename(dest),
+    'menu_html': menu_html,
+    'api_methods_links': api_methods_links,
 }
 open(dest, mode='w').write(newbody)
-

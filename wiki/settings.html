@@ -100,6 +100,7 @@
 
                         <!-- Docs Sidebar -->
                         <div class="docs-sidebar col-md-3">
+
                             <h6 class="heading">
                                 Beginning
                             </h6>
@@ -135,6 +136,8 @@
                                 <li><a href="/wiki/seed_node.html">Seed node</a></li>
                                 <li><a href="/wiki/respect.html">Contributors and Supporters</a></li>
                             </ul>
+
+
                             <h6 class="heading">Repositories</h6>
                             <ul>
                                 <li>
@@ -174,8 +177,6 @@
                             <div class="docs-section doc-action-cards">
                                 <h1 id="settings">Settings</h1>
 
-<p>In this section the different settings that can used for the BitDust network from command line are displayed. If you have any questions regarding this please contact the BitDust team (info@bitdust.io)</p>
-
 <h2 id="command-line-syntax">Command line syntax</h2>
 
 <p>Read single setting value:</p>
@@ -199,7 +200,7 @@
 
 <p>interface/api/json-rpc-enabled, default value: true</p>
 
-<h3 id="interface/api/json-rpc-port-(positive-integer)">interface/api/json-rpc-port (positive integer)</h3>
+<h3 id="interface/api/json-rpc-port-(port-number)">interface/api/json-rpc-port (port number)</h3>
 
 <p>interface/api/json-rpc-port, default value: 8083</p>
 
@@ -207,21 +208,41 @@
 
 <p>interface/api/rest-http-enabled, default value: true</p>
 
-<h3 id="interface/api/rest-http-port-(positive-integer)">interface/api/rest-http-port (positive integer)</h3>
+<h3 id="interface/api/rest-http-port-(port-number)">interface/api/rest-http-port (port number)</h3>
 
 <p>interface/api/rest-http-port, default value: 8180</p>
+
+<h3 id="interface/api/web-socket-enabled-(boolean)">interface/api/web-socket-enabled (boolean)</h3>
+
+<p>interface/api/web-socket-enabled, default value: true</p>
+
+<h3 id="interface/api/web-socket-port-(port-number)">interface/api/web-socket-port (port number)</h3>
+
+<p>interface/api/web-socket-port, default value: 8280</p>
 
 <h3 id="interface/ftp/enabled-(boolean)">interface/ftp/enabled (boolean)</h3>
 
 <p>interface/ftp/enabled, default value: true</p>
 
-<h3 id="interface/ftp/port-(positive-integer)">interface/ftp/port (positive integer)</h3>
+<h3 id="interface/ftp/port-(port-number)">interface/ftp/port (port number)</h3>
 
 <p>interface/ftp/port, default value: 8021</p>
 
+<h3 id="logs/api-enabled-(boolean)">logs/api-enabled (boolean)</h3>
+
+<p>logs/api-enabled, default value: false</p>
+
+<h3 id="logs/automat-events-enabled-(boolean)">logs/automat-events-enabled (boolean)</h3>
+
+<p>logs/automat-events-enabled, default value: false</p>
+
+<h3 id="logs/automat-transitions-enabled-(boolean)">logs/automat-transitions-enabled (boolean)</h3>
+
+<p>logs/automat-transitions-enabled, default value: false</p>
+
 <h3 id="debug-level-(positive-integer)">debug level (positive integer)</h3>
 
-<p>logs/debug-level, default value: 10</p>
+<p>logs/debug-level, default value: 0</p>
 
 <p>Higher values will produce more log messages.</p>
 
@@ -230,9 +251,9 @@
 <p>logs/memdebug-enabled, default value: false</p>
 
 <p>Enabled this and go to http://127.0.0.1:[memdebug port number] to watch memory usage.
-This feature is disabled at the moment.</p>
+Requires "cherrypy" and "dowser" python packages to be installed inside ~/.bitdust/venv/.</p>
 
-<h3 id="logs/memdebug-port-(positive-integer)">logs/memdebug-port (positive integer)</h3>
+<h3 id="logs/memdebug-port-(port-number)">logs/memdebug-port (port number)</h3>
 
 <p>logs/memdebug-port, default value: 9996</p>
 
@@ -240,25 +261,28 @@ This feature is disabled at the moment.</p>
 
 <p>logs/memprofile-enabled, default value: false</p>
 
-<p>Use "guppy" package to profile memory usage.
-This feature is disabled at the moment.</p>
+<p>Use "guppy" package to profile memory usage.</p>
+
+<h3 id="logs/packet-enabled-(boolean)">logs/packet-enabled (boolean)</h3>
+
+<p>logs/packet-enabled, default value: false</p>
 
 <h3 id="enable-web-logs-(boolean)">enable web logs (boolean)</h3>
 
-<p>logs/stream-enabled, default value: true</p>
+<p>logs/stream-enabled, default value: false</p>
 
 <p>Enabled this and go to http://127.0.0.1:[logs port number] to browse the program log.
 Need to restart the program.</p>
 
-<h3 id="logs/stream-port-(positive-integer)">logs/stream-port (positive integer)</h3>
+<h3 id="logs/stream-port-(port-number)">logs/stream-port (port number)</h3>
 
 <p>logs/stream-port, default value: 9999</p>
 
 <h3 id="logs/traffic-enabled-(boolean)">logs/traffic-enabled (boolean)</h3>
 
-<p>logs/traffic-enabled, default value: true</p>
+<p>logs/traffic-enabled, default value: false</p>
 
-<h3 id="logs/traffic-port-(positive-integer)">logs/traffic-port (positive integer)</h3>
+<h3 id="logs/traffic-port-(port-number)">logs/traffic-port (port number)</h3>
 
 <p>logs/traffic-port, default value: 9997</p>
 
@@ -298,7 +322,7 @@ All encrypted files, uploaded by other users, will kept here.</p>
 <p>personal/betatester, default value: false</p>
 
 <p>Are you agree to participate in the BitDust project testing?
-We are going to provide some bonuses to people who help us at this stage.</p>
+We are going to provide some bonuses to people who help us at this stage, to be decided later.</p>
 
 <h3 id="personal/email-(string)">personal/email (string)</h3>
 
@@ -325,7 +349,7 @@ If you leave this blank your identity address will be used to form a nickname.</
 
 <p>personal/surname, default value: </p>
 
-<p>Set your surname if you wish.</p>
+<p>Set your family name if you wish.</p>
 
 <h3 id="services/accountant/enabled-(boolean)">services/accountant/enabled (boolean)</h3>
 
@@ -339,7 +363,7 @@ If you leave this blank your identity address will be used to form a nickname.</
 
 <h3 id="preferred-block-size-(disk-space)">preferred block size (disk space)</h3>
 
-<p>services/backups/block-size, default value: 2 MB</p>
+<p>services/backups/block-size, default value: 4 MB</p>
 
 <p>Preferred block size in bytes which used to split the raw data during backup.</p>
 
@@ -351,16 +375,16 @@ If you leave this blank your identity address will be used to form a nickname.</
 
 <h3 id="keep-local-copies-(boolean)">keep local copies (boolean)</h3>
 
-<p>services/backups/keep-local-copies-enabled, default value: false</p>
+<p>services/backups/keep-local-copies-enabled, default value: true</p>
 
 <p>Enable this to keep a copy of every new backup on your local HDD as well as on remote machines of your suppliers.
-This increases data reliablity, rebuilding performance and decrease network load,
+This increases data reliability, rebuilding performance and decrease network load,
 but consumes space on your HDD.
 Every one Mb of source data uploaded will consume two Mb on your local HDD.</p>
 
 <h3 id="maximum-block-size-(disk-space)">maximum block size (disk space)</h3>
 
-<p>services/backups/max-block-size, default value: 4 MB</p>
+<p>services/backups/max-block-size, default value: 16 MB</p>
 
 <p>Maximum block size in bytes which used to split the raw data during backup.
 The actual block size is calculated depending on size of the particular backup to optimize performance and data storage.
@@ -376,7 +400,7 @@ A "0" value means unlimited number of copies, be sure you have enough amount of 
 
 <h3 id="wait-suppliers-24-hours-(boolean)">wait suppliers 24 hours (boolean)</h3>
 
-<p>services/backups/wait-suppliers-enabled, default value: false</p>
+<p>services/backups/wait-suppliers-enabled, default value: true</p>
 
 <p>If you disabled storing of local data of your backups but one day a critical amount of your suppliers become unreliable - your data may be lost completely.
 Enable this option to wait for 24 hours after finishing any backup and perform a check all of your suppliers before removing the locally backed up data for this copy.</p>
@@ -389,7 +413,7 @@ Enable this option to wait for 24 hours after finishing any backup and perform a
 
 <p>services/blockchain/explorer/enabled, default value: true</p>
 
-<h3 id="services/blockchain/explorer/port-(non-zero-positive-integer)">services/blockchain/explorer/port (non zero positive integer)</h3>
+<h3 id="services/blockchain/explorer/port-(port-number)">services/blockchain/explorer/port (port number)</h3>
 
 <p>services/blockchain/explorer/port, default value: 9180</p>
 
@@ -401,7 +425,7 @@ Enable this option to wait for 24 hours after finishing any backup and perform a
 
 <p>services/blockchain/miner/enabled, default value: false</p>
 
-<h3 id="services/blockchain/port-(non-zero-positive-integer)">services/blockchain/port (non zero positive integer)</h3>
+<h3 id="services/blockchain/port-(port-number)">services/blockchain/port (port number)</h3>
 
 <p>services/blockchain/port, default value: 9100</p>
 
@@ -413,7 +437,7 @@ Enable this option to wait for 24 hours after finishing any backup and perform a
 
 <p>services/blockchain/wallet/enabled, default value: true</p>
 
-<h3 id="services/blockchain/wallet/port-(non-zero-positive-integer)">services/blockchain/wallet/port (non zero positive integer)</h3>
+<h3 id="services/blockchain/wallet/port-(port-number)">services/blockchain/wallet/port (port number)</h3>
 
 <p>services/blockchain/wallet/port, default value: 9280</p>
 
@@ -459,22 +483,42 @@ Enable this option to wait for 24 hours after finishing any backup and perform a
 
 <p>How many megabytes you need to store your files?</p>
 
-<h3 id="number-of-suppliers-(combo-box)">number of suppliers (combo box)</h3>
+<h3 id="number-of-suppliers-(selection)">number of suppliers (selection)</h3>
 
-<p>services/customer/suppliers-number, default value: 4</p>
+<p>services/customer/suppliers-number, default value: 2</p>
 
 <p>Number of remote suppliers which keeps your backups.
-You can ser one of the following values: 2, 4, 7, 13, 18, 26, 64.
-Right now we have only 16 testing machines in the network, so last three values is not usefull yet.
-<font color=red>WARNING!</font> You will lost all your existing backups after changing suppliers number.</p>
+You can select one of the following values: 2, 4, 7, 13, 18, 26, 64.
+Right now we have only few testing nodes in the network, so high values is not working yet.
+WARNING! You will lost all your existing backups after changing suppliers number.</p>
+
+<h3 id="services/data-disintegration/enabled-(boolean)">services/data-disintegration/enabled (boolean)</h3>
+
+<p>services/data-disintegration/enabled, default value: true</p>
 
 <h3 id="services/data-motion/enabled-(boolean)">services/data-motion/enabled (boolean)</h3>
 
 <p>services/data-motion/enabled, default value: true</p>
 
+<h3 id="services/data-motion/supplier-request-queue-size-(non-zero-positive-integer)">services/data-motion/supplier-request-queue-size (non zero positive integer)</h3>
+
+<p>services/data-motion/supplier-request-queue-size, default value: 4</p>
+
+<h3 id="services/data-motion/supplier-sending-queue-size-(non-zero-positive-integer)">services/data-motion/supplier-sending-queue-size (non zero positive integer)</h3>
+
+<p>services/data-motion/supplier-sending-queue-size, default value: 4</p>
+
+<h3 id="services/employer/candidates-(string)">services/employer/candidates (string)</h3>
+
+<p>services/employer/candidates, default value: </p>
+
 <h3 id="services/employer/enabled-(boolean)">services/employer/enabled (boolean)</h3>
 
 <p>services/employer/enabled, default value: true</p>
+
+<h3 id="services/entangled-dht/attached-layers-(string)">services/entangled-dht/attached-layers (string)</h3>
+
+<p>services/entangled-dht/attached-layers, default value: </p>
 
 <h3 id="services/entangled-dht/enabled-(boolean)">services/entangled-dht/enabled (boolean)</h3>
 
@@ -484,7 +528,7 @@ Right now we have only 16 testing machines in the network, so last three values 
 
 <p>services/entangled-dht/known-nodes, default value: </p>
 
-<h3 id="udp-port-number-for-distributed-hash-table-(positive-integer)">udp port number for distributed hash table (positive integer)</h3>
+<h3 id="udp-port-number-for-distributed-hash-table-(port-number)">udp port number for distributed hash table (port number)</h3>
 
 <p>services/entangled-dht/udp-port, default value: 14441</p>
 
@@ -499,7 +543,7 @@ BitDust uses <a href="http://entangled.sourceforge.net/">Entangled Project</a> t
 
 <p>services/http-connections/enabled, default value: false</p>
 
-<h3 id="services/http-connections/http-port-(positive-integer)">services/http-connections/http-port (positive integer)</h3>
+<h3 id="services/http-connections/http-port-(port-number)">services/http-connections/http-port (port number)</h3>
 
 <p>services/http-connections/http-port, default value: 9993</p>
 
@@ -519,9 +563,17 @@ BitDust uses <a href="http://entangled.sourceforge.net/">Entangled Project</a> t
 
 <p>services/http-transport/sending-enabled, default value: true</p>
 
+<h3 id="services/identity-propagate/automatic-rotate-enabled-(boolean)">services/identity-propagate/automatic-rotate-enabled (boolean)</h3>
+
+<p>services/identity-propagate/automatic-rotate-enabled, default value: true</p>
+
 <h3 id="services/identity-propagate/enabled-(boolean)">services/identity-propagate/enabled (boolean)</h3>
 
 <p>services/identity-propagate/enabled, default value: true</p>
+
+<h3 id="services/identity-propagate/health-check-interval-seconds-(positive-integer)">services/identity-propagate/health-check-interval-seconds (positive integer)</h3>
+
+<p>services/identity-propagate/health-check-interval-seconds, default value: 300</p>
 
 <h3 id="services/identity-propagate/known-servers-(string)">services/identity-propagate/known-servers (string)</h3>
 
@@ -539,7 +591,7 @@ BitDust uses <a href="http://entangled.sourceforge.net/">Entangled Project</a> t
 
 <p>services/identity-propagate/preferred-servers, default value: </p>
 
-<h3 id="ebable-identity-server-(boolean)">ebable identity server (boolean)</h3>
+<h3 id="enable-identity-server-(boolean)">enable identity server (boolean)</h3>
 
 <p>services/identity-server/enabled, default value: false</p>
 
@@ -554,13 +606,13 @@ Otherwise your external IP will be used as a host name.
 The host name is used to form a unique IDURL of any hosted identity.
 User ID looking more pretty and safe without IP address.</p>
 
-<h3 id="tcp-port-number-(positive-integer)">TCP port number (positive integer)</h3>
+<h3 id="tcp-port-number-(port-number)">TCP port number (port number)</h3>
 
 <p>services/identity-server/tcp-port, default value: 6661</p>
 
 <p>A TCP port number to receive user's identity files.</p>
 
-<h3 id="web-port-number-(positive-integer)">WEB port number (positive integer)</h3>
+<h3 id="web-port-number-(port-number)">WEB port number (port number)</h3>
 
 <p>services/identity-server/web-port, default value: 8084</p>
 
@@ -574,13 +626,33 @@ User ID looking more pretty and safe without IP address.</p>
 
 <p>services/keys-registry/enabled, default value: true</p>
 
+<h3 id="services/keys-storage/enabled-(boolean)">services/keys-storage/enabled (boolean)</h3>
+
+<p>services/keys-storage/enabled, default value: true</p>
+
 <h3 id="services/list-files/enabled-(boolean)">services/list-files/enabled (boolean)</h3>
 
 <p>services/list-files/enabled, default value: true</p>
 
+<h3 id="services/message-broker/archive-chunk-size-(non-zero-positive-integer)">services/message-broker/archive-chunk-size (non zero positive integer)</h3>
+
+<p>services/message-broker/archive-chunk-size, default value: 100</p>
+
+<h3 id="services/message-broker/enabled-(boolean)">services/message-broker/enabled (boolean)</h3>
+
+<p>services/message-broker/enabled, default value: true</p>
+
+<h3 id="services/message-history/enabled-(boolean)">services/message-history/enabled (boolean)</h3>
+
+<p>services/message-history/enabled, default value: true</p>
+
 <h3 id="services/miner/enabled-(boolean)">services/miner/enabled (boolean)</h3>
 
 <p>services/miner/enabled, default value: false</p>
+
+<h3 id="services/my-data/enabled-(boolean)">services/my-data/enabled (boolean)</h3>
+
+<p>services/my-data/enabled, default value: true</p>
 
 <h3 id="services/my-ip-port/enabled-(boolean)">services/my-ip-port/enabled (boolean)</h3>
 
@@ -602,7 +674,7 @@ User ID looking more pretty and safe without IP address.</p>
 
 <p>services/network/proxy/password, default value: </p>
 
-<h3 id="services/network/proxy/port-(positive-integer)">services/network/proxy/port (positive integer)</h3>
+<h3 id="services/network/proxy/port-(port-number)">services/network/proxy/port (port number)</h3>
 
 <p>services/network/proxy/port, default value: </p>
 
@@ -640,6 +712,14 @@ A value of "0" means no outgoing limit.</p>
 
 <p>services/p2p-notifications/enabled, default value: true</p>
 
+<h3 id="services/private-groups/enabled-(boolean)">services/private-groups/enabled (boolean)</h3>
+
+<p>services/private-groups/enabled, default value: true</p>
+
+<h3 id="services/private-groups/message-ack-timeout-(non-zero-positive-integer)">services/private-groups/message-ack-timeout (non zero positive integer)</h3>
+
+<p>services/private-groups/message-ack-timeout, default value: 10</p>
+
 <h3 id="services/private-messages/enabled-(boolean)">services/private-messages/enabled (boolean)</h3>
 
 <p>services/private-messages/enabled, default value: true</p>
@@ -650,7 +730,7 @@ A value of "0" means no outgoing limit.</p>
 
 <h3 id="services/proxy-server/enabled-(boolean)">services/proxy-server/enabled (boolean)</h3>
 
-<p>services/proxy-server/enabled, default value: true</p>
+<p>services/proxy-server/enabled, default value: false</p>
 
 <h3 id="services/proxy-server/routes-limit-(positive-integer)">services/proxy-server/routes-limit (positive integer)</h3>
 
@@ -688,6 +768,10 @@ A value of "0" means no outgoing limit.</p>
 
 <p>services/proxy-transport/sending-enabled, default value: true</p>
 
+<h3 id="services/rebuilding/child-processes-enabled-(boolean)">services/rebuilding/child-processes-enabled (boolean)</h3>
+
+<p>services/rebuilding/child-processes-enabled, default value: false</p>
+
 <h3 id="services/rebuilding/enabled-(boolean)">services/rebuilding/enabled (boolean)</h3>
 
 <p>services/rebuilding/enabled, default value: true</p>
@@ -720,7 +804,7 @@ A value of "0" means no outgoing limit.</p>
 
 <p>services/tcp-connections/enabled, default value: true</p>
 
-<h3 id="tcp-port-number-(positive-integer)">tcp port number (positive integer)</h3>
+<h3 id="tcp-port-number-(port-number)">tcp port number (port number)</h3>
 
 <p>services/tcp-connections/tcp-port, default value: 7771</p>
 
@@ -758,7 +842,7 @@ A value of "0" means no outgoing limit.</p>
 
 <p>services/udp-datagrams/enabled, default value: true</p>
 
-<h3 id="udp-port-number-(positive-integer)">udp port number (positive integer)</h3>
+<h3 id="udp-port-number-(port-number)">udp port number (port number)</h3>
 
 <p>services/udp-datagrams/udp-port, default value: 8882</p>
 
