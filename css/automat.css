@@ -19,8 +19,23 @@
     background-color: rgba(255,255,255,.05);
 }
 
-div.wiki div.docs-section h6 {
+div.docs-section h2 {
+    font-size: 2rem;
+}
+
+h4.api_method {
+    padding-top: 15px;
+}
+
+h6.api_method_header {
     color: #ccc;
     font-weight: 100;
     margin-bottom: 0px;
+}
+
+div.docs-section p code {
+    font-size: 1.1em;
+    padding-left: 2px;
+    padding-right: 2px;
+    color: #B792CC;
 }
