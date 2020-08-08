@@ -13,7 +13,7 @@ basepath = '/'
 if len(sys.argv) > 3:
     basepath = sys.argv[3]
 if not os.path.isdir(os.path.dirname(dest)):
-    print "create", os.path.dirname(dest)
+    print("create", os.path.dirname(dest))
     os.makedirs(os.path.dirname(dest))
 
 menu_html = open('template_menu.htm').read()
