@@ -4,6 +4,6 @@ import codecs
 import locale
 markdowner = markdown2.Markdown(extras=['markdown-in-html', 
                                         'tables',])
-mdsrc = codecs.open(sys.argv[1], mode='r').read()  # .decode('utf8')
+mdsrc = codecs.open(sys.argv[1], mode='r').read().decode('utf8')
 htmlsrc = markdowner.convert(mdsrc)
-sys.stdout.write(htmlsrc)  # .encode('utf8'))
+sys.stdout.write(htmlsrc.encode('utf8'))
