@@ -175,6 +175,7 @@
 <a href="#process_stop">process_stop</a><br>
 <a href="#process_restart">process_restart</a><br>
 <a href="#process_health">process_health</a><br>
+<a href="#process_info">process_info</a><br>
 <a href="#process_debug">process_debug</a><br>
 <a href="#config_get">config_get</a><br>
 <a href="#config_set">config_set</a><br>
@@ -195,6 +196,7 @@
 <a href="#key_share">key_share</a><br>
 <a href="#key_audit">key_audit</a><br>
 <a href="#files_sync">files_sync</a><br>
+<a href="#files_list">files_list</a><br>
 <a href="#file_exists">file_exists</a><br>
 <a href="#file_info">file_info</a><br>
 <a href="#file_create">file_create</a><br>
@@ -259,6 +261,7 @@
 <a href="#network_stun">network_stun</a><br>
 <a href="#network_reconnect">network_reconnect</a><br>
 <a href="#network_connected">network_connected</a><br>
+<a href="#network_status">network_status</a><br>
 <a href="#network_configuration">network_configuration</a><br>
 <a href="#dht_node_find">dht_node_find</a><br>
 <a href="#dht_user_random">dht_user_random</a><br>
@@ -288,7 +291,7 @@
 <p>There are multiple ways you can interract with the BitDust engine main process.
 Here you can find some examples of how to do that using different clients.</p>
 
-<h4 id="http-rest-api">HTTP Rest API</h4>
+<h5 id="http-rest-api">HTTP Rest API</h5>
 
 <p>The API server inside the engine is running on <code>localhost:8180</code> by default.
 This can be modified via program settings.</p>
@@ -302,7 +305,7 @@ This can be modified via program settings.</p>
 }
 </code></pre>
 
-<h4 id="websocket">WebSocket</h4>
+<h5 id="websocket">WebSocket</h5>
 
 <p>The WebSocket server inside the engine is running on <code>localhost:8280</code> by default.
 This can be modified via program settings.</p>
@@ -322,7 +325,7 @@ websocket.onmessage = function(e) {
 };
 </code></pre>
 
-<h4 id="command-line-shell-client">Command line shell client</h4>
+<h5 id="command-line-shell-client">Command line shell client</h5>
 
 <p>Command line client is actually also using HTTP Rest API interface to interact with the main process.</p>
 
@@ -392,6 +395,20 @@ will not be able to access the API.</p>
 <h6 class="api_method_header" id="websocket">WebSocket</h6>
 
 <pre><code>websocket.send('{"command": "api_call", "method": "process_health", "kwargs": {} }');
+</code></pre>
+
+<h4 class="api_method" id="process_info">process_info()</h4>
+
+<p>Returns overall information about current process. This method can be used for live monitoring and statistics.</p>
+
+<h6 class="api_method_header" id="http">HTTP</h6>
+
+<pre><code>curl -X GET 'localhost:8180/process/info/v1'
+</code></pre>
+
+<h6 class="api_method_header" id="websocket">WebSocket</h6>
+
+<pre><code>websocket.send('{"command": "api_call", "method": "process_info", "kwargs": {} }');
 </code></pre>
 
 <h4 class="api_method" id="process_debug">process_debug()</h4>
@@ -483,20 +500,24 @@ to interrupt it and investigate things.</p>
 <pre><code>websocket.send('{"command": "api_call", "method": "identity_get", "kwargs": {} }');
 </code></pre>
 
-<h4 class="api_method" id="identity_create">identity_create(username, preferred_servers=[])</h4>
+<h4 class="api_method" id="identity_create">identity_create(username, preferred_servers=[], join_network=False)</h4>
 
 <p>Generates new private key and creates new identity for you to be able to communicate with other nodes in the network.</p>
 
-<p>Parameter <code>username</code> defines filename of the new identity.</p>
+<p>Parameter <code>username</code> defines filename of the new identity, can not be changed anymore.</p>
+
+<p>By default that method only connects to ID servers to be able to register a new identity file for you.
+If you also pass <code>join_network=True</code> it will start all network services right after that and will make
+you connected to the BitDust network automatically.</p>
 
 <h6 class="api_method_header" id="http">HTTP</h6>
 
-<pre><code>curl -X POST 'localhost:8180/identity/create/v1' -d '{"username": "alice"}'
+<pre><code>curl -X POST 'localhost:8180/identity/create/v1' -d '{"username": "alice", "join_network": 1}'
 </code></pre>
 
 <h6 class="api_method_header" id="websocket">WebSocket</h6>
 
-<pre><code>websocket.send('{"command": "api_call", "method": "identity_create", "kwargs": {"username": "alice"} }');
+<pre><code>websocket.send('{"command": "api_call", "method": "identity_create", "kwargs": {"username": "alice", "join_network": 1} }');
 </code></pre>
 
 <h4 class="api_method" id="identity_backup">identity_backup(destination_filepath)</h4>
@@ -518,7 +539,7 @@ to restore your data in case of lost.</p>
 <pre><code>websocket.send('{"command": "api_call", "method": "identity_backup", "kwargs": {"destination_filepath": "/tmp/alice_backup.key"} }');
 </code></pre>
 
-<h4 class="api_method" id="identity_recover">identity_recover(private_key_source, known_idurl=None)</h4>
+<h4 class="api_method" id="identity_recover">identity_recover(private_key_source, known_idurl=None, join_network=False)</h4>
 
 <p>Restores your identity from backup copy.</p>
 
@@ -712,6 +733,28 @@ call that method.</p>
 <h6 class="api_method_header" id="websocket">WebSocket</h6>
 
 <pre><code>websocket.send('{"command": "api_call", "method": "files_sync", "kwargs": {} }');
+</code></pre>
+
+<h4 class="api_method" id="files_list">files_list(remote_path=None, key_id=None, recursive=True, all_customers=False, include_uploads=False, include_downloads=False)</h4>
+
+<p>Returns list of known files registered in the catalog under given <code>remote_path</code> folder.
+By default returns items from root of the catalog.</p>
+
+<p>If <code>key_id</code> is passed will only return items encrypted using that key.</p>
+
+<p>Use <code>all_customers=True</code> to get list of all registered files - including received/shared to you by another user.</p>
+
+<p>You can also use <code>include_uploads</code> and <code>include_downloads</code> parameters to get more info about currently running
+uploads and downloads.</p>
+
+<h6 class="api_method_header" id="http">HTTP</h6>
+
+<pre><code>curl -X GET 'localhost:8180/file/list/v1?remote_path=abcd1234$alice@server-a.com:pictures/cats/'
+</code></pre>
+
+<h6 class="api_method_header" id="websocket">WebSocket</h6>
+
+<pre><code>websocket.send('{"command": "api_call", "method": "files_list", "kwargs": {"remote_path": "abcd1234$alice@server-a.com:pictures/cats/"} }');
 </code></pre>
 
 <h4 class="api_method" id="file_exists">file_exists(remote_path)</h4>
@@ -1025,7 +1068,7 @@ or by other users that shared a key with you before.</p>
 <pre><code>websocket.send('{"command": "api_call", "method": "groups_list", "kwargs": {} }');
 </code></pre>
 
-<h4 class="api_method" id="group_create">group_create(creator_id=None, key_size=None, label="")</h4>
+<h4 class="api_method" id="group_create">group_create(creator_id=None, key_size=None, label="", timeout=20)</h4>
 
 <p>Creates a new messaging group.</p>
 
@@ -1238,7 +1281,16 @@ populated from the <code>personal/private-key-size</code> program setting.</p>
 
 <h4 class="api_method" id="message_send">message_send(recipient_id, data, ping_timeout=30, message_ack_timeout=15)</h4>
 
-<p>Sends a text message to remote peer, <code>recipient_id</code> is a string with a nickname, global_id or IDURL of the remote user.</p>
+<p>Sends a private message to remote peer, <code>recipient_id</code> is a string with a nickname, global_id or IDURL of the remote user.</p>
+
+<p>Message will be encrypted first with public key of the recipient.
+Public key must be already registered locally or populated from remote identity file.
+Corresponding key will be recognized based on <code>recipient_id</code> parameter.</p>
+
+<p>Recipient will receive incoming message of type "private_message" and de-crypt it.
+If recipient is listening on the new private messages it will be marked as "consumed".</p>
+
+<p>Input <code>data</code> must be a JSON dictionary.</p>
 
 <h6 class="api_method_header" id="http">HTTP</h6>
 
@@ -1252,7 +1304,9 @@ populated from the <code>personal/private-key-size</code> program setting.</p>
 
 <h4 class="api_method" id="message_send_group">message_send_group(group_key_id, data)</h4>
 
-<p>Sends a text message to a group of users.</p>
+<p>Sends a "group_message" to a group of users.</p>
+
+<p>Input <code>data</code> must be a JSON dictionary.</p>
 
 <h6 class="api_method_header" id="http">HTTP</h6>
 
@@ -1724,6 +1778,20 @@ As soon as client received and processed the response events are marked as "cons
 <h6 class="api_method_header" id="websocket">WebSocket</h6>
 
 <pre><code>websocket.send('{"command": "api_call", "method": "network_connected", "kwargs": {} }');
+</code></pre>
+
+<h4 class="api_method" id="network_status">network_status(suppliers=False, customers=False, cache=False, tcp=False, udp=False, proxy=False, dht=False)</h4>
+
+<p>Returns detailed info about current network status, protocols and active connections.</p>
+
+<h6 class="api_method_header" id="http">HTTP</h6>
+
+<pre><code>curl -X GET 'localhost:8180/network/status/v1?cache=1&amp;suppliers=1&amp;dht=1'
+</code></pre>
+
+<h6 class="api_method_header" id="websocket">WebSocket</h6>
+
+<pre><code>websocket.send('{"command": "api_call", "method": "network_status", "kwargs": {"cache": 1, "suppliers": 1, "dht": 1} }');
 </code></pre>
 
 <h4 class="api_method" id="network_configuration">network_configuration()</h4>

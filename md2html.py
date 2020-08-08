@@ -2,8 +2,12 @@ import sys
 import markdown2
 import codecs
 import locale
-markdowner = markdown2.Markdown(extras=['markdown-in-html', 
-                                        'tables',])
-mdsrc = codecs.open(sys.argv[1], mode='r').read().decode('utf8')
+
+from io import open
+
+markdowner = markdown2.Markdown(extras=['markdown-in-html', 'tables',])
+
+mdsrc = open(sys.argv[1], 'rt', encoding='utf-8').read()
+
 htmlsrc = markdowner.convert(mdsrc)
-sys.stdout.write(htmlsrc.encode('utf8'))
+sys.stdout.write(htmlsrc.encode('utf-8').decode('utf-8'))
