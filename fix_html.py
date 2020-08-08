@@ -1,6 +1,9 @@
 import os
 import sys
 import re
+
+from io import open
+
 # gitlab_base = 'http://gitlab.bitdust.io/devel/bitdust/blob/master/'
 
 md_base = ''
@@ -16,16 +19,16 @@ if not os.path.isdir(os.path.dirname(dest)):
     print("create", os.path.dirname(dest))
     os.makedirs(os.path.dirname(dest))
 
-menu_html = open('template_menu.htm').read()
+menu_html = open('template_menu.htm', 'rt', encoding='utf-8').read()
 menu_html = menu_html % {'wikipath': wikipath, }
 
-template = open('template.htm').read()
+template = open('template.htm', 'rt', encoding='utf-8').read()
 if src.count('api.html'):
-    template = open('template_api.htm').read()
+    template = open('template_api.htm', 'rt', encoding='utf-8').read()
 
-keywords = open('keywords.txt').read().replace('\n', ', ')
+keywords = open('keywords.txt', 'rt', encoding='utf-8').read().replace('\n', ', ')
 
-sbody = open(src).read()
+sbody = open(src, 'rt', encoding='utf-8').read()
 sbody = re.sub('a href="(.+?)\.md"', 'a href="%s\g<1>.html"' % md_base, sbody)
 sbody = re.sub('a href="(.+?)\.md\#(.+?)"', 'a href="%s\g<1>.html#\g<2>"' % md_base, sbody)
 # sbody = re.sub('a href="(.+?)\.py"', 'a href="%s\g<1>.py"' % gitlab_base, sbody)
@@ -94,4 +97,4 @@ newbody = template % {
     'menu_html': menu_html,
     'api_methods_links': api_methods_links,
 }
-open(dest, mode='w').write(newbody)
+open(dest, 'wt', encoding='utf-8').write(newbody)
