@@ -1,4 +1,4 @@
 #!/bin/bash
 
-ssh bitdust "cd bitdust.www; git pull origin master;"
+ssh bitdust "cd bitdust.www; ./deploy;"
 
