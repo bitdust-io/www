@@ -1,3 +1,69 @@
-<html>
-The First BitDust on-line Hackathon
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-content="pageTitle">BitDust Hackathon - 2021</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="logo-pictogram-color.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo-pictogram-color.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo-pictogram-color.png">
+
+    <meta property="og:image:height" content="558">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:title" content="BitDust Hackathon - 2021">
+    <meta property="og:description"
+          content="BitDust Hackathon takes place in January 2021">
+    <meta property="og:url" content="https://bitdust.io">
+    <meta property="og:image" content="bitdust-hackathon.png">
+
+    <link rel="stylesheet" href="styles/styles.scss">
+
+</head>
+<body class="ui-transparent-nav" data-fade_in="on-load">
+
+<div class="container">
+
+    <header>
+        <div class="logo">
+            <img src="./images/logo.svg" alt="BitDust Hackathon" />
+            <div>
+                <h1>
+                    <span>BitDust</span>
+                    <span>hackathon</span>
+                </h1>
+                <p>
+                    Online January 2021 16:00 - CEST
+                </p>
+            </div>
+        </div>
+        <div class="counter">
+            <p id="counter"></p>
+        </div>
+        <div class="join-now">
+            <button class="button is-primary">
+                Join now
+            </button>
+        </div>
+    </header>
+
+</div>
+
+<script src="js/hackathon.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158200962-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-158200962-1');
+</script>
+
+</body>
 </html>

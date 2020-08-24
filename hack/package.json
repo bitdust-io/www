@@ -1,0 +1,19 @@
+{
+    "name": "bitdust-hackathon",
+    "version": "1.0.0",
+    "description": "First BitDust hackathon",
+    "main": "index.js",
+    "scripts": {
+        "start": "parcel index.html",
+        "build": "parcel build index.html --no-source-maps"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "cssnano": "^4.1.10",
+        "sass": "^1.26.10"
+    },
+    "dependencies": {
+        "bulma": "^0.9.0"
+    }
+}

@@ -15,3 +15,7 @@ service_*.html
 /.idea
 /node_modules
 /node_scripts/all.json
+
+/hack/node_modules
+/hack/.cache
+/hack/dist
