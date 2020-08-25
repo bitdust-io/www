@@ -1,22 +1,51 @@
 @import "node_modules/bulma/sass/utilities/initial-variables";
-@import "node_modules/bulma/bulma";
 @import "fonts";
+@import "mixins";
+@import "config";
+
+// OVERWRITES
+// Colors
+$primary: #5700CB;
+$background: black;
+$body-background-color: $background;
+
+@import '~bulma/bulma';
+
+// OVERWRITES
 
 html {
-    background: url("../images/bg.png") top center black no-repeat;
-    background-size: 100%;
     width: 100%;
+
+    * {
+        &::selection {
+            background: $primary;
+        }
+    }
 }
 
 body {
     height: 100%;
     width: 100%;
     min-height: 1000px;
+    overflow-x: hidden;
 
     * {
         @include medium;
         color: white;
     }
+}
+
+#bg {
+    content: '';
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 900px;
+    z-index: -1;
+    background: url("../images/bg.png") top center black no-repeat;
+    background-size: 100%;
 }
 
 
@@ -31,8 +60,19 @@ header {
         align-content: center;
         justify-content: center;
 
+        @include breakpoint-down(sm) {
+            flex-direction: column;
+            margin: 0;
+        }
+
+
         img {
             margin-right: 50px;
+            max-width: 160px;
+            @include breakpoint-down(sm) {
+                margin: 50px auto 0;
+                max-width: 100px;
+            }
         }
 
         h1 {
@@ -48,25 +88,298 @@ header {
                 display: block;
                 font-size: 5rem;
             }
+
+            @include breakpoint-down(sm) {
+                transform: scale(.6);
+                margin-left: -20px;
+            }
         }
 
         p {
             margin-top: 30px;
+
+            @include breakpoint-down(sm) {
+                margin: 0;
+                text-align: center;
+            }
         }
     }
 
     .counter {
         margin: 100px auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        @include breakpoint-down(sm) {
+            transform: scale(.6);
+            margin: 50px auto 20px;
+        }
+
+        #counter {
+            display: flex;
+            text-align: center;
+
+            span:first-of-type {
+                margin: 0 30px;
+            }
+
+            span {
+                @include heavy;
+                display: block;
+                font-size: 3rem;
+                line-height: 4rem;
+
+                &:last-child {
+                    font-size: .8rem;
+                    @include medium;
+                }
+            }
+        }
     }
 
     .join-now {
-
         margin: 50px auto;
 
-        .button {
-            background: #5700CB;
-            border-radius: 4px;
+        @include breakpoint-down(sm) {
+            margin: auto;
         }
     }
 }
 
+
+.button {
+    &.is-primary {
+        &:hover {
+            background-color: #8027F7 !important;
+        }
+    }
+}
+
+.mg-top-100 {
+    margin-top: 100px;
+}
+
+.max-width {
+    max-width: 1024px;
+}
+
+.move-up {
+    transform: translateY(-50px);
+}
+
+.base-block {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 100px;
+    @include box-shadow($color-gray-100, .9, 60px);
+
+    @include breakpoint-down(sm) {
+        padding: 10px;
+    }
+}
+
+.block-a {
+    display: flex;
+    margin: 100px auto 0;
+
+    @extend .max-width;
+
+    @include breakpoint-down(sm) {
+        flex-direction: column;
+        margin: 60px 20px;
+    }
+
+    .block-a-text {
+        flex: 1;
+        margin-right: 150px;
+
+        @include breakpoint-down(sm) {
+            flex: auto;
+            margin: 0;
+        }
+    }
+
+    h3 {
+        @include bold;
+        font-size: 3.4rem;
+        margin-bottom: 30px;
+    }
+
+    p {
+        @include demiBold;
+        font-size: 1.6rem;
+    }
+
+    figure {
+        display: flex;
+        justify-content: flex-end;
+
+        @include breakpoint-down(sm) {
+            justify-content: center;
+            margin-top: 20px;
+        }
+    }
+
+    img {
+        width: 200px;
+    }
+}
+
+.purple-bg {
+    position: relative;
+
+    &:before {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        background-image: linear-gradient(-180deg, rgba(#000000, 0) 0%, rgba(52, 19, 92, 0.34) 61%, rgba(#2A1044, .7) 100%, rgba(#000000, .7) 100%);
+        left: -100%;
+        right: -100%;
+        top: 0;
+        height: 100%;
+    }
+}
+
+.block-b {
+    margin-top: 200px;
+    padding: 100px 0;
+    @extend .purple-bg;
+
+    ul {
+        @extend .max-width;
+        margin: auto;
+    }
+
+    img {
+        max-width: 100px;
+    }
+
+    .column {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    h4 {
+        font-size: 2rem;
+        @include bold;
+        margin: 30px 0;
+    }
+
+    p {
+        max-width: 80%;
+        align-self: center;
+    }
+}
+
+.block-c {
+    margin-top: 100px;
+    padding-top: 0;
+
+    img {
+        max-width: 60px;
+    }
+
+    h4 {
+        font-size: 1.4rem;
+        @include bold;
+        margin: 10px 0;
+    }
+
+    p {
+        max-width: 50%;
+    }
+
+    .column {
+        margin-bottom: 40px;
+        align-self: flex-start;
+    }
+}
+
+
+.block-d {
+    @extend .max-width;
+    display: flex;
+    flex-direction: column;
+    margin: 200px auto;
+
+
+    h4 {
+        align-self: center;
+        @include bold;
+        font-size: 4rem;
+        line-height: 4rem;
+        text-align: center;
+        margin-bottom: 100px;
+
+        .date {
+            color: $primary;
+            display: block;
+            font-size: 2rem;
+        }
+    }
+
+    .day {
+        font-size: 2rem;
+        @include bold;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .column {
+        &:not(:last-child) {
+            border-right: 1px solid $primary;
+        }
+
+        padding: 0 30px;
+    }
+}
+
+.block-faq {
+    @extend .max-width;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+    .column {
+        li {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            cursor: pointer;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+
+    }
+}
+
+.block-welcome {
+    @extend .max-width;
+    display: flex;
+    flex-direction: column;
+    margin: 300px auto;
+
+    h2 {
+        font-size: 3rem;
+        @include heavy;
+        text-align: center;
+
+        span {
+            display: block;
+        }
+    }
+
+    .join-now {
+        margin: 40px auto;
+    }
+}
+
+footer {
+    color: white;
+    background: $primary;
+    text-align: center;
+    padding: 40px;
+}
