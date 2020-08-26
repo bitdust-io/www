@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="65px" height="64px" viewBox="0 0 65 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>alarm_clock</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Hackathon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Desktop-HD" transform="translate(-1039.000000, -3410.000000)" stroke="#FFFFFF" stroke-width="3">
+            <g id="alarm_clock" transform="translate(1040.000000, 3412.000000)">
+                <g id="Group" transform="translate(31.000000, 30.000000) scale(-1, 1) translate(-31.000000, -30.000000) ">
+                    <path d="M27.1729111,5.08474576 L34.7232623,5.08474576 C47.233094,5.08474576 57.3743162,15.2790953 57.3743162,27.8544628 L57.3743162,35.1963846 C57.3743162,47.7717521 47.233094,57.9661017 34.7232623,57.9661017 L27.1729111,57.9661017 C14.6630794,57.9661017 4.5218572,47.7717521 4.5218572,35.1963846 L4.5218572,27.8544628 C4.5218572,15.2790953 14.6630794,5.08474576 27.1729111,5.08474576 Z" id="Path"></path>
+                    <path d="M15.7021851,1.77456024 C12.3115962,-0.468462403 7.69388353,-0.714856814 4.32245868,1.78424738 C0.848107372,4.3596469 -0.501169145,8.66013544 1.16996447,12.2033898" id="Path"></path>
+                    <path d="M46.1939883,1.9375374 C49.5512836,-0.45505096 54.2371928,-0.774113156 57.6345449,1.78374272 C61.0553418,4.35925014 62.3831406,8.66047928 60.7358341,12.2033898" id="Path"></path>
+                    <polyline id="Path" points="30.9480867 16.2711864 30.9480867 31.5254237 17.734972 31.5254237"></polyline>
+                    <path d="M51.2759556,52.8813559 L59.4071031,60" id="Path" fill="#D8D8D8"></path>
+                    <path d="M2.48907031,52.8813559 L10.6202179,60" id="Path" fill="#D8D8D8" transform="translate(6.554644, 56.440678) scale(-1, 1) translate(-6.554644, -56.440678) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
