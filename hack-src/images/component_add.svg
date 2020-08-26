@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="57px" height="57px" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>component_add</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Hackathon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Desktop-HD" transform="translate(-626.000000, -3102.000000)" stroke="#FFFFFF" stroke-width="3">
+            <g id="component_add" transform="translate(627.000000, 3103.000000)">
+                <path d="M0.5,33.5 L0.5,46.8636364 C0.5,51.0810835 3.91891645,54.5 8.13636364,54.5 L34.8636364,54.5 C39.0810835,54.5 42.5,51.0810835 42.5,46.8636364 L42.5,20.1363636 C42.5,15.9189165 39.0810835,12.5 34.8636364,12.5 L21.5,12.5" id="Path" transform="translate(21.500000, 33.500000) rotate(90.000000) translate(-21.500000, -33.500000) "></path>
+                <path d="M43,0.5 L43,23.5" id="Path"></path>
+                <path d="M43,0.5 L43,23.5" id="Path" transform="translate(43.000000, 12.000000) rotate(90.000000) translate(-43.000000, -12.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
