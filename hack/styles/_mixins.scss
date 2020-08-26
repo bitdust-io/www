@@ -1,0 +1,65 @@
+@import 'config';
+
+@mixin breakpoint-down-value($value, $direction) {
+    @if $direction==height {
+        @media (max-height: $value) and (min-width: $value) {
+            @content;
+        }
+    } @else {
+        @media (max-width: $value) {
+            @content;
+        }
+    }
+}
+
+@mixin breakpoint-up($class) {
+    @if $class==xs {
+        @media (min-width: map-get($breakpoints, extraSmall)) {
+            @content;
+        }
+    } @else if $class==sm {
+        @media (min-width: map-get($breakpoints, small)) {
+            @content;
+        }
+    } @else if $class==md {
+        @media (min-width: map-get($breakpoints, medium)) {
+            @content;
+        }
+    } @else if $class==lg {
+        @media (min-width: map-get($breakpoints, large)) {
+            @content;
+        }
+    } @else if $class==xl {
+        @media (min-width: map-get($breakpoints, extraLarge)) {
+            @content;
+        }
+    } @else {
+        @warn 'Breakpoint mixin supports: xs, sm, md, lg';
+    }
+}
+
+@mixin breakpoint-down($class) {
+    @if $class==xs {
+        @media (max-width: map-get($breakpoints, extraSmall) - 1) {
+            @content;
+        }
+    } @else if $class==sm {
+        @media (max-width: map-get($breakpoints, small) - 1) {
+            @content;
+        }
+    } @else if $class==md {
+        @media (max-width: map-get($breakpoints, medium) - 1) {
+            @content;
+        }
+    } @else if $class==lg {
+        @media (max-width: map-get($breakpoints, large) - 1) {
+            @content;
+        }
+    } @else {
+        @warn 'Breakpoint mixin supports: xs, sm, md, lg';
+    }
+}
+
+@mixin box-shadow($color: $color-gray-100, $opacity: .05, $blur: 6px) {
+    box-shadow: 0 2px $blur 0 rgba($color, $opacity);
+}

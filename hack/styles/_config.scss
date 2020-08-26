@@ -1,0 +1,109 @@
+// Colors Gray
+$color-gray-00: #fff;
+$color-gray-10: #f3f3f3;
+$color-gray-15: #f8f8f8;
+$color-gray-20: #e3e3e3;
+$color-gray-30: #d3d3d3;
+$color-gray-40: #b3b3b3;
+$color-gray-50: #939393;
+$color-gray-60: #737373;
+$color-gray-70: #535353;
+$color-gray-80: #333;
+$color-gray-90: #141414;
+$color-gray-100: #000;
+
+
+// F24 Colors
+$color-blue: #128cf4;
+$color-blue-dark: #006ac5;
+$color-blue-darker: #194379;
+$color-blue-darkest: #0a1d36;
+$color-blue-light: #72b9f6;
+
+$color-green: #2cc164;
+$color-green-dark: #0b9f43;
+
+$color-red: #f96555;
+$color-red-dark: #d64738;
+
+$color-orange: #fb9b3f;
+
+$color-gray: #363636;
+
+$color-purple: #082a57;
+$color-purple-dark: #171b44;
+
+// + Custom colors
+$color-blue-gray-01: #f0f0f2;
+$color-blue-gray-02: #819db5;
+$color-blue-gray-03: #4c667c;
+$color-blue-gray-04: #c0ceda;
+$color-blue-gray-05: #e5e8eb;
+$modal-background: #000c1b;
+
+
+// Margins
+$margin-default: 10px;
+
+// Radius
+$border-radius: 16px;
+
+// Breakpoints
+$breakpoints: (
+        extraSmall: 425px,
+        small: 769px,
+        medium: 1025px,
+        large: 2000px
+);
+
+$xsmall-font-sizes: (
+        default: (12px, 14px)
+);
+
+$small-font-sizes: (
+        default: (14px, 16px)
+);
+
+$regular-font-sizes: (
+        default: (15px, 24px),
+        medium: (17px, 24px)
+);
+
+$medium-font-sizes: (
+        default: (18px, 24px),
+        medium: (20px, 24px)
+);
+
+$big-font-sizes: (
+        default: (19px),
+        medium: (24px)
+);
+
+$h1-font-sizes: (
+        default: (32px, 36px),
+        medium: (48px, 52px)
+);
+
+$h2-font-sizes: (
+        default: (22px, 26px),
+        medium: (32px, 36px)
+);
+
+$h3-font-sizes: (
+        default: (19px, 23px),
+        medium: (24px, 28px)
+);
+
+$h4-font-sizes: (
+        default: (17px, 22px),
+        medium: (20px, 24px)
+);
+
+$h5-font-sizes: (
+        default: (15px, 20px),
+        medium: (16px, 18px),
+);
+
+
+//Others
+$box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.2);

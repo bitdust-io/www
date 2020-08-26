@@ -1,0 +1,54 @@
+$font-dir: "../fonts/";
+
+@mixin font-face($font-label, $font-path, $font-name, $type, $format, $style: normal, $weight: normal) {
+    @font-face {
+        font-family: $font-label;
+        src: url($font-path + $font-name + $type) format($format);
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+
+@include font-face("AvenirNext-Heavy", $font-dir, "AvenirNext-Heavy", ".woff2", "woff2");
+@include font-face("AvenirNext-Bold", $font-dir, "AvenirNext-Bold", ".woff2", "woff2", "italic");
+@include font-face("AvenirNext-DemiBold", $font-dir, "AvenirNext-DemiBold", ".woff2", "woff2");
+@include font-face("AvenirNext-Medium", $font-dir, "AvenirNext-Medium", ".woff2", "woff2", "italic");
+
+/* ------------------------------------------------------------------------------------------------------------
+* Define main font styles
+*------------------------------------------------------------------------------------------------------------*/
+
+@mixin heavy {
+    font-family: AvenirNext-Heavy, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+@mixin demiBold {
+    font-family: AvenirNext-DemiBold, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+@mixin bold {
+    font-family: AvenirNext-Bold, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+@mixin medium {
+    font-family: AvenirNext-Medium, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
