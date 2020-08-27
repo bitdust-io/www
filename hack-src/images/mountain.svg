@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="303px" height="316px" viewBox="0 0 303 316" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>mountain</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Hackathon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Desktop-HD" transform="translate(-1050.000000, -2268.000000)" stroke="#FFFFFF" stroke-width="4">
+            <g id="mountain" transform="translate(1201.500000, 2426.500000) rotate(-180.000000) translate(-1201.500000, -2426.500000) translate(1052.000000, 2270.000000)">
+                <path d="M0.928571429,1 L297.928571,1" id="Path"></path>
+                <path d="M200.928571,53 L240.928571,162" id="Path"></path>
+                <path d="M298.928571,1 L241.928571,162" id="Path"></path>
+                <path d="M114.792208,275 L170.928571,313" id="Path"></path>
+                <path d="M114.928571,237.128498 L114.928571,312" id="Path"></path>
+                <path d="M115.928571,312.25 L170.928571,312.75" id="Path"></path>
+                <path d="M115.928571,53 L200.928571,237" id="Path" transform="translate(158.428571, 145.000000) scale(1, -1) translate(-158.428571, -145.000000) "></path>
+                <path d="M114.928571,1 L0.928571429,238" id="Path" transform="translate(57.928571, 119.500000) scale(1, -1) translate(-57.928571, -119.500000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

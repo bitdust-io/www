@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="61px" height="59px" viewBox="0 0 61 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>chat_add</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Hackathon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Desktop-HD" transform="translate(-287.000000, -3101.000000)" stroke="#FFFFFF" stroke-width="3">
+            <g id="chat_add" transform="translate(289.000000, 3103.000000)">
+                <path d="M38.8961808,2.64217088 C35.6752248,1.58204815 32.1685584,1 28.5,1 C12.7598846,1 0,11.7147953 0,24.9321651 C0,30.0928633 1.94524181,34.8720446 5.25360382,38.7808868 L1.78125,55 L15.7322628,46.334274 C19.5730211,47.9530868 23.9097832,48.8643302 28.5,48.8643302 C44.2401154,48.8643302 57,38.1495348 57,24.9321651 C57,22.5074339 56.5705784,20.1669245 55.7721135,17.9613377" id="Path"></path>
+                <path d="M49.5,0 L49.5,15" id="Path"></path>
+                <path d="M49.5,0 L49.5,13" id="Path" transform="translate(49.500000, 6.500000) rotate(90.000000) translate(-49.500000, -6.500000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
