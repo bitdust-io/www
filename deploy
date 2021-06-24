@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Other BitDust repositories must be already cloned in home folder like that:
+# As a preparation, a few other BitDust repositories need to be already prepared inside your home folder:
 #
 #     cd ~
 #     git clone https://github.com/bitdust-io/public bitdust
@@ -8,7 +8,7 @@
 #     git clone https://github.com/bitdust-io/docs.git bitdust.docs
 #     git clone https://github.com/bitdust-io/www.git bitdust.www
 #
-# Then you can just run that script to rebuild the web site files in-place:
+# Then you run the script to rebuild the web site files in-place:
 #
 #     cd bitdust.www
 #     ./deploy
