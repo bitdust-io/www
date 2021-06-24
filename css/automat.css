@@ -39,3 +39,8 @@ div.docs-section p code {
     padding-right: 2px;
     color: #B792CC;
 }
+
+div.docs-section h3 {
+    margin-top: -60px;
+    padding-top: 60px;
+}
