@@ -33,6 +33,6 @@
     "grunt-contrib-uglify": "^4.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "mime.json": "^1.1.2",
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   }
 }
