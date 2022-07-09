@@ -5,7 +5,7 @@ import locale
 
 from io import open
 
-markdowner = markdown2.Markdown(extras=['markdown-in-html', 'tables',])
+markdowner = markdown2.Markdown(extras=['markdown-in-html', 'tables', ])
 
 mdsrc = open(sys.argv[1], 'rt', encoding='utf-8').read()
 
