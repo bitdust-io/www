@@ -5,21 +5,21 @@
 
 ## About
 
-BitDust - is decentralized, secure and anonymous on-line storage, where only the owner has access and absolute control over its data.
+BitDust - is decentralized, secure, and anonymous online storage, where only the owner has access and absolute control over its data.
 
-Imagine a situation when two friends and you agree to help each other to store the data. On your computer you store the data that both of your friends uploaded to you via Internet, and you in turn can use the free space on their machines to save your files. This creates [redundancy](https://github.com/bitdust-io/docs/blob/master/storage.md), but allows storing important data in a safer way. It is also a fair deal, because all three are interested in the maximum safety and availability of stored information.
+Imagine a situation when you and your friends agree to help each other to store the data. On your computer, you store the data that both of your friends uploaded to you via the Internet, and you, in turn, can use the free space on their machines to save your files. This creates [redundancy](https://github.com/bitdust-io/docs/blob/master/storage.md) but allows safer storage of important data. It is also a fair deal because all three are interested in the maximum safety and availability of stored information.
 
-BitDust network is a voluntary association of people sharing resources of their personal computers. Their machines run the same copies of BitDust program, which enables device communication via Internet when data are transmitted directly from one user to another and stored on user hard disk drives. 
+BitDust network is a voluntary association of people sharing resources of their personal computers. Their machines run the same copies of the BitDust program, which enables device communication via the Internet when data are transmitted directly from one user to another and stored on user hard disk drives. 
 
-Uploaded input data is divided into blocks and fragments, [encrypted](https://github.com/bitdust-io/docs/blob/master/security.md) and uploaded on other users computers. The system is designed to perform continuous monitoring of each node, which stores your data.
+Uploaded input data is divided into blocks and fragments, [encrypted](https://github.com/bitdust-io/docs/blob/master/security.md), and uploaded on other users' computers. The system is designed to monitor each node, which stores your data continuously.
 
-The BitDust program constantly keeps a state, which enables you to download your data back to your machine at any moment. The mechanism of [automatic data restoring](https://github.com/bitdust-io/docs/blob/master/rebuilding.md) allows dynamic reassembling of the data fragments uploaded into the network on the new nodes without any action from the user. 
+The BitDust program constantly keeps a state, enabling you to download your data back to your machine anytime. The mechanism of [automatic data restoration](https://github.com/bitdust-io/docs/blob/master/rebuilding.md) allows the dynamic reassembling of the data fragments uploaded into the network on the new nodes without any action from the user.
 
 BitDust program is written in [Python](http://python.org) using [Twisted](http://twistedmatrix.com/) Framework and is distributed in open source code - we are still deciding about the license type. 
 
 The project is in the stage of deep development, but the demo version will be available in the near future. 
 
-We invite all who are interested in this direction - primarily developers and enthusiasts. Join our [team](https://github.com/bitdust-io), or directly [support us](https://github.com/bitdust-io/docs/blob/master/donate.md). Together we will be able to create a fairer alternative and trusted solutions than existing global networks.
+We invite everyone interested in this direction - primarily developers and enthusiasts. Join our [team](https://github.com/bitdust-io), or directly [support us](https://github.com/bitdust-io/docs/blob/master/donate.md). Together we can create a fairer alternative and trusted solutions than existing global networks.
 
 
 
@@ -59,11 +59,11 @@ We invite all who are interested in this direction - primarily developers and en
 
 ## Deploying
 
-You can just open "index.html" file in the root folder of your local "www" repository and fully automated and independent copy of the web site will be rendered in your web browser. The web site do not require database to be avaialble on your host and only serve static HTML pages at the moment.
+You can just open a "index.html" file in the root folder of your local "www" repository, and a fully automated and independent copy of the website will be rendered in your web browser. The website does not require a database to be available on your host and only serves static HTML pages at the moment.
 
-On the live machine serving https://bitdust.io resource "www" repository is cloned and direcly loaded into WWW folder maintained by Apache2 web server.
+On the live machine serving https://bitdust.io resource "www", the repository is cloned and directly loaded into the WWW folder maintained by the Apache2 web server.
 
-On live machine cron job is runnig every 5 minutes and executes `./deploy` script from repository root. After your "Pull Request" gets merged changes will be automatically delivered to BitDust web site in a short period.
+The live machine cron job runs every 5 minutes and executes the `./deploy` script from the repository root. After merging your "Pull Request", changes will be automatically delivered to the BitDust website quickly.
 
 
 
