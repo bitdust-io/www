@@ -9,6 +9,8 @@ from io import open
 md_base = ''
 site_url = "https://bitdust.io"
 wikipath = '/wiki/'
+idserverspath = 'https://identities.bitdust.io/'
+blockchainpath = 'https://blockchain.bitdust.io/'
 
 src = sys.argv[1]
 dest = sys.argv[2]
@@ -93,6 +95,8 @@ newbody = template % {
     'basepath': basepath,
     'wikipath': wikipath,
     'site_url': site_url,
+    'idserverspath': idserverspath,
+    'blockchainpath': blockchainpath,
     'filepath': os.path.basename(dest),
     'menu_html': menu_html,
     'api_methods_links': api_methods_links,

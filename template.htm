@@ -17,7 +17,7 @@
     <meta property="og:image:width" content="2400">
     <meta property="og:title" content="%(title)s">
     <meta property="og:description"
-          content="BitDust is distributed secure anonymous on-line storage, where only the owner has access and absolute control over its data.">
+          content="Distributed secure anonymous on-line storage, where only the owner has access and absolute control over its data.">
     <meta property="og:url" content="%(site_url)s">
     <meta property="og:image" content="https://bitdust.io/assets/img/og/og-image.jpg">
 
@@ -34,11 +34,9 @@
         <!-- Navbar Logo -->
         <a class="ui-variable-logo navbar-brand" href="%(site_url)s/" title="BitDust">
             <!-- Default Logo -->
-            <img class="logo-default" src="%(basepath)sassets/img/logo/bitdust-logo-white.svg"
-                 alt="BitDust">
+            <img class="logo-default" src="%(basepath)sassets/img/logo/bitdust-logo-white.svg" alt="BitDust">
             <!-- Transparent Logo -->
-            <img class="logo-transparent" src="%(basepath)sassets/img/logo/bitdust-logo-white.svg"
-                 alt="BitDust">
+            <img class="logo-transparent" src="%(basepath)sassets/img/logo/bitdust-logo-white.svg" alt="BitDust">
         </a><!-- .navbar-brand -->
 
         <!-- Navbar Navigation -->
@@ -71,6 +69,21 @@
                 <!-- Nav Item -->
                 <li class="active">
                     <a href="%(wikipath)s">Wiki</a>
+                </li>
+
+                <!-- Nav Item -->
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Network
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item">
+                            <a href="%(idserverspath)s" style="color:#8089ff;">ID servers</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="%(blockchainpath)s" style="color:#8089ff;">Blockchain</a>
+                        </li>
+                    </ul>
                 </li>
 
             </ul><!--.navbar-nav -->
