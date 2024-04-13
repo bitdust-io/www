@@ -2,10 +2,10 @@
 
     const storageKeyBName = 'bitdust_i18n';
     const defaultLanguage = 'en';
-    const translatable = document.querySelectorAll('[data-content]');
-    const languageSelector = document.querySelector('select[name="language"]');
-    languageSelector.value = getLanguage();
-    languageSelector.onchange = changeEventHandler;
+    // const translatable = document.querySelectorAll('[data-content]');
+    // const languageSelector = document.querySelector('select[name="language"]');
+    // languageSelector.value = getLanguage();
+    // languageSelector.onchange = changeEventHandler;
 
     function getLanguage() {
         let language = window.localStorage[storageKeyBName];
@@ -32,6 +32,6 @@
         });
     }
 
-    renderContent();
+    // renderContent();
 
 })();
