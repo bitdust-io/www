@@ -7,7 +7,7 @@ mdfilepath=$SOURCE_DIR/$1
 mdfile=$(basename "$mdfilepath")
 htmlfile="${mdfile/.md/.html}"
 PYTHONIOENCODING=utf-8:surrogateescape python3 md2html.py "$SOURCE_DIR/$mdfile" > "./wiki/$htmlfile"
-PYTHONIOENCODING=utf-8:surrogateescape python3 fix_html.py "./wiki/$htmlfile" "./wiki/$htmlfile"
+PYTHONIOENCODING=utf-8:surrogateescape python3 fix_html.py "./wiki/$htmlfile" "./wiki/$htmlfile" ""
 echo "$SOURCE_DIR/$mdfile -> ./wiki/$htmlfile"
 
-
+cp -v "./wiki/$htmlfile" .
