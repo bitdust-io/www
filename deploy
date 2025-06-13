@@ -16,7 +16,8 @@
 
 
 cd ~/bitdust/
-git pull
+git fetch --all
+git reset --hard origin/master
 
 
 cd ~/bitdust.docs/
