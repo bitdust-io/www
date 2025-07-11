@@ -14574,7 +14574,6 @@ body.modal-open {
 .section .section-heading .ui-video-toggle {
     display: inline-block;
     font-weight: 600;
-    text-transform: uppercase;
     font-size: 0.95rem;
     cursor: pointer;
 }
