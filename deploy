@@ -42,4 +42,23 @@ git reset --hard origin/master
 ./build_visual
 
 
+cd ~
+rm -rf www
+mkdir www
+cp -v -r ~/bitdust.www/wiki ~/www/
+cp -v -r ~/bitdust.www/pics ~/www/
+cp -v -r ~/bitdust.www/logos ~/www/
+cp -v -r ~/bitdust.www/js ~/www/
+cp -v -r ~/bitdust.www/images ~/www/
+cp -v -r ~/bitdust.www/fonts ~/www/
+cp -v -r ~/bitdust.www/css ~/www/
+cp -v -r ~/bitdust.www/images ~/www/
+cp -v -r ~/bitdust.www/assets ~/www/
+cp -v ~/bitdust.www/*.html ~/www/
+cp -v ~/bitdust.www/*.xml ~/www/
+cp -v ~/bitdust.www/*.webmanifest ~/www/
+cp -v ~/bitdust.www/*.css ~/www/
+cp -v ~/bitdust.www/*.js ~/www/
+cp -v ~/bitdust.www/*.txt ~/www/
+
 echo "DONE!"
