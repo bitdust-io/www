@@ -14,17 +14,20 @@
 #     ./deploy
 #
 
+python3 -m pip install markdown2
+
 
 cd ~/bitdust/
-git pull
+git fetch --all
+git reset --hard origin/master
 
 
 cd ~/bitdust.docs/
 git fetch --all
 git reset --hard origin/master
-python build_api.py ../bitdust/bitdust/interface/api.py api.md
-python build_settings.py ../bitdust/ settings.md
-python build_changelog.py ../bitdust/CHANGELOG.txt changelog.md
+python3 build_api.py ../bitdust/bitdust/interface/api.py api.md
+python3 build_settings.py ../bitdust/ settings.md
+python3 build_changelog.py ../bitdust/CHANGELOG.txt changelog.md
 
 
 cd ~/bitdust.states/
