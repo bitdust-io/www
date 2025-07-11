@@ -2,6 +2,15 @@
 
 SOURCE_DIR=../bitdust.docs
 
+for mdfilepath in $SOURCE_DIR/automats/*.md
+do
+    mdfile=$(basename "$mdfilepath")
+    htmlfile="${mdfile/.md/.html}"
+    PYTHONIOENCODING=utf-8:surrogateescape python3 md2html.py "$SOURCE_DIR/automats/$mdfile" > "./wiki/$htmlfile"
+    PYTHONIOENCODING=utf-8:surrogateescape python3 fix_html.py "./wiki/$htmlfile" "./wiki/$htmlfile"
+    echo "$SOURCE_DIR/automats/$mdfile -> ./wiki/$htmlfile"
+done
+
 for mdfilepath in $SOURCE_DIR/*.md
 do
     mdfile=$(basename "$mdfilepath")
