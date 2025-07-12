@@ -38,8 +38,8 @@ git reset --hard origin/master
 cd ~/bitdust.www/
 git fetch --all
 git reset --hard origin/master
-./build
 ./build_visual
+./build
 
 
 cd ~
